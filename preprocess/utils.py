@@ -7,6 +7,9 @@ from urllib.parse import urlparse
 ###########################################
 import numpy as np
 
+# recommended value of paper 50
+# WINDOW_SIZE = 51
+
 WINDOW_SIZE = 11
 
 OS_TYPES = {

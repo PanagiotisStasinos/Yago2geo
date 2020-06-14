@@ -3,7 +3,7 @@ from rdflib.graph import Graph, ConjunctiveGraph
 from rdflib.plugins.memory import IOMemory
 
 g = Graph()
-g.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_matches.nt", format="nt")          # works
+g.parse("../datasets/yago2geo_uk/os/OS_matches.nt", format="nt")          # works
 
 print("graph has %s statements." % len(g))
 

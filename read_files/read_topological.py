@@ -4,7 +4,7 @@ from rdflib.plugins.memory import IOMemory
 from collections import Counter
 
 g = Graph()
-g.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_topological.nt", format="nt")          # works
+g.parse("../datasets/yago2geo_uk/os/OS_topological.nt", format="nt")          # works
 
 print("graph has %s statements." % len(g))
 

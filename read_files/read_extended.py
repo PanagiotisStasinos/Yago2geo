@@ -6,8 +6,8 @@ from collections import Counter
 
 class OS_extended_RDF_graph:
     def __init__(self):
-        self.count = 0;
-        self.count_subject = 0;
+        self.count = 0
+        self.count_subject = 0
         self.g = Graph()
 
     def print_info(self):
@@ -18,16 +18,16 @@ class OS_extended_RDF_graph:
         # self.g = Graph()
         # g.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_extended_small.ttl", format="n3")       # not working (maybe very large file)
 
-        self.g.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_extended_p1.ttl", format="n3")  # works 1/4
+        self.g.parse("../datasets/yago2geo_uk/os/OS_extended_p1.ttl", format="n3")  # works 1/4
         print("1) graph has %s statements" % len(self.g))
         prev = len(self.g)
-        self.g.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_extended_p2.ttl", format="n3")  # works 2/4
+        self.g.parse("../datasets/yago2geo_uk/os/OS_extended_p2.ttl", format="n3")  # works 2/4
         print("2) graph has ", len(self.g), " statements, new", (len(self.g) - prev))
         prev = len(self.g)
-        self.g.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_extended_p3.ttl", format="n3")  # works 3/4
+        self.g.parse("../datasets/yago2geo_uk/os/OS_extended_p3.ttl", format="n3")  # works 3/4
         print("3) graph has ", len(self.g), " statements, new", (len(self.g) - prev))
         prev = len(self.g)
-        self.g.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_extended_p4.ttl", format="n3")  # works 4/4
+        self.g.parse("../datasets/yago2geo_uk/os/OS_extended_p4.ttl", format="n3")  # works 4/4
         print("4) graph has ", len(self.g), " statements, new", (len(self.g) - prev))
         prev = len(self.g)
 

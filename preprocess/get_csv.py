@@ -59,7 +59,7 @@ weighted_graph.print_statistics()
 # weighted_graph.print_statistics()
 # ##########################################################################################
 #
-# print("sort locations")
+# print("sort locations_csv")
 # sort_Locations(weighted_graph)
 # weighted_graph.print_statistics()
 #

@@ -152,11 +152,11 @@ class KGraph:
         temp_dict["type"] = type_list
         temp_dict["asWKT"] = wkt_list
         df = pd.DataFrame.from_dict(temp_dict)
-        df.to_csv('../datasets/locations/locations_1.csv')
+        df.to_csv('../datasets/locations_csv/locations_1.csv')
 
         temp_dict.pop("asWKT")
         df = pd.DataFrame.from_dict(temp_dict)
-        df.to_csv('../datasets/locations/locations_2.csv')
+        df.to_csv('../datasets/locations_csv/locations_2.csv')
 
     def get_os_type(self, loc):
         return self.Locations[loc].rdf_syntax_ns_type

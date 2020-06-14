@@ -10,17 +10,17 @@ import time
 
 ################################
 # reads extented and new files
-# creates a graph with all locations
+# creates a graph with all locations_csv
 #
 ################################
 # from preprocess import get_csv
 if __name__ == "__main__":
     start = time.time()
 
-    weighted_graph = get_locations_from_csv("C:/Users/panai/PycharmProjects/untitled/datasets/locations/locations_1.csv")
+    weighted_graph = get_locations_from_csv("/datasets/locations_csv/locations_1.csv")
     # weighted_graph.print_statistics()
 
-    print("sort locations")
+    print("sort locations_csv")
     sort_Locations(weighted_graph)
     # weighted_graph.print_statistics()
 

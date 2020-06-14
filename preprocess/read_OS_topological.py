@@ -84,8 +84,8 @@ def get_topological_statistics(weighted_graph):
             if utils.get_url_value(obj) in matches_object:
                 o_garbage_count = o_garbage_count + 1
 
-    print("subject\n\t exists in locations ", subject_count_2, "\n\t exists in matches file ", s_count,
+    print("subject\n\t exists in locations_csv ", subject_count_2, "\n\t exists in matches file ", s_count,
           "\n\t exists in objects ", count, "\n\t doesnt exist in objects ", s1_count)
-    print("obj\n\t exists in locations ", obj_count_2, "\n\t exists in matches file ", o1_count,
+    print("obj\n\t exists in locations_csv ", obj_count_2, "\n\t exists in matches file ", o1_count,
           "\n\t exists in objects ", o_count, "\n\t doesnt exist in objects ", o2_count)
     print("garbage sub ", garbage_s, " exists ", s_garbage_count, "\n\tobj ", garbage_o, " exists ", o_garbage_count)
