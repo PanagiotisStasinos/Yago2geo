@@ -1,10 +1,6 @@
 from rdflib.graph import Graph
-from preprocess.KGraph import read_RDF_Graph_and_store_Locations
-from preprocess.KGraph import sort_Locations
-from preprocess.KGraph import find_distances
-from preprocess.random_walk import store_random_walks
+from locations_graph.KGraph import read_RDF_Graph_and_store_Locations
 import time
-from collections import Counter
 
 start = time.time()
 

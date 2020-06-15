@@ -1,22 +1,30 @@
-from preprocess.KGraph import get_locations_from_csv
-from preprocess.KGraph import sort_Locations
-from preprocess.KGraph import find_distances
+from locations_graph.KGraph import get_locations_from_csv
+from locations_graph.KGraph import sort_Locations
+from locations_graph.KGraph import find_distances
 from preprocess.random_walk import store_random_walks
 from preprocess.random_walk import store_random_walks2
 from preprocess.read_OS_topological import get_topological_statistics
 from preprocess.read_OS_topological import get_topological_info
 import time
 
-################################
-# reads extented and new files
-# creates a graph with all locations_csv
+########################################################
+#   1)  get_locations_from_csv()
+#       reads locations from /datasets/locations_csv/locations.csv
+#       locations.csv has the locations from OS_extended and OS_new files
+#   2)  sort_locations()
+#       find neighbors sorted by by longitude and latitude for each location
+#   3)  get_topological_info()
+#       store locations that are adjacent or within each location
+#   4)  find_distances()
+#       find distances for each location with its closest by longitude, latitude, adjacent and within locations
+#   5)  separate_data()  (not randomly)
+#       separates location to 2 sets, one for training the nn and one for testing the nn
 #
-################################
-# from preprocess import get_csv
+########################################################
 if __name__ == "__main__":
     start = time.time()
 
-    weighted_graph = get_locations_from_csv("/datasets/locations_csv/locations_1.csv")
+    weighted_graph = get_locations_from_csv("/datasets/locations_csv/locations.csv")
     # weighted_graph.print_statistics()
 
     print("sort locations_csv")
@@ -26,7 +34,7 @@ if __name__ == "__main__":
     print("read topological")
     get_topological_info(weighted_graph)
     weighted_graph.print_statistics()
-    # exit(5)
+
     print("find distances")
     find_distances(weighted_graph)
     weighted_graph.print_statistics()

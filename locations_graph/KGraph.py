@@ -2,9 +2,8 @@ from urllib.parse import urlparse
 
 import pandas
 from rdflib.graph import Graph
-from preprocess.location import Location
+from locations_graph.location import Location
 from preprocess import utils
-import numpy as np
 from collections import Counter
 import pandas as pd
 import itertools
@@ -152,7 +151,7 @@ class KGraph:
         temp_dict["type"] = type_list
         temp_dict["asWKT"] = wkt_list
         df = pd.DataFrame.from_dict(temp_dict)
-        df.to_csv('../datasets/locations_csv/locations_1.csv')
+        df.to_csv('../datasets/locations_csv/locations.csv')
 
         temp_dict.pop("asWKT")
         df = pd.DataFrame.from_dict(temp_dict)

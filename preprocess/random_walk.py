@@ -11,6 +11,18 @@ NUM_OF_STEPS = 4  # recommended values of paper
 NUM_OF_WALKS = 4
 
 
+###################################################
+# random walk function when data is separated in
+# train and test sets
+# creates : ../datasets/window_size_W/Ksteps_Pwalks/train_set_vectors.csv
+#           ../datasets/window_size_W/Ksteps_Pwalks/train_set_vectors.json
+#           ../datasets/window_size_W/Ksteps_Pwalks/train_set_labels.csv
+#           ../datasets/window_size_W/Ksteps_Pwalks/train_set_labels.json
+#      and  ../datasets/window_size_W/Ksteps_Pwalks/test_set_vectors.csv
+#           ../datasets/window_size_W/Ksteps_Pwalks/test_set_vectors.json
+#           ../datasets/window_size_W/Ksteps_Pwalks/test_set_labels.csv
+#           ../datasets/window_size_W/Ksteps_Pwalks/test_set_labels.json
+###################################################
 def store_random_walks(weighted_graph):
     #########################################################################################
     #   TRAIN FILES                                                                          #
@@ -94,6 +106,11 @@ def store_random_walks(weighted_graph):
                str(NUM_OF_WALKS) + 'walks/test_set_labels.json', orient='index')
 
 
+###################################################
+# random walk function when data is not separated
+# in train and test sets
+# creates : ../datasets/window_size_W/Ksteps_Pwalks/dataX_S.csv / .json , X = [0,1,2,3,4] and S = [20,40,60,80,100]
+###################################################
 def store_random_walks2(weighted_graph):
     #############################################################################
     #   vectors : list of dicts  (each of these dicts has key value the name

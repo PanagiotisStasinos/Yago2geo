@@ -1,7 +1,5 @@
-from rdflib.graph import Graph, ConjunctiveGraph
-from collections import Counter
+from rdflib.graph import Graph
 from preprocess import utils
-from termcolor import colored
 
 
 def get_topological_info(weighted_graph):

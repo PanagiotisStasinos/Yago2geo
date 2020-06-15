@@ -3,3 +3,4 @@ venv/
 datasets/
 __pycache__/
 unit_testing/
+read_files
