@@ -1,6 +1,6 @@
 import os
 
-f = open("C:/Users/panai/Desktop/yago2geo_uk/os/OS_extended.ttl", "r")
+f = open("../datasets/yago2geo_uk/os/OS_extended.ttl", "r")
 num_lines = sum(1 for line in f)
 print(num_lines)
 f.close()
