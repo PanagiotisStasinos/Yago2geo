@@ -1,10 +1,10 @@
-from locations_graph.KGraph import get_locations_from_csv
 from locations_graph.KGraph import sort_Locations
 from locations_graph.KGraph import find_distances
 from preprocess.random_walk import store_random_walks
 from preprocess.random_walk import store_random_walks2
-from preprocess.read_OS_topological import get_topological_statistics
+from preprocess.read_OS_topological import get_statistics_of_topological_and_matches_files
 from preprocess.read_OS_topological import get_topological_info
+from locations_graph.KGraph import get_locations_from_csv
 import time
 
 ########################################################
@@ -24,17 +24,18 @@ import time
 if __name__ == "__main__":
     start = time.time()
 
-    weighted_graph = get_locations_from_csv("/datasets/locations_csv/locations.csv")
+    weighted_graph = get_locations_from_csv("../datasets/locations_csv/locations.csv")
     # weighted_graph.print_statistics()
 
-    print("sort locations_csv")
-    sort_Locations(weighted_graph)
+    # print("sort locations_csv")
+    # sort_Locations(weighted_graph)
     # weighted_graph.print_statistics()
 
     print("read topological")
     get_topological_info(weighted_graph)
     weighted_graph.print_statistics()
-
+    get_statistics_of_topological_and_matches_files(weighted_graph)
+    exit(1)
     print("find distances")
     find_distances(weighted_graph)
     weighted_graph.print_statistics()

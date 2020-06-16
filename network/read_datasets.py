@@ -4,9 +4,7 @@ from pandas import read_csv
 from sklearn.preprocessing import Normalizer
 import tensorflow as tf
 from collections import Counter
-import numpy as np
 
-from preprocess import utils
 
 def read_from_csv():
     #   train data

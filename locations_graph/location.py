@@ -1,12 +1,10 @@
 import shapely.wkt
 from shapely.geometry import Point
-from shapely.geometry import Polygon
 import numpy as np
 from math import e
 from geopy import distance
 import re
-from preprocess import utils
-from preprocess.utils import get_url_value
+from utils import get_url_value
 
 
 class Location:

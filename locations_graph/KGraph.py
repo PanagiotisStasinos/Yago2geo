@@ -3,7 +3,7 @@ from urllib.parse import urlparse
 import pandas
 from rdflib.graph import Graph
 from locations_graph.location import Location
-from preprocess import utils
+import utils
 from collections import Counter
 import pandas as pd
 import itertools
@@ -285,7 +285,7 @@ def store_distances(weighted_graph):
         vectors[key] = temp
     df = pandas.DataFrame.from_dict(vectors, orient='index')
     df.rows = None
-    df.to_csv('../datasets/window_size_'+utils.WINDOW_SIZE+'/distances/distances_lat.csv', index=False)
+    df.to_csv('../datasets/window_size_' + utils.WINDOW_SIZE + '/distances/distances_lat.csv', index=False)
 
     vectors = {}
     for key, value in weighted_graph.Locations.items():
@@ -298,5 +298,5 @@ def store_distances(weighted_graph):
         vectors[key] = temp
     df = pandas.DataFrame.from_dict(vectors, orient='index')
     df.rows = None
-    df.to_csv('../datasets/window_size_'+utils.WINDOW_SIZE+'/distances/distances_lon.csv', index=False)
+    df.to_csv('../datasets/window_size_' + utils.WINDOW_SIZE + '/distances/distances_lon.csv', index=False)
 

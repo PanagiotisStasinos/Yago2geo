@@ -2,8 +2,11 @@ from rdflib.graph import Graph
 from locations_graph.KGraph import read_RDF_Graph_and_store_Locations
 import time
 
+################################
+#   reads OS_extended and OS_new files, get the locations
+#   and stores them in the datasets/locations_csv/locations.csv and .json
+################################
 start = time.time()
-
 
 extended_part1_file_RDF_graph = Graph()
 extended_part1_file_RDF_graph.parse("C:/Users/panai/Desktop/yago2geo_uk/os/OS_extended_p1.ttl", format="n3")
@@ -45,28 +48,6 @@ weighted_graph.print_statistics()
 
 weighted_graph.write_to_csv()
 weighted_graph.print_statistics()
-
-# weighted_graph.print_info()
-# weighted_graph.print_statistics()
-
-#########################################################################################
-# print("separate data")
-# weighted_graph.separate_data()
-# weighted_graph.print_statistics()
-# ##########################################################################################
-#
-# print("sort locations_csv")
-# sort_Locations(weighted_graph)
-# weighted_graph.print_statistics()
-#
-# print("find distances")
-# find_distances(weighted_graph)
-# weighted_graph.print_statistics()
-#
-# print("random walk")
-# store_random_walks(weighted_graph)
-# weighted_graph.print_statistics()
-
 
 weighted_graph.clear()
 main_graph.close()

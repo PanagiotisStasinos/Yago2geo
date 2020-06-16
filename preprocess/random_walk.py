@@ -1,7 +1,7 @@
 from numpy.random import choice
 import pandas
-from preprocess.utils import get_value_of_type
-import preprocess.utils as utils
+from utils import get_value_of_type
+import utils as utils
 
 # recommended values of paper
 # NUM_OF_STEPS = 10
