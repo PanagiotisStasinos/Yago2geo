@@ -35,7 +35,7 @@ if __name__ == "__main__":
     get_topological_info(weighted_graph)
     weighted_graph.print_statistics()
     get_statistics_of_topological_and_matches_files(weighted_graph)
-    exit(1)
+    # exit(1)
     print("find distances")
     find_distances(weighted_graph)
     weighted_graph.print_statistics()

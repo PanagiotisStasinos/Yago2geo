@@ -1,11 +1,11 @@
-**\__init\__()**  
+**\__init\__.py**  
 > used to either call a single nn for testing or to do bayesian optimize on a NN anf find the best hyperpameters
 
- **bayesian_opt()**  
+ **bayesian_opt.py**  
 >   returns the best hyperparameters for the current dataset 
 > todo
 
-**read_datasets()**  
+**read_datasets.py**  
 > * read_from_csv() :  
 >>>    reads the vector and label csv files for both training and testing data, normalizes the vectors , converts them in 
     dataframes and returns them  
@@ -21,5 +21,6 @@
     
     
     
-**simple_nn()**  
-> used for mainly for testing, uses the best hyperparameters given from the optimizer
+**simple_nn.py**  
+> used for mainly for testing, uses the best hyperparameters given from the optimizer for the certain dataset
+
