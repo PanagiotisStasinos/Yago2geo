@@ -1,32 +1,12 @@
-import numpy as np
-import pandas as pd
-
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Activation
-# from tensorflow.keras.layers. import Dense
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.optimizers import SGD
-from tensorflow.keras.metrics import categorical_crossentropy
-
-from tensorflow import feature_column
-from tensorflow.keras import layers
-from sklearn.model_selection import train_test_split
-from network.read_datasets import df_to_dataset
-
 from tensorflow.keras import backend as K
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import InputLayer, Input
-from tensorflow.keras.layers import Reshape, MaxPooling2D
 from tensorflow.keras.layers import Conv2D, Dense, Flatten
 from tensorflow.keras.callbacks import TensorBoard
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.models import load_model
 
 # imports we know we'll need
 import skopt
-# !pip install scikit-optimize if  necessary
 from skopt import gbrt_minimize, gp_minimize
 from skopt.utils import use_named_args
 from skopt.space import Real, Categorical, Integer

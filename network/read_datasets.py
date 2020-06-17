@@ -160,17 +160,12 @@ def df_to_dataset(df, shuffle=True, batch_size=32):
 
 
 def get_classWeight(train_labels):
-    # ll = train_labels.tolist()
-
     ll = [i[0] for i in train_labels.tolist()]
     print(ll)
     w_dict = Counter(ll)
     print(w_dict)
     print(len(w_dict))
     return w_dict
-    # for val in utils.OS_TYPES:
-    #     w_dict[val] = 0
-    # for val in train_labels:
 
 
 def read_data(path):
