@@ -1,5 +1,5 @@
 from rdflib.graph import Graph
-from locations_graph.KGraph import read_RDF_Graph_and_store_Locations
+from location.KGraph import read_RDF_Graph_and_store_Locations
 import time
 
 ################################

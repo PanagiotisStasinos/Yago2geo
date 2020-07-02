@@ -48,7 +48,7 @@ def simple_nn_2():
     # model.fit(X_train, y_train, batch_size = batch_size, nb_epoch = nb_epochs, show_accuracy = True, verbose = 2, \
     #           validation_data = (X_test, y_test), class_weight=classWeight)
 
-    path = '../datasets/window_size_11/2steps_10walks/data4_60.csv'
+    path = '../datasets/center_distance/vectors_1/window_size_11/2steps_10walks/data4_60.csv'
     train_data, train_labels = read_datasets.read_data(path)
     print(np.unique(train_labels))
     model = Sequential([
@@ -158,7 +158,7 @@ def simple_nn_6():
 
 
 def simple_nn_7():
-    path = '../datasets/window_size_11/2steps_10walks/data4_60.csv'
+    path = '../datasets/center_distance/vectors_1/window_size_11/2steps_10walks/data4_60.csv'
     train_data, train_labels = read_datasets.read_data(path)
     print(np.unique(train_labels))
     model = Sequential([

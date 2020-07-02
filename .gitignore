@@ -2,6 +2,6 @@
 venv/
 datasets/
 __pycache__/
-unit_testing/
+testing/
 read_files
 auxiliary_scripts/

@@ -2,7 +2,7 @@ from urllib.parse import urlparse
 
 import pandas
 from rdflib.graph import Graph
-from locations_graph.location import Location
+from location.location import Location, compute_dampened_weight
 import utils
 from collections import Counter
 import pandas as pd
@@ -118,6 +118,10 @@ class KGraph:
             print("\n\n        ", count1, " MATCHES MUST BE DONE     !!!\n\n")
             # to do
 
+    #################################
+    #   writes all locations to a scv file
+    #   for quicker reading in next parts of the project
+    #################################
     def write_to_csv(self):
         temp_dict = {}
 
@@ -157,9 +161,16 @@ class KGraph:
         df = pd.DataFrame.from_dict(temp_dict)
         df.to_csv('../datasets/locations_csv/locations_2.csv')
 
+    #################################
+    #   returns OS_type of the given location
+    #################################
     def get_os_type(self, loc):
         return self.Locations[loc].rdf_syntax_ns_type
 
+    #################################
+    #   splits data in training and testing set, 90%-10% respectively
+    #   doesn;t do the split randomly
+    #################################
     def separate_data(self):
         len_d2 = len(self.Locations.items()) // 10
         len_d1 = len(self.Locations.items()) - len_d2
@@ -196,6 +207,9 @@ class KGraph:
 
     def print_statistics(self):
         utils.dict_info(self.Locations)
+
+    def get_statistics_csv(self):
+        utils.dict_info_to_csv(self.Locations)
 
     def location_exists(self, name):
         return name in self.Locations
@@ -261,6 +275,73 @@ def find_distances(weighted_graph):
         node1[1].compute_dampened_weights_Longitude()
 
 
+def find_distances_2(weighted_graph):
+    # Latitude
+    index = 0
+    for node1 in weighted_graph.Locations_sorted_by_Latitude.items():
+        # print("\n\n 1 -----------   ", node1[1].Location.resource, "( ", node1[1].Location.Lat, ", ", node1[1].Location.Lon, ")     --------   ")
+        start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Latitude))
+        # print(index, " (", start, ",", end, ")")
+        i = 0
+        for node2 in weighted_graph.Locations_sorted_by_Latitude.items():
+            if i in range(int(start), int(end) + 1):
+                if node1[1].resource != node2[1].resource:
+                    if node1[1].resource in node2[1].Closest_Location_by_Latitude:
+                        print("lat 1")
+                        d = node2[1].Closest_Location_by_Latitude[node1[1].resource]
+                        w = compute_dampened_weight(d)
+
+                        node1[1].Closest_Location_by_Latitude_dampened_weight[node2[1].resource] = w
+                        node1[1].Closest_Location_by_Latitude[node2[1].resource] = d
+
+                        node1[1].dampened_weight_for_closest_by_Latitude_sum = node1[1].dampened_weight_for_closest_by_Latitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    else:
+                        node1[1].compute_distance_from_closest_by_Latitude_2(node2[1])
+            i = i + 1
+        index = index + 1
+
+    # Longitude
+    index = 0
+    for node1 in weighted_graph.Locations_sorted_by_Longitude.items():
+        # print("\n 2 -----------   ", node1[1].Location.resource, "( ", node1[1].Location.Lat, ", ", node1[1].Location.Lon, ")    --------   ")
+        start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Longitude))
+        # print(index, " (", start, ",", end, ")")
+        i = 0
+        for node2 in weighted_graph.Locations_sorted_by_Longitude.items():
+            if i in range(int(start), int(end) + 1):
+                if node1[1].resource != node2[1].resource:
+                    if node1[1].resource in node2[1].Closest_Location_by_Longitude:
+                        print("lon 1")
+                        d = node2[1].Closest_Location_by_Longitude[node1[1].resource]
+                        w = compute_dampened_weight(d)
+
+                        node1[1].Closest_Location_by_Longitude_dampened_weight[node2[1].resource] = w
+                        node1[1].Closest_Location_by_Longitude[node2[1].resource] = d
+
+                        node1[1].dampened_weight_for_closest_by_Longitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Longitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    elif node1[1].resource in node2[1].Closest_Location_by_Latitude:
+                        print("lon 2")
+                        d = node2[1].Closest_Location_by_Latitude[node1[1].resource]
+                        w = compute_dampened_weight(d)
+
+                        node1[1].Closest_Location_by_Longitude_dampened_weight[node2[1].resource] = w
+                        node1[1].Closest_Location_by_Longitude[node2[1].resource] = d
+
+                        node1[1].dampened_weight_for_closest_by_Longitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Longitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    else:
+                        node1[1].compute_distance_from_closest_by_Longitude_2(node2[1])
+            i = i + 1
+        index = index + 1
+
+        node1[1].compute_dampened_weights_Latitude()  # we call it here because we want the total weight
+        node1[1].compute_dampened_weights_Longitude()
+
+
 def get_locations_from_csv(file):
     weighted_graph = KGraph()
     df = pd.read_csv(file)
@@ -273,19 +354,20 @@ def get_locations_from_csv(file):
     return weighted_graph
 
 
-def store_distances(weighted_graph):
+def store_distances(weighted_graph, vectors_type, distance_type):
     vectors = {}
     for key, value in weighted_graph.Locations.items():
         temp = []
+        temp.append(key)    # name of current location
         for x, y in value.Closest_Location_by_Latitude.items():
-            temp.append(x)
-            temp.append(y)
-            temp.append(value.Closest_Location_by_Latitude_dampened_weight[x])
-        temp.append(value.dampened_weight_for_closest_by_Latitude_sum)
+            temp.append(x)  # name
+            temp.append(y)  # distance
+            temp.append(value.Closest_Location_by_Latitude_dampened_weight[x])  # dampened distance
+        temp.append(value.dampened_weight_for_closest_by_Latitude_sum)      # dampened_weight_sum
         vectors[key] = temp
     df = pandas.DataFrame.from_dict(vectors, orient='index')
     df.rows = None
-    df.to_csv('../datasets/window_size_' + utils.WINDOW_SIZE + '/distances/distances_lat.csv', index=False)
+    df.to_csv('../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(utils.WINDOW_SIZE) + '/distances/distances_lat.csv', index=False)
 
     vectors = {}
     for key, value in weighted_graph.Locations.items():
@@ -298,5 +380,49 @@ def store_distances(weighted_graph):
         vectors[key] = temp
     df = pandas.DataFrame.from_dict(vectors, orient='index')
     df.rows = None
-    df.to_csv('../datasets/window_size_' + utils.WINDOW_SIZE + '/distances/distances_lon.csv', index=False)
+    df.to_csv('../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(utils.WINDOW_SIZE) + '/distances/distances_lon.csv', index=False)
+
+
+def get_distances_from_csv(weighted_graph, lat_file, lon_file):
+    df_lat = pd.read_csv(lat_file)
+    df_lon = pd.read_csv(lon_file)
+
+    for index, row in df_lat.iterrows():
+        current_location = row['0']
+        for i in range(1, len(row)-2, 3):
+            neighbor_name = row[str(i)]
+            j = i + 1
+            d = row[str(j)]  # distance
+            j = j + 1
+            w = row[str(j)]  # dampened weight
+            # print("\t" + str(i) + str(neighbor_name) + " - " + str(d) + " - " + str(w))
+            weighted_graph.Locations[current_location].Closest_Location_by_Latitude_dampened_weight[neighbor_name] = w
+            weighted_graph.Locations[current_location].Closest_Location_by_Latitude[neighbor_name] = d
+
+        dampened_weight_lat_sum = row[str(len(row)-1)]
+        weighted_graph.Locations[current_location].dampened_weight_for_closest_by_Latitude_sum = \
+            dampened_weight_lat_sum
+        weighted_graph.Locations[current_location].total_weight_sum = dampened_weight_lat_sum
+        # print(current_location + " - " + str(dampened_weight_sum))
+
+    for index, row in df_lon.iterrows():
+        current_location = row['0']
+        for i in range(1, len(row)-2, 3):
+            neighbor_name = row[str(i)]
+            j = i + 1
+            d = row[str(j)]     # distance
+            j = j + 1
+            w = row[str(j)]     # dampened weight
+            # print("\t" + str(i) + str(neighbor_name) + " - " + str(d) + " - " + str(w))
+            weighted_graph.Locations[current_location].Closest_Location_by_Longitude_dampened_weight[neighbor_name] = w
+            weighted_graph.Locations[current_location].Closest_Location_by_Longitude[neighbor_name] = d
+
+        dampened_weight_lon_sum = row[str(len(row)-1)]
+        weighted_graph.Locations[current_location].dampened_weight_for_closest_by_Longitude_sum = \
+            dampened_weight_lon_sum
+        weighted_graph.Locations[current_location].total_weight_sum = \
+            weighted_graph.Locations[current_location].total_weight_sum + dampened_weight_lon_sum
+        # print(current_location + " - " + str(dampened_weight_sum))
+
+
 

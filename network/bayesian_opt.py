@@ -62,7 +62,7 @@ dimensions = [dim_learning_rate,
 default_parameters = [1e-3, 1, 512, 256, 'relu', 64, 1e-3]
 
 # X_train, y_train, test_data, test_labels = read_datasets.read_from_json()
-path = '../datasets/window_size_11/2steps_10walks/data4_60.csv'
+path = '../datasets/center_distance/vectors_1/window_size_11/2steps_10walks/data4_60.csv'
 X_train, y_train = read_datasets.read_data(path)
 
 

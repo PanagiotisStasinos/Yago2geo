@@ -11,6 +11,13 @@ import numpy as np
 # WINDOW_SIZE = 51
 
 WINDOW_SIZE = 11
+# WINDOW_SIZE = 21
+# WINDOW_SIZE = 31
+# WINDOW_SIZE = 41
+# WINDOW_SIZE = 51
+# WINDOW_SIZE = 61
+# WINDOW_SIZE = 71
+# WINDOW_SIZE = 81
 
 OS_TYPES = {
     "OS_CivilParishorCommunity": 0,
@@ -128,6 +135,70 @@ def dict_info(temp_dict):
     print("#\tOS_COMMUNITYWARD ", dif_types_count[get_value_of_type("OS_COMMUNITYWARD")])
     print("#\tOS_COMMUNITY ", dif_types_count[get_value_of_type("OS_COMMUNITY")])
     print("#\tOS_CCOMMUNITY ", dif_types_count[get_value_of_type("OS_CCOMMUNITY")])
+
+
+def dict_info_to_csv(temp_dict):
+    wkt_count = 0
+    geo_count = 0
+    id_count = 0
+    name_count = 0
+    type_count = 0
+
+    within_counter = 0
+    within_average_len = 0
+    includes_counter = 0
+    includes_average_len = 0
+    touches_counter = 0
+    touches_average_len = 0
+
+    count = 0
+    dif_types_count = np.zeros(len(OS_TYPES))
+    for k, v in temp_dict.items():
+        if v.asWKT is not None:
+            wkt_count = wkt_count + 1
+        if v.OS_Geometry is not None:
+            geo_count = geo_count + 1
+        if v.OS_ID is not None:
+            id_count = id_count + 1
+        if v.OS_Name is not None:
+            name_count = name_count + 1
+        if v.rdf_syntax_ns_type is not None:
+            type_count = type_count + 1
+        if v.Touches:  # not empty
+            touches_counter = touches_counter + 1
+            touches_average_len = touches_average_len + len(v.Touches)
+        if v.Within:  # not empty
+            within_counter = within_counter + 1
+            within_average_len = within_average_len + len(v.Within)
+        if v.Includes:  # not empty
+            includes_counter = includes_counter + 1
+            includes_average_len = includes_average_len + len(v.Includes)
+        count = count + 1
+        dif_types_count[get_value_of_type(v.rdf_syntax_ns_type)] = \
+            dif_types_count[get_value_of_type(v.rdf_syntax_ns_type)] + 1
+
+    file = open("../auxiliary_scripts/locations_stats.txt", "w")
+    file.write("\t\tTOTAL " + str(count) + "\n")
+    file.write("#\twithin " + str(within_counter) + " average len " + str(within_average_len/(max(1, within_counter))) + "\n")
+    file.write("#\tincludes " + str(includes_counter) + " average len " + str(includes_average_len/(max(1, includes_average_len))) + "\n")
+    file.write("#\ttouches " + str(touches_counter) + " average len " + str(touches_average_len/(max(1, touches_counter))) + "\n")
+    file.write("\t\tOS_TYPES\n")
+    file.write("#\tOS_CivilParishorCommunity " + str(dif_types_count[get_value_of_type("OS_CivilParishorCommunity")]) + "\n")
+    file.write("#\tOS_DistrictWard " + str(dif_types_count[get_value_of_type("OS_DistrictWard")]) + "\n")
+    file.write("#\tOS_UnitaryAuthorityWard " + str(dif_types_count[get_value_of_type("OS_UnitaryAuthorityWard")]) + "\n")
+    file.write("#\tOS_District " + str(dif_types_count[get_value_of_type("OS_District")]) + "\n")
+    file.write("#\tOS_MetropolitanDistrict " + str(dif_types_count[get_value_of_type("OS_MetropolitanDistrict")]) + "\n")
+    file.write("#\tOS_MetropolitanDistrictWard " + str(dif_types_count[get_value_of_type("OS_MetropolitanDistrictWard")]) + "\n")
+    file.write("#\tOS_LondonBorough " + str(dif_types_count[get_value_of_type("OS_LondonBorough")]) + "\n")
+    file.write("#\tOS_UnitaryAuthority " + str(dif_types_count[get_value_of_type("OS_UnitaryAuthority")]) + "\n")
+    file.write("#\tOS_LondonBoroughWard " + str(dif_types_count[get_value_of_type("OS_LondonBoroughWard")]) + "\n")
+    file.write("#\tOS_County " + str(dif_types_count[get_value_of_type("OS_County")]) + "\n")
+    file.write("#\tOS_EuropeanRegion " + str(dif_types_count[get_value_of_type("OS_EuropeanRegion")]) + "\n")
+    file.write("#\tOS_GreaterLondonAuthority " + str(dif_types_count[get_value_of_type("OS_GreaterLondonAuthority")]) + "\n")
+    file.write("#\tOS_COMMUNITYWARD " + str(dif_types_count[get_value_of_type("OS_COMMUNITYWARD")]) + "\n")
+    file.write("#\tOS_COMMUNITY " + str(dif_types_count[get_value_of_type("OS_COMMUNITY")]) + "\n")
+    file.write("#\tOS_CCOMMUNITY " + str(dif_types_count[get_value_of_type("OS_CCOMMUNITY")]) + "\n")
+    file.close()
 
 
 # GeeksforGeeks, Python | Print all the common elements of two lists

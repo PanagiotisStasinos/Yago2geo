@@ -1,11 +1,10 @@
 from rdflib.graph import Graph
-from locations_graph.KGraph import read_RDF_Graph_and_store_Locations, find_distances
+from location.KGraph import read_RDF_Graph_and_store_Locations, find_distances
 import time
 
 ################################
 #   does everything from the beginning
 ################################
-from network import simple_nn
 from preprocess import get_topological_info, get_statistics_of_topological_and_matches_files, store_random_walks2
 
 start = time.time()
@@ -41,7 +40,10 @@ print("len", len(main_graph))
 
 weighted_graph = read_RDF_Graph_and_store_Locations(main_graph)
 # weighted_graph.print_statistics()
+end = time.time()
 
+print("Processor time (in seconds):", end)
+print("Time elapsed:", end - start)
 # NO MATCHES NEEDED
 # weighted_graph.concat_matches()
 
@@ -68,6 +70,7 @@ print("random walk")
 store_random_walks2(weighted_graph)
 weighted_graph.print_statistics()
 
+from network import simple_nn
 simple_nn.simple_nn_7()     # 0.98
 
 # bayesian_opt.optimize()

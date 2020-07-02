@@ -1,7 +1,7 @@
-from locations_graph.KGraph import get_locations_from_csv
-from locations_graph.KGraph import sort_Locations
-from locations_graph.KGraph import find_distances
-from locations_graph.KGraph import store_distances
+from location.KGraph import get_locations_from_csv
+from location.KGraph import sort_Locations
+from location.KGraph import find_distances
+from location.KGraph import store_distances
 from preprocess.read_OS_topological import get_topological_info
 import time
 
@@ -17,7 +17,35 @@ import time
 if __name__ == "__main__":
     start = time.time()
 
-    weighted_graph = get_locations_from_csv("/datasets/locations_csv/locations.csv")
+##################
+#   find and store distances for all locations
+#    vectors_type = 1
+##################
+    # weighted_graph = get_locations_from_csv("../datasets/locations_csv/locations.csv")
+    # # weighted_graph.print_statistics()
+    #
+    # print("sort locations_csv")
+    # sort_Locations(weighted_graph)
+    # # weighted_graph.print_statistics()
+    #
+    # print("read topological")
+    # get_topological_info(weighted_graph)
+    # weighted_graph.print_statistics()
+    #
+    # print("find distances")
+    # find_distances(weighted_graph)
+    # weighted_graph.print_statistics()
+    #
+    # print("store distances")
+    # vectors_type = 1
+    # store_distances(weighted_graph, vectors_type)
+    # weighted_graph.print_statistics()
+
+##################
+#   find and store distances for smaller location dataset
+#   vectors_type = 2
+##################
+    weighted_graph = get_locations_from_csv("../datasets/locations_csv/locations_2.csv")
     # weighted_graph.print_statistics()
 
     print("sort locations_csv")
@@ -33,7 +61,8 @@ if __name__ == "__main__":
     weighted_graph.print_statistics()
 
     print("store distances")
-    store_distances(weighted_graph)
+    vectors_type = 2
+    store_distances(weighted_graph, vectors_type, "center_distance")
     weighted_graph.print_statistics()
 
     end = time.time()
