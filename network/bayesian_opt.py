@@ -62,8 +62,8 @@ dimensions = [dim_learning_rate,
 default_parameters = [1e-3, 1, 512, 256, 'relu', 64, 1e-3]
 
 # X_train, y_train, test_data, test_labels = read_datasets.read_from_json()
-path = '../datasets/center_distance/vectors_1/window_size_11/2steps_10walks/data4_60.csv'
-X_train, y_train = read_datasets.read_data(path)
+# path = '../datasets/center_distance/vectors_1/window_size_11/2steps_10walks/data4_60.csv'
+# X_train, y_train = read_datasets.read_data(path)
 
 
 def create_model(learning_rate, num_dense_layers, num_input_nodes,
@@ -138,7 +138,7 @@ def fitness(learning_rate, num_dense_layers, num_input_nodes,
     return -accuracy
 
 
-def optimize():
+def optimize(X_train, y_train):
     # K.clear_session()
     # tf.reset_default_graph()
 
@@ -188,3 +188,5 @@ def optimize():
                             columns=["learning rate", "hidden layers", "input layer nodes", "hidden layer nodes",
                                      "activation function", "batch size", "adam learning rate decay"]),
                (pd.Series(gp_result.func_vals * -100, name="accuracy"))], axis=1)
+
+    return gp_result

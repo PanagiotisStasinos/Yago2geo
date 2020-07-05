@@ -1,3 +1,5 @@
+import os
+
 from numpy.random import choice
 import pandas
 from utils import get_value_of_type
@@ -8,14 +10,14 @@ import utils as utils
 # VECTORS_TYPE = 2
 
 # recommended values of paper
-NUM_OF_STEPS = 10    # k=10
-NUM_OF_WALKS = 5    # p=5
+# NUM_OF_STEPS = 10    # k=10
+# NUM_OF_WALKS = 5    # p=5
 
 # NUM_OF_STEPS = 4    # k=4
 # NUM_OF_WALKS = 4    # p=4
 
-# NUM_OF_STEPS = 2    # k=2
-# NUM_OF_WALKS = 10    # p=10
+NUM_OF_STEPS = 2    # k=2
+NUM_OF_WALKS = 10    # p=10
 
 
 ###################################################
@@ -30,7 +32,16 @@ NUM_OF_WALKS = 5    # p=5
 #           ../datasets/window_size_W/Ksteps_Pwalks/test_set_labels.csv
 #           ../datasets/window_size_W/Ksteps_Pwalks/test_set_labels.json
 ###################################################
-def store_random_walks(weighted_graph):
+def store_random_walks(weighted_graph, distance_type, vectors_type, num_of_steps, num_of_walks, window_size):
+    path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(window_size) + '/' + str(
+        num_of_steps) + 'steps_' + str(
+        num_of_walks) + 'walks' + '/'
+    if not os.path.exists(path):
+        os.makedirs(path)
+    else:
+        print("\tvectors exist (num_of_steps=", num_of_steps, " num_of_walks=", num_of_walks, " window_size=",
+              window_size, " vectors_type=", vectors_type)
+        return
     #########################################################################################
     #   TRAIN FILES                                                                          #
     #   train_vectors  : key = name of location                                             #
@@ -42,9 +53,9 @@ def store_random_walks(weighted_graph):
     train_type_vec = {}
     for loc in weighted_graph.training_set:
         temp = []
-        for walk in range(NUM_OF_WALKS):
+        for walk in range(num_of_walks):
             cur_node = loc
-            for step in range(NUM_OF_STEPS):
+            for step in range(num_of_steps):
                 neighbors = weighted_graph.find_neighbors_2(cur_node)
                 next_node, os_id, center, os_type, os_area = find_next(neighbors)
                 cur_node = next_node
@@ -59,17 +70,11 @@ def store_random_walks(weighted_graph):
     # files are saved in datasets folder under the current window size, number of steps
     # and number of walks folders
     df = pandas.DataFrame.from_dict(train_vectors, orient='index')
-    df.to_csv(
-        '../datasets/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + str(NUM_OF_WALKS) \
-        + 'walks/train_set_vectors.csv')
-    df.to_json(
-        '../datasets/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + str(NUM_OF_WALKS) \
-        + 'walks/train_set_vectors.json', orient='index')
+    df.to_csv(path + 'train_set_vectors.csv')
+    df.to_json(path + 'train_set_vectors.json', orient='index')
     df = pandas.DataFrame.from_dict(train_type_vec, orient='index', columns=['OS_type'])
-    df.to_csv('../datasets/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + \
-              str(NUM_OF_WALKS) + 'walks/train_set_labels.csv')
-    df.to_json('../datasets/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + \
-               str(NUM_OF_WALKS) + 'walks/train_set_labels.json', orient='index')
+    df.to_csv(path + 'train_set_labels.csv')
+    df.to_json(path + 'train_set_labels.json', orient='index')
 
     #########################################################################################
     #   TEST FILES                                                                          #
@@ -82,9 +87,9 @@ def store_random_walks(weighted_graph):
     test_type_vec = {}
     for loc in weighted_graph.test_set:
         temp = []  # temp vector of current location
-        for walk in range(NUM_OF_WALKS):
+        for walk in range(num_of_walks):
             cur_node = loc
-            for step in range(NUM_OF_STEPS):
+            for step in range(num_of_steps):
                 # get _neighbors
                 neighbors = weighted_graph.find_neighbors_2(cur_node)
                 # choose one randomly
@@ -102,15 +107,11 @@ def store_random_walks(weighted_graph):
     # files are saved in datasets folder under the current window size, number of steps
     # and number of walks folders
     df = pandas.DataFrame.from_dict(test_vectors, orient='index')
-    df.to_csv('../datasets/vectors_1/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + \
-              str(NUM_OF_WALKS) + 'walks/test_set_vectors.csv')
-    df.to_json('../datasets/vectors_1/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + \
-               str(NUM_OF_WALKS) + 'walks/test_set_vectors.json', orient='index')
+    df.to_csv(path + 'test_set_vectors.csv')
+    df.to_json(path + 'test_set_vectors.json', orient='index')
     df = pandas.DataFrame.from_dict(test_type_vec, orient='index', columns=['OS_type'])
-    df.to_csv('../datasets/vectors_1/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + \
-              str(NUM_OF_WALKS) + 'walks/test_set_labels.csv')
-    df.to_json('../datasets/vectors_1/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + \
-               str(NUM_OF_WALKS) + 'walks/test_set_labels.json', orient='index')
+    df.to_csv(path + 'test_set_labels.csv')
+    df.to_json(path + 'test_set_labels.json', orient='index')
 
 
 ###################################################
@@ -118,7 +119,16 @@ def store_random_walks(weighted_graph):
 # in train and test sets
 # creates : ../datasets/window_size_W/Ksteps_Pwalks/dataX_S.csv / .json , X = [0,1,2,3,4] and S = [20,40,60,80,100]
 ###################################################
-def store_random_walks2(weighted_graph, vectors_type):
+def store_random_walks2(weighted_graph, distance_type ,vectors_type, num_of_steps, num_of_walks, window_size):
+    path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(window_size) + '/' + str(
+        num_of_steps) + 'steps_' + str(
+        num_of_walks) + 'walks' + '/'
+    if not os.path.exists(path):
+        os.makedirs(path)
+    else:
+        print("\tvectors exist (num_of_steps=", num_of_steps, " num_of_walks=", num_of_walks, " window_size=",
+              window_size, " vectors_type=", vectors_type)
+        return
     #############################################################################
     #   vectors : list of dicts  (each of these dicts has key value the name
     #               of current location and value the feature vector created
@@ -138,9 +148,9 @@ def store_random_walks2(weighted_graph, vectors_type):
         temp3 = []  # os_area, os_type, center
         temp4 = []  # os_area, os_type, center, os_id
         temp5 = []  # os_area, center
-        for walk in range(NUM_OF_WALKS):
+        for walk in range(num_of_walks):
             cur_node = loc
-            for step in range(NUM_OF_STEPS):
+            for step in range(num_of_steps):
                 neighbors = weighted_graph.find_neighbors_2(cur_node)
                 next_node, os_id, center, os_type, os_area = find_next(neighbors)
                 cur_node = next_node
@@ -189,10 +199,8 @@ def store_random_walks2(weighted_graph, vectors_type):
         temp.append('label')
         df.columns = temp
         df.rows = None
-        df.to_csv('../datasets/vectors_' + str(vectors_type) + '/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + str(
-            NUM_OF_WALKS) + 'walks' + '/data' + str(i) + '_' + str(vectors_len - 1) + '.csv', index=False)
-        df.to_json('../datasets/vectors_' + str(vectors_type) + '/window_size_' + str(utils.WINDOW_SIZE) + '/' + str(NUM_OF_STEPS) + 'steps_' + str(
-            NUM_OF_WALKS) + 'walks' + '/data' + str(i) + '_' + str(vectors_len - 1) + '.json', orient='index')
+        df.to_csv(path + 'data' + str(i) + '_' + str(vectors_len - 1) + '.csv', index=False)
+        df.to_json(path + 'data' + str(i) + '_' + str(vectors_len - 1) + '.json', orient='index')
 
 
 def find_next(neighbors):

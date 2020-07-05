@@ -40,7 +40,7 @@ class Location:
             self.Closest_Location_by_Longitude_dampened_weight = {}
             self.dampened_weight_for_closest_by_Longitude_sum = 0.0
 
-            self.total_weight_sum = 0
+            self.total_weight_sum = 0.0
 
             self.resource = get_url_value(subject)
 
@@ -92,7 +92,7 @@ class Location:
             self.Closest_Location_by_Longitude_dampened_weight = {}
             self.dampened_weight_for_closest_by_Longitude_sum = 0.0
 
-            self.total_weight_sum = 0
+            self.total_weight_sum = 0.0
 
     def print_info(self):
         print("[", self.resource, ", ", self.rdf_syntax_ns_type, ", ",

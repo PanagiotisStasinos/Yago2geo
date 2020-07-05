@@ -1,4 +1,4 @@
-from location.KGraph import find_distances, get_distances_from_csv
+from location.KGraph import find_center_distances, get_distances_from_csv
 from preprocess.random_walk import store_random_walks
 from preprocess.random_walk import store_random_walks2
 from preprocess.read_OS_topological import get_statistics_of_topological_and_matches_files
@@ -13,6 +13,10 @@ if __name__ == "__main__":
     get_distances_from_csv(weighted_graph,
                            "../datasets/center_distance/vectors_2/window_size_51/distances/distances_lat.csv",
                            "../datasets/center_distance/vectors_2/window_size_51/distances/distances_lon.csv")
+    weighted_graph.print_statistics()
+
+    vectors_type = 2
+    store_random_walks2(weighted_graph, vectors_type)
     weighted_graph.print_statistics()
 
     end = time.time()

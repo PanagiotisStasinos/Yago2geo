@@ -174,17 +174,18 @@ def read_data(path):
     data_frame = read_csv(path)
     data_frame = data_frame.reset_index(drop=True)
     array = data_frame.values
-    print(array.shape)
+    print("array shape ", array.shape)
     labels = array[:, -1]
     sh = labels.shape
     print(labels.shape)
-    labels = labels.reshape(sh[0],1)
+    labels = labels.reshape(sh[0], 1)
     print(labels.shape)
     array = array[:, 1:]
 
     print(str(type(array)))
 
     print(array.shape)
+    input_shape_x = array.shape[1]
     print(array[0])
 
     data_normalizer = Normalizer(norm='l2').fit(array)
@@ -193,5 +194,5 @@ def read_data(path):
     print(str(type(train_data_normalized)))
     # temp = np.hsplit(train_data_normalized, np.array([3, 6]))
 
-    return train_data_normalized, labels
+    return train_data_normalized, labels, input_shape_x
 

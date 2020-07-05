@@ -1,5 +1,7 @@
-from location.KGraph import sort_Locations
-from location.KGraph import find_distances
+import os
+
+from location.KGraph import sort_Locations, store_distances, get_distances_from_csv, empty_distance_dicts
+from location.KGraph import find_center_distances
 from preprocess.random_walk import store_random_walks
 from preprocess.random_walk import store_random_walks2
 from preprocess.read_OS_topological import get_statistics_of_topological_and_matches_files
@@ -9,8 +11,8 @@ import time
 
 ########################################################
 #   1)  get_locations_from_csv()
-#       reads locations from /datasets/locations_csv/locations.csv
-#       locations.csv has the locations from OS_extended and OS_new files
+#       reads locations from /datasets/locations_csv/locations_1.csv
+#       locations_1.csv has the locations from OS_extended and OS_new files
 #   2)  sort_locations()
 #       find neighbors sorted by by longitude and latitude for each location
 #   3)  get_topological_info()
@@ -24,38 +26,47 @@ import time
 if __name__ == "__main__":
     start = time.time()
 
-    weighted_graph = get_locations_from_csv("../datasets/locations_csv/locations.csv")
-    # weighted_graph.print_statistics()
+    # for vectors_type in [1, 2]:
+    for vectors_type in [1]:
+        file = "../datasets/locations_csv/locations_" + str(vectors_type) + ".csv"
+        weighted_graph = get_locations_from_csv(file)
 
-    # print("sort locations_csv")
-    # sort_Locations(weighted_graph)
-    # weighted_graph.print_statistics()
+        print("sort locations_csv")
+        sort_Locations(weighted_graph)
 
-    print("read topological")
-    get_topological_info(weighted_graph)
-    weighted_graph.print_statistics()
-    get_statistics_of_topological_and_matches_files(weighted_graph)
-    # exit(1)
-    print("find distances")
-    find_distances(weighted_graph)
-    weighted_graph.print_statistics()
+        # for distance_type in ['center_distance', 'polygon_distance']:
+        for distance_type in ['center_distance']:
 
-    #########################################################################################
-    print("separate data")
-    weighted_graph.separate_data()
-    weighted_graph.print_statistics()
-    ##########################################################################################
+            # for window_size in [11, 21, 31, 41, 51, 61, 71, 81]:
+            # for window_size in [11, 21, 31]:
+            for window_size in [11]:
+                # # check if distances exist
+                path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + \
+                       str(window_size) + '/distances/'
+                if not os.path.exists(path):
+                    print("find center distances")
+                    find_center_distances(weighted_graph, window_size)
 
-    print("random walk")
-    # store_random_walks(weighted_graph)
-    # vectors_type = 1
-    # store_random_walks2(weighted_graph, vectors_type)
-    vectors_type = 2
-    store_random_walks2(weighted_graph, vectors_type)
-    weighted_graph.print_statistics()
+                    print("store distances")
+                    store_distances(weighted_graph, vectors_type, 'center_distance', window_size)
+                else:
+                    print("get distances")
+                    get_distances_from_csv(weighted_graph, path + 'distances_lat.csv', path + 'distances_lon.csv')
 
-    weighted_graph.clear()
+                for k, p in [(10, 5), (2, 10)]:
+                # for k, p in [(10, 5)]:
+                # for k, p in [(2, 10)]:
+                    print("random walk")
+                    store_random_walks2(weighted_graph, distance_type, vectors_type, k, p, window_size)
+
+                # empty distance dicts
+                print("delete previous distances")
+                empty_distance_dicts(weighted_graph)
 
     end = time.time()
     print("Processor time (in seconds):", end)
     print("Time elapsed:", end - start)
+    total = end - start
+    minutes, secs = divmod(total, 60)
+    hours, minutes = divmod(minutes, 60)
+    print(hours, ' : ', minutes, ' : ', secs)

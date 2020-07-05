@@ -4,7 +4,7 @@ import time
 
 ################################
 #   reads OS_extended and OS_new files, get the locations
-#   and stores them in the datasets/locations_csv/locations.csv and .json
+#   and stores them in the datasets/locations_csv/locations_1.csv and .json
 ################################
 start = time.time()
 

@@ -39,16 +39,26 @@ OS_TYPES = {
 }
 
 
-def find_start_end(index, size):
-    if index < ((WINDOW_SIZE - 1) / 2):
+def find_start_end(index, size, window_size):
+    # if index < ((WINDOW_SIZE - 1) / 2):
+    #     start = 0
+    #     end = WINDOW_SIZE - 1
+    # elif index > size - 1 - ((WINDOW_SIZE - 1) / 2):
+    #     start = size - WINDOW_SIZE
+    #     end = size - 1
+    # else:
+    #     start = index - ((WINDOW_SIZE - 1) / 2)
+    #     end = index + ((WINDOW_SIZE - 1) / 2)
+    # return start, end
+    if index < ((window_size - 1) / 2):
         start = 0
-        end = WINDOW_SIZE - 1
-    elif index > size - 1 - ((WINDOW_SIZE - 1) / 2):
-        start = size - WINDOW_SIZE
+        end = window_size - 1
+    elif index > size - 1 - ((window_size - 1) / 2):
+        start = size - window_size
         end = size - 1
     else:
-        start = index - ((WINDOW_SIZE - 1) / 2)
-        end = index + ((WINDOW_SIZE - 1) / 2)
+        start = index - ((window_size - 1) / 2)
+        end = index + ((window_size - 1) / 2)
     return start, end
 
 

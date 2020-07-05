@@ -1,5 +1,5 @@
 from rdflib.graph import Graph
-from location.KGraph import read_RDF_Graph_and_store_Locations, find_distances
+from location.KGraph import read_RDF_Graph_and_store_Locations, find_center_distances
 import time
 
 ################################
@@ -56,7 +56,7 @@ weighted_graph.print_statistics()
 get_statistics_of_topological_and_matches_files(weighted_graph)
 # exit(1)
 print("find distances")
-find_distances(weighted_graph)
+find_center_distances(weighted_graph)
 weighted_graph.print_statistics()
 
 #########################################################################################

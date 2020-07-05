@@ -2,12 +2,33 @@ import numpy as np
 from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
-
+import matplotlib.pyplot as plt
 from network import read_datasets
 
 
+def plots(history):
+    # summarize history for accuracy
+    plt.plot(history.history['accuracy'])
+    plt.plot(history.history['val_accuracy'])
+    plt.title('model accuracy')
+    plt.ylabel('accuracy')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
+    plt.show()
+    # summarize history for loss
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.title('model loss')
+    plt.ylabel('loss')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
+    plt.show()
+
+
 def simple_nn_1():
-    train_data, train_labels, test_data, test_labels = read_datasets.read_from_json()
+    path = '../datasets/center_distance/vectors_2/window_size_11/10steps_5walks/data1_100.csv'
+    train_data, train_labels, input_shape_x = read_datasets.read_data(path)
+    # train_data, train_labels, test_data, test_labels = read_datasets.read_from_json()
     # train_data, train_labels, test_data, test_labels = read_datasets.read_from_csv()
 
     # print("train_data ", str(type(train_data)), " size ", train_data.shape, " ", train_data[0])
@@ -18,7 +39,7 @@ def simple_nn_1():
     # print(np.unique(test_labels))
 
     model = Sequential([
-        keras.layers.Dense(20, input_shape=(40,), activation="relu"),
+        keras.layers.Dense(20, input_shape=(input_shape_x,), activation="relu"),
         keras.layers.Dense(160, activation="relu"),
         keras.layers.Dense(15, activation="softmax")
     ])
@@ -31,13 +52,13 @@ def simple_nn_1():
     model.compile(optimizer=opt1, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
     classWeight = read_datasets.get_classWeight(train_labels)
-    model.fit(train_data, train_labels, batch_size=64, epochs=3, shuffle=True,
+    history = model.fit(train_data, train_labels, batch_size=64, epochs=3, shuffle=True,
               class_weight=classWeight,
               validation_split=0.1,
               verbose=2)
     #
-    model.evaluate(x=test_data, y=test_labels)
-
+    # model.evaluate(x=test_data, y=test_labels)
+    plots(history)
     # exit(0)
 
 
@@ -48,11 +69,11 @@ def simple_nn_2():
     # model.fit(X_train, y_train, batch_size = batch_size, nb_epoch = nb_epochs, show_accuracy = True, verbose = 2, \
     #           validation_data = (X_test, y_test), class_weight=classWeight)
 
-    path = '../datasets/center_distance/vectors_1/window_size_11/2steps_10walks/data4_60.csv'
-    train_data, train_labels = read_datasets.read_data(path)
+    path = '../datasets/center_distance/vectors_2/window_size_11/10steps_5walks/data1_100.csv'
+    train_data, train_labels, input_shape_x = read_datasets.read_data(path)
     print(np.unique(train_labels))
     model = Sequential([
-        keras.layers.Dense(20, input_shape=(60,), activation="relu"),
+        keras.layers.Dense(20, input_shape=(input_shape_x,), activation="relu"),
         keras.layers.Dense(160, activation="relu"),
         # keras.layers.Dense(400, activation="relu"),
         # keras.layers.Dense(160, activation="relu"),
@@ -73,10 +94,11 @@ def simple_nn_2():
 
 
 def simple_nn_3():
-    train_data, train_labels = read_datasets.read_data()
+    path = '../datasets/center_distance/vectors_2/window_size_11/10steps_5walks/data0_50.csv'
+    train_data, train_labels, input_shape_x = read_datasets.read_data(path)
     print(np.unique(train_labels))
     model = Sequential([
-        keras.layers.Dense(218, input_shape=(40,), activation="relu"),
+        keras.layers.Dense(218, input_shape=(input_shape_x,), activation="relu"),
         keras.layers.Dense(382, activation="relu"),
         keras.layers.Dense(382, activation="relu"),
         keras.layers.Dense(382, activation="relu"),
@@ -89,10 +111,11 @@ def simple_nn_3():
 
     classWeight = read_datasets.get_classWeight(train_labels)
     print(classWeight)
-    model.fit(train_data, train_labels, batch_size=41, epochs=20, shuffle=True,
+    history = model.fit(train_data, train_labels, batch_size=41, epochs=40, shuffle=True,
               class_weight=classWeight,
               validation_split=0.1,
               verbose=2)
+    plots(history)
 
 
 def simple_nn_4():
