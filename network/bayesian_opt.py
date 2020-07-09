@@ -77,7 +77,7 @@ def create_model(learning_rate, num_dense_layers, num_input_nodes,
     """
     # start the model making process and create our first layer
     model = Sequential()
-    input_shape = (40,)
+    input_shape = (temp_input_shape,)
     model.add(Dense(num_input_nodes, input_shape=input_shape, activation=activation
                     ))
     # create a loop making a new dense layer for the amount passed to this model.
@@ -109,20 +109,21 @@ def fitness(learning_rate, num_dense_layers, num_input_nodes,
                          activation=activation,
                          adam_decay=adam_decay
                          )
-    # named blackbox becuase it represents the structure
-    blackbox = model.fit(x=X_train,
+    # named blackbox because it represents the structure
+    blackbox = model.fit(x=x_train,
                          y=y_train,
                          epochs=3,
                          batch_size=batch_size,
                          validation_split=0.15,
+                         verbose=0,
                          )
     # return the validation accuracy for the last epoch.
     accuracy = blackbox.history['val_accuracy'][-1]
 
     # Print the classification accuracy.
-    print()
+    # print()
     print("Accuracy: {0:.2%}".format(accuracy))
-    print()
+    # print()
 
     # Delete the Keras model with these hyper-parameters from memory.
     del model
@@ -138,23 +139,16 @@ def fitness(learning_rate, num_dense_layers, num_input_nodes,
     return -accuracy
 
 
-def optimize(X_train, y_train):
-    # K.clear_session()
-    # tf.reset_default_graph()
-
-    # train_data, train_labels, test_data, test_labels = read_datasets.read_from_json()
-    # train_data, train_labels, test_data, test_labels = read_datasets.read_from_csv()
-
-    # print("train_data ", str(type(train_data)), " size ", train_data.shape, " ", train_data[0])
-    # print("train_labels ", str(type(train_labels)), " size ", train_labels.shape)
-    # print(np.unique(train_labels))
-    # print("test_data ", str(type(test_data)), " size ", test_data.shape)
-    # print("test_labels ", str(type(test_labels)), " size ", test_labels.shape)
-    # print(np.unique(test_labels))
-
+def optimize(X_train, Y_train, input_shape_x):
     # This is the search-dimension for the learning-rate. It is a real number (floating-point) with a lower
     # bound of 1e-6 and an upper bound of 1e-2. But instead of searching between these bounds directly, we use
     # a logarithmic transformation, so we will search for the number k in 1ek which is only bounded between -6 and -2
+    global x_train
+    x_train = X_train
+    global y_train
+    y_train = Y_train
+    global temp_input_shape
+    temp_input_shape = input_shape_x
 
     gp_result = gp_minimize(func=fitness,
                             dimensions=dimensions,
@@ -189,4 +183,5 @@ def optimize(X_train, y_train):
                                      "activation function", "batch size", "adam learning rate decay"]),
                (pd.Series(gp_result.func_vals * -100, name="accuracy"))], axis=1)
 
-    return gp_result
+    best_accuracy = round(gp_result.fun * -100, 2)
+    return gp_result, best_accuracy
