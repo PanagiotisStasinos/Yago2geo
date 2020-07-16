@@ -134,11 +134,11 @@ def store_random_walks2(weighted_graph, distance_type ,vectors_type, num_of_step
     #               of current location and value the feature vector created
     #               by random walk
     #   temp* : feature vector
-    #           1 : only os_area
-    #           2 : os_area, os_type
-    #           3 : os_area, os_type, center
-    #           4 : os_area, os_type, center, os_id
-    #           5 : os_area, center
+    #           0 : only os_area
+    #           1 : os_area, os_type
+    #           2 : os_area, os_type, center
+    #           3 : os_area, os_type, center, os_id
+    #           4 : os_area, center
     #############################################################################
 
     vectors = [dict() for x in range(5)]

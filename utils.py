@@ -105,7 +105,7 @@ def dict_info(temp_dict):
             id_count = id_count + 1
         if v.OS_Name is not None:
             name_count = name_count + 1
-        if v.rdf_syntax_ns_type is not None:
+        if v.OS_type is not None:
             type_count = type_count + 1
         if v.Touches:  # not empty
             touches_counter = touches_counter + 1
@@ -118,8 +118,8 @@ def dict_info(temp_dict):
             includes_average_len = includes_average_len + len(v.Includes)
         count = count + 1
         # print(" -> ", v.rdf_syntax_ns_type)
-        dif_types_count[get_value_of_type(v.rdf_syntax_ns_type)] = \
-            dif_types_count[get_value_of_type(v.rdf_syntax_ns_type)] + 1
+        dif_types_count[get_value_of_type(v.OS_type)] = \
+            dif_types_count[get_value_of_type(v.OS_type)] + 1
 
     print("#\t\ttotal ", count)
     print("#\twkt ", wkt_count)
@@ -172,7 +172,7 @@ def dict_info_to_csv(temp_dict):
             id_count = id_count + 1
         if v.OS_Name is not None:
             name_count = name_count + 1
-        if v.rdf_syntax_ns_type is not None:
+        if v.OS_type is not None:
             type_count = type_count + 1
         if v.Touches:  # not empty
             touches_counter = touches_counter + 1
@@ -184,8 +184,8 @@ def dict_info_to_csv(temp_dict):
             includes_counter = includes_counter + 1
             includes_average_len = includes_average_len + len(v.Includes)
         count = count + 1
-        dif_types_count[get_value_of_type(v.rdf_syntax_ns_type)] = \
-            dif_types_count[get_value_of_type(v.rdf_syntax_ns_type)] + 1
+        dif_types_count[get_value_of_type(v.OS_type)] = \
+            dif_types_count[get_value_of_type(v.OS_type)] + 1
 
     file = open("../auxiliary_scripts/locations_stats.txt", "w")
     file.write("\t\tTOTAL " + str(count) + "\n")

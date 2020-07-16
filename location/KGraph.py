@@ -39,13 +39,13 @@ class KGraph:
             neighbors.append(
                 tuple((key, self.Locations[loc].Closest_Location_by_Latitude_dampened_weight[key],
                        int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].rdf_syntax_ns_type, self.Locations[key].area)))
+                       self.Locations[key].OS_type, self.Locations[key].area)))
 
         for key in self.Locations[loc].Closest_Location_by_Longitude_dampened_weight:
             neighbors.append(
                 tuple((key, self.Locations[loc].Closest_Location_by_Longitude_dampened_weight[key],
                        int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].rdf_syntax_ns_type, self.Locations[key].area)))
+                       self.Locations[key].OS_type, self.Locations[key].area)))
         return neighbors
 
     def find_neighbors_2(self, loc):
@@ -54,25 +54,25 @@ class KGraph:
             neighbors.append(
                 tuple((key, self.Locations[loc].Closest_Location_by_Latitude_dampened_weight[key],
                        int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].rdf_syntax_ns_type, self.Locations[key].area)))
+                       self.Locations[key].OS_type, self.Locations[key].area)))
 
         for key in self.Locations[loc].Closest_Location_by_Longitude_dampened_weight:
             neighbors.append(
                 tuple((key, self.Locations[loc].Closest_Location_by_Longitude_dampened_weight[key],
                        int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].rdf_syntax_ns_type, self.Locations[key].area)))
+                       self.Locations[key].OS_type, self.Locations[key].area)))
         for key in self.Locations[loc].Within:
             neighbors.append(
                 tuple((key, 0, int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].rdf_syntax_ns_type, self.Locations[key].area)))
+                       self.Locations[key].OS_type, self.Locations[key].area)))
         for key in self.Locations[loc].Includes:
             neighbors.append(
                 tuple((key, 0, int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].rdf_syntax_ns_type, self.Locations[key].area)))
+                       self.Locations[key].OS_type, self.Locations[key].area)))
         for key in self.Locations[loc].Touches:
             neighbors.append(
                 tuple((key, 0, int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].rdf_syntax_ns_type, self.Locations[key].area)))
+                       self.Locations[key].OS_type, self.Locations[key].area)))
         return neighbors
 
     def concat_geo(self):
@@ -143,7 +143,7 @@ class KGraph:
 
             name_list.append(item.OS_Name)
             id_list.append(item.OS_ID)
-            type_list.append(item.rdf_syntax_ns_type)
+            type_list.append(item.OS_type)
             wkt_list.append(item.asWKT)
             geometry_list.append(item.OS_Geometry)
 
@@ -166,7 +166,7 @@ class KGraph:
     #   returns OS_type of the given location
     #################################
     def get_os_type(self, loc):
-        return self.Locations[loc].rdf_syntax_ns_type
+        return self.Locations[loc].OS_type
 
     #################################
     #   splits data in training and testing set, 90%-10% respectively

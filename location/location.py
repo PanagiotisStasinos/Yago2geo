@@ -20,7 +20,7 @@ class Location:
             self.OS_ID = None
             self.OS_Name = None
             self.asWKT = None
-            self.rdf_syntax_ns_type = None
+            self.OS_type = None
 
             self.Within = []
             self.Includes = []
@@ -61,14 +61,14 @@ class Location:
                 self.Lon = self.Center.y
                 self.Center = Point(self.Lat, self.Lon)
             elif pred == "rdf-syntax-ns#type":
-                self.rdf_syntax_ns_type = get_url_value(obj)
+                self.OS_type = get_url_value(obj)
         else:   # get info from csv
             self.resource = args[0]
 
             self.OS_Name = args[0]
             self.OS_Geometry = args[1]
             self.OS_ID = args[2]
-            self.rdf_syntax_ns_type = args[3]
+            self.OS_type = args[3]
             self.asWKT = args[4]
 
             self.Within = []
@@ -95,7 +95,7 @@ class Location:
             self.total_weight_sum = 0.0
 
     def print_info(self):
-        print("[", self.resource, ", ", self.rdf_syntax_ns_type, ", ",
+        print("[", self.resource, ", ", self.OS_type, ", ",
               str(self.Center), ", ", self.OS_ID, ", ", self.OS_Name, ", ", self.OS_Geometry, ", ", self.asWKT, "]")
 
     #################################
@@ -111,8 +111,8 @@ class Location:
             prev.OS_ID = self.OS_ID
         elif self.OS_Name is not None and prev.OS_Name is None:
             prev.OS_Mame = self.OS_Name
-        elif self.rdf_syntax_ns_type is not None and prev.rdf_syntax_ns_type is None:
-            prev.rdf_syntax_ns_type = self.rdf_syntax_ns_type
+        elif self.OS_type is not None and prev.OS_type is None:
+            prev.OS_type = self.OS_type
 
     #################################
     #   finds the geodesic distance between the centers of the 2 locations
@@ -183,8 +183,8 @@ class Location:
             self.OS_ID = other.OS_ID
         if self.OS_Name is None:
             self.OS_Name = other.resource
-        if self.rdf_syntax_ns_type is None:
-            self.rdf_syntax_ns_type = other.rdf_syntax_ns_type
+        if self.OS_type is None:
+            self.OS_type = other.OS_type
 
         self.count = self.count + other.count
 
