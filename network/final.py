@@ -16,6 +16,8 @@ def plots(temp_history):
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left')
+    path = '../plots/accuracy.png'
+    plt.savefig(path)
     plt.show()
     # summarize history for loss
     plt.plot(temp_history.history['loss'])
@@ -24,6 +26,8 @@ def plots(temp_history):
     plt.ylabel('loss')
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left')
+    path = '../plots/loss.png'
+    plt.savefig(path)
     plt.show()
 
 
@@ -40,7 +44,7 @@ if __name__ == '__main__':
 
     path = '../datasets/center_distance/vectors_2/window_size_31/2steps_10walks/data2_80.csv'
     train_data, train_labels, input_shape = network.read_datasets.read_data(path)
-    # print(np.unique(train_labels))
+    print(np.unique(train_labels))
 
     callback = [
         tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=2),
@@ -60,7 +64,7 @@ if __name__ == '__main__':
                         activation=activation,
                         name=name
                         ))
-    # add our classification layer.
+    # add classification layer (15 categories) .
     num_output_nodes = 15
     model.add(Dense(num_output_nodes, activation='softmax'))
 

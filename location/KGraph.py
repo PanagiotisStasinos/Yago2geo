@@ -170,7 +170,7 @@ class KGraph:
 
     #################################
     #   splits data in training and testing set, 90%-10% respectively
-    #   doesn;t do the split randomly
+    #   doesn't do the split randomly
     #################################
     def separate_data(self):
         len_d2 = len(self.Locations.items()) // 10

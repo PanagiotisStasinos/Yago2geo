@@ -138,11 +138,78 @@ def plot_by_nuf_of_steps_n_walks(average_accuracy_by_window_size):
     max_acc = []
     average = []
 
+    k_2_p_10 = []
     k_10_p_5 = []
     for w in [11, 21, 31, 41, 51, 61, 71, 81]:
-        average.append(mean(average_accuracy_by_window_size[w]))
-        max_acc.append(max(average_accuracy_by_window_size[w]))
+        k_2_p_10 = k_2_p_10 + average_accuracy_by_window_size[w][0:5]
+        k_2_p_10 = k_2_p_10 + average_accuracy_by_window_size[w][10:15]
+        k_10_p_5 = k_10_p_5 + average_accuracy_by_window_size[w][5:10]
+        k_10_p_5 = k_10_p_5 + average_accuracy_by_window_size[w][15:20]
 
+        print(average_accuracy_by_window_size[w])
+        print("(2,10) : ", k_2_p_10)
+        print("(10,5) : ", k_10_p_5)
+
+    max_acc.append(max(k_2_p_10))
+    max_acc.append((max(k_10_p_5)))
+
+    average.append(mean(k_2_p_10))
+    average.append((mean(k_10_p_5)))
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width / 2, max_acc, width, label='Max')
+    rects2 = ax.bar(x + width / 2, average, width, label='Average')
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel('Accuracy')
+    plt.ylim(70.0, 100.0)
+    ax.set_xlabel('Num of steps and walks \n max accuracy ' + str(max(max_acc)) + ", vectors type : " + str(
+        labels[max_acc.index(max(max_acc))]))
+    ax.set_title('Max and Average accuracy for each set of (num of steps, num of walks) ')
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+    auto_label(rects1)
+    auto_label(rects2)
+    fig.tight_layout()
+    path = '../plots/steps_walks_plt.png'
+    plt.savefig(path)
+    plt.show()
+
+
+def plot_by_feature(feature):
+    labels = [0, 1, 2, 3, 4]
+    max_acc = []
+    average = []
+    for f in [0, 1, 2, 3, 4]:
+        average.append(mean(feature[f]))
+        max_acc.append(max(feature[f]))
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width / 2, max_acc, width, label='Max')
+    rects2 = ax.bar(x + width / 2, average, width, label='Average')
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel('Accuracy')
+    plt.ylim(50.0, 100.0)
+    ax.set_xlabel('feature combination \n max accuracy ' + str(max(max_acc)) + ", feature combination " + str(labels[max_acc.index(max(max_acc))]))
+    ax.set_title('Max and Average accuracy for each feature combination')
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+    autolabel(rects1)
+    autolabel(rects2)
+    fig.tight_layout()
+    path = '../plots/feature_plt.png'
+    plt.savefig(path)
+    plt.show()
 
 if __name__ == '__main__':
     start = time.time()
@@ -313,6 +380,7 @@ if __name__ == '__main__':
         print()
 
 
+    plot_by_feature(feature)
     print("\nACCURACY BY FEATURE")
     for feature_type in [0, 1, 2, 3, 4]:
         print(feature[feature_type])
