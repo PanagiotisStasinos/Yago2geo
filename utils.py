@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 #
 ###########################################
 import numpy as np
+import pandas as pd
 
 # recommended value of paper 50
 # WINDOW_SIZE = 51
@@ -147,7 +148,7 @@ def dict_info(temp_dict):
     print("#\tOS_CCOMMUNITY ", dif_types_count[get_value_of_type("OS_CCOMMUNITY")])
 
 
-def dict_info_to_csv(temp_dict):
+def dict_info_to_csv(temp_dict, vec_type):
     wkt_count = 0
     geo_count = 0
     id_count = 0
@@ -187,7 +188,8 @@ def dict_info_to_csv(temp_dict):
         dif_types_count[get_value_of_type(v.OS_type)] = \
             dif_types_count[get_value_of_type(v.OS_type)] + 1
 
-    file = open("../auxiliary_scripts/locations_stats.txt", "w")
+    # file = open("../auxiliary_scripts/locations_stats.txt", "w")
+    file = open("../locations_stats_" + vec_type + ".txt", "w")
     file.write("\t\tTOTAL " + str(count) + "\n")
     file.write("#\twithin " + str(within_counter) + " average len " + str(within_average_len/(max(1, within_counter))) + "\n")
     file.write("#\tincludes " + str(includes_counter) + " average len " + str(includes_average_len/(max(1, includes_average_len))) + "\n")
@@ -209,6 +211,12 @@ def dict_info_to_csv(temp_dict):
     file.write("#\tOS_COMMUNITY " + str(dif_types_count[get_value_of_type("OS_COMMUNITY")]) + "\n")
     file.write("#\tOS_CCOMMUNITY " + str(dif_types_count[get_value_of_type("OS_CCOMMUNITY")]) + "\n")
     file.close()
+
+    temp_dict = {}
+    for i in range(0, 15):
+        temp_dict[i] = dif_types_count[i]
+    temp_dt = pd.DataFrame(temp_dict.items())
+    temp_dt.to_csv("../locations_stats_" + vec_type + ".csv", index=False, header=["type_index", "frequency"])
 
 
 # GeeksforGeeks, Python | Print all the common elements of two lists

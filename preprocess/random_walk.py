@@ -2,22 +2,9 @@ import os
 
 from numpy.random import choice
 import pandas
+from pandas import read_csv
+
 from utils import get_value_of_type
-import utils as utils
-
-# vectors types 1 or 2
-# VECTORS_TYPE = 1
-# VECTORS_TYPE = 2
-
-# recommended values of paper
-# NUM_OF_STEPS = 10    # k=10
-# NUM_OF_WALKS = 5    # p=5
-
-# NUM_OF_STEPS = 4    # k=4
-# NUM_OF_WALKS = 4    # p=4
-
-NUM_OF_STEPS = 2    # k=2
-NUM_OF_WALKS = 10    # p=10
 
 
 ###################################################
@@ -33,7 +20,8 @@ NUM_OF_WALKS = 10    # p=10
 #           ../datasets/window_size_W/Ksteps_Pwalks/test_set_labels.json
 ###################################################
 def store_random_walks(weighted_graph, distance_type, vectors_type, num_of_steps, num_of_walks, window_size):
-    path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(window_size) + '/' + str(
+    path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(
+        window_size) + '/' + str(
         num_of_steps) + 'steps_' + str(
         num_of_walks) + 'walks' + '/'
     if not os.path.exists(path):
@@ -119,8 +107,9 @@ def store_random_walks(weighted_graph, distance_type, vectors_type, num_of_steps
 # in train and test sets
 # creates : ../datasets/window_size_W/Ksteps_Pwalks/dataX_S.csv / .json , X = [0,1,2,3,4] and S = [20,40,60,80,100]
 ###################################################
-def store_random_walks2(weighted_graph, distance_type ,vectors_type, num_of_steps, num_of_walks, window_size):
-    path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(window_size) + '/' + str(
+def store_random_walks2(weighted_graph, distance_type, vectors_type, num_of_steps, num_of_walks, window_size):
+    path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(
+        window_size) + '/' + str(
         num_of_steps) + 'steps_' + str(
         num_of_walks) + 'walks' + '/'
     if not os.path.exists(path):
@@ -200,7 +189,126 @@ def store_random_walks2(weighted_graph, distance_type ,vectors_type, num_of_step
         df.columns = temp
         df.rows = None
         df.to_csv(path + 'data' + str(i) + '_' + str(vectors_len - 1) + '.csv', index=False)
-        df.to_json(path + 'data' + str(i) + '_' + str(vectors_len - 1) + '.json', orient='index')
+        # df.to_json(path + 'data' + str(i) + '_' + str(vectors_len - 1) + '.json', orient='index')
+
+
+###################################################
+# random walk function when data is not separated
+# in train and test sets
+# creates : ../datasets/................/window_size_W/Ksteps_Pwalks/dataX_S.csv / .json , X = [0,1,2,3,4] and S = [20,40,60,80,100]
+# for locations of small classes executes more random walks so each class has same number of vectors in the final set
+###################################################
+def store_random_walks3(weighted_graph, distance_type, vectors_type, num_of_steps, num_of_walks, window_size,
+                        stats_file):
+    path = '../datasets/balanced_classes/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(
+        window_size) + '/' + str(
+        num_of_steps) + 'steps_' + str(
+        num_of_walks) + 'walks' + '/'
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print("CREATE ", path)
+    else:
+        print("\tvectors exist (num_of_steps=", num_of_steps, " num_of_walks=", num_of_walks, " window_size=",
+              window_size, " vectors_type=", vectors_type, ")")
+        return
+
+    data_frame = read_csv(stats_file)
+    data_frame = data_frame.reset_index(drop=True)
+    array = data_frame.values
+    print("array shape ", array.shape)
+
+    categories = array[:, 0]  # index of categories
+    frequency = array[:, 1]  # frequency of each class, how many locations exists for a class
+    max_freq = max(frequency)  # frequency of biggest class
+    rw_per_class = max_freq / frequency  # number for random walks to be done pen class
+
+    total = 0
+    for i in range(0, 15):
+        total = total + int(rw_per_class[i]) * frequency[i]
+    print("total vectors expected : ", total)
+
+    #############################################################################
+    #   vectors : list of dicts  (each of these dicts has key value the name
+    #               of current location and value the feature vector created
+    #               by random walk
+    #   temp* : feature vector
+    #           0 : only os_area
+    #           1 : os_area, os_type
+    #           2 : os_area, os_type, center
+    #           3 : os_area, os_type, center, os_id
+    #           4 : os_area, center
+    #############################################################################
+
+    vectors = [dict() for x in range(5)]
+    count = 0
+    for loc in weighted_graph.Locations:
+        for i in range(0, int(rw_per_class[get_value_of_type(weighted_graph.get_os_type(loc))])):
+            # print(i, "/", int(rw_per_class[get_value_of_type(weighted_graph.get_os_type(loc))]), " ", loc)
+
+            temp1 = []  # os_area
+            temp2 = []  # os_area, os_type
+            temp3 = []  # os_area, os_type, center
+            temp4 = []  # os_area, os_type, center, os_id
+            temp5 = []  # os_area, center
+            for walk in range(num_of_walks):
+                cur_node = loc
+                for step in range(num_of_steps):
+                    neighbors = weighted_graph.find_neighbors_2(cur_node)
+                    next_node, os_id, center, os_type, os_area = find_next(neighbors)
+                    cur_node = next_node
+
+                    temp1.append(os_area)
+
+                    temp2.append(os_area)
+                    temp2.append(get_value_of_type(os_type))
+
+                    temp3.append(os_area)
+                    temp3.append(get_value_of_type(os_type))
+                    temp3.append(center.x)
+                    temp3.append(center.y)
+
+                    temp4.append(os_area)
+                    temp4.append(get_value_of_type(os_type))
+                    temp4.append(center.x)
+                    temp4.append(center.y)
+                    temp4.append(os_id)
+
+                    temp5.append(os_area)
+                    temp5.append(center.x)
+                    temp5.append(center.y)
+
+            temp1.append(get_value_of_type(weighted_graph.get_os_type(loc)))
+            temp2.append(get_value_of_type(weighted_graph.get_os_type(loc)))
+            temp3.append(get_value_of_type(weighted_graph.get_os_type(loc)))
+            temp4.append(get_value_of_type(weighted_graph.get_os_type(loc)))
+            temp5.append(get_value_of_type(weighted_graph.get_os_type(loc)))
+
+            vectors[0][count] = temp1
+            vectors[1][count] = temp2
+            vectors[2][count] = temp3
+            vectors[3][count] = temp4
+            vectors[4][count] = temp5
+
+            if count % 1000 == 0:
+                print(count)
+            count = count + 1
+        # ends for loop for random walks of a loc
+
+    print("total vectors : ", count)
+    # create csv and json data files
+    # files are saved in datasets folder under the current window size, number of steps
+    # and number of walks folders
+    for i in range(5):
+        df = pandas.DataFrame.from_dict(vectors[i], orient='index')
+        temp = []
+        vectors_len = len(vectors[i][next(iter(vectors[i]))])
+        for j in range(1, vectors_len):
+            temp.append('feature' + str(j))
+        temp.append('label')
+        df.columns = temp
+        df.rows = None
+        df.to_csv(path + 'data' + str(i) + '_' + str(vectors_len - 1) + '.csv', index=False)
+        # df.to_json(path + 'data' + str(i) + '_' + str(vectors_len - 1) + '.json', orient='index')
 
 
 def find_next(neighbors):

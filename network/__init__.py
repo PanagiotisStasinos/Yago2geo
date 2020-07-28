@@ -1,7 +1,8 @@
 from tensorflow import feature_column
 from tensorflow.keras import layers
 from sklearn.model_selection import train_test_split
-from network.read_datasets import df_to_dataset
+from network import read_datasets
+from network.read_datasets import df_to_dataset, read_data
 import time
 import pandas as pd
 
@@ -45,8 +46,8 @@ if __name__ == '__main__':
                            "dim_adam_decay": [],
                            "best_accuracy": []}
 
-    simple_nn.simple_nn_1()     # .62
-    exit(-1)
+    # simple_nn.simple_nn_1()     # .62
+    # exit(-1)
     # simple_nn.simple_nn_2()     # .83
     # simple_nn.simple_nn_3()     # 0.87
     # simple_nn.simple_nn_4()     # 0.8276
@@ -55,16 +56,16 @@ if __name__ == '__main__':
     # simple_nn.simple_nn_7()     # 0.
 
     # compare.compare_1()
-    for distance_type in ["polygon_distance"]:
-    # for distance_type in ["center_distance"]:
+    # for distance_type in ["polygon_distance"]:
+    for distance_type in ["center_distance"]:
     # for distance_type in ["center_distance", "polygon_distance"]:
 
         # for vec in ["vectors_1", "vectors_2"]:
         for vec in ["vectors_2"]:
             # for w_size in [11, 21, 31, 41, 51, 61, 71, 81]:
             # for w_size in [21, 31, 41, 51, 61, 71, 81]:
-            # for w_size in [81]:
-            for w_size in [11]:
+            for w_size in [71, 81]:
+            # for w_size in [11]:
                 for k, p in [(2, 10), (10, 5)]:
                     # v = number of features
                     # d = number_of_file

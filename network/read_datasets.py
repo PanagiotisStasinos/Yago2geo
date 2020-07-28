@@ -4,6 +4,7 @@ from pandas import read_csv
 from sklearn.preprocessing import Normalizer
 import tensorflow as tf
 from collections import Counter
+import numpy as np
 
 
 def read_from_csv():
@@ -174,19 +175,24 @@ def read_data(path):
     data_frame = read_csv(path)
     data_frame = data_frame.reset_index(drop=True)
     array = data_frame.values
+
+    np.random.shuffle(array)
+
     print("array shape ", array.shape)
     labels = array[:, -1]
     sh = labels.shape
     print(labels.shape)
     labels = labels.reshape(sh[0], 1)
     print(labels.shape)
-    array = array[:, 1:]
+    # array = array[:, 1:]
+    array = array[:, 0:-1]
 
     print(str(type(array)))
 
     print(array.shape)
     input_shape_x = array.shape[1]
     print(array[0])
+    print(labels[0])
 
     data_normalizer = Normalizer(norm='l2').fit(array)
     train_data_normalized = data_normalizer.transform(array)
@@ -194,5 +200,33 @@ def read_data(path):
     print(str(type(train_data_normalized)))
     # temp = np.hsplit(train_data_normalized, np.array([3, 6]))
 
-    return train_data_normalized, labels, input_shape_x
+    # data_norm_labels = Normalizer(norm='l1').fit(labels)
+    # labels_normalized = data_norm_labels.transform(labels)
 
+    return train_data_normalized, labels, input_shape_x
+    # return train_data_normalized, labels_normalized, input_shape_x
+
+
+def get_raw_data(path):
+    data_frame = read_csv(path)
+    data_frame = data_frame.reset_index(drop=True)
+    array = data_frame.values
+    print("array shape ", array.shape)
+    labels = array[:, -1]
+    sh = labels.shape
+    print(labels.shape)
+    labels = labels.reshape(sh[0], 1)
+    print(labels.shape)
+
+    print(array)
+    # array = array[:, 1:]
+    array = array[:, 0:-1]
+    print(array)
+
+    print(str(type(array)))
+
+    print(array.shape)
+    print(array[0])
+    print(labels[0])
+
+    return array, labels

@@ -46,12 +46,12 @@ if __name__ == '__main__':
     train_data, train_labels, input_shape = network.read_datasets.read_data(path)
     print(np.unique(train_labels))
 
-    callback = [
-        tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=2),
-        tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=2),
-        tf.keras.callbacks.EarlyStopping(monitor='loss', patience=2),
-        tf.keras.callbacks.EarlyStopping(monitor='accuracy', patience=2)
-    ]
+    # callback = [
+    #     tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=2),
+    #     tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=2),
+    #     tf.keras.callbacks.EarlyStopping(monitor='loss', patience=2),
+    #     tf.keras.callbacks.EarlyStopping(monitor='accuracy', patience=2)
+    # ]
 
     model = Sequential()
     input_shape = (input_shape,)
@@ -78,10 +78,31 @@ if __name__ == '__main__':
     history = model.fit(train_data, train_labels, batch_size=batch_size, epochs=30, shuffle=True,
                         class_weight=classWeight,
                         validation_split=0.3,
-                        callbacks=callback,
+                        # callbacks=callback,
                         verbose=2)
 
     plots(history)
+
+####################################################
+#   2 : os_area, os_type, center
+#   we have 4 features for each neighbor, and 20 neihgbors (2 steps x 10 walks), so 80-len vectors
+#   features : 0 os_area
+#              1 os_type, [0,14]
+#              2 center.x
+#              3 center.y
+#
+####################################################
+    # print("Stats for the vectors")
+    # raw_train_data, labels = network.read_datasets.get_raw_data(path)
+    #
+    # for i in range(0, len(labels)-1):
+    #     print(i, " ", raw_train_data[i])
+    #     print(labels[i])
+
+
+
+
+
 
     end = time.time()
     print("Processor time (in seconds):", end)

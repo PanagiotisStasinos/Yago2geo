@@ -39,7 +39,8 @@ dim_num_dense_nodes = Integer(low=256, high=1024, name='num_dense_nodes')
 
 # search-dimension for the activation-function
 # a combinatorial or categorical parameter which can be either 'relu' or 'sigmoid'
-dim_activation = Categorical(categories=['relu', 'sigmoid'],
+# dim_activation = Categorical(categories=['relu', 'sigmoid'],
+dim_activation = Categorical(categories=['relu'],
                              name='activation')
 # dim_activation = Categorical(categories=['relu', 'sigmoid'],
 #                              name='activation')
@@ -112,7 +113,7 @@ def fitness(learning_rate, num_dense_layers, num_input_nodes,
     # named blackbox because it represents the structure
     blackbox = model.fit(x=x_train,
                          y=y_train,
-                         epochs=3,
+                         epochs=50,   ######################################################################
                          batch_size=batch_size,
                          validation_split=0.15,
                          verbose=0,

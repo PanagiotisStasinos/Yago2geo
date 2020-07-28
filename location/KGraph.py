@@ -209,8 +209,8 @@ class KGraph:
     def print_statistics(self):
         utils.dict_info(self.Locations)
 
-    def get_statistics_csv(self):
-        utils.dict_info_to_csv(self.Locations)
+    def get_statistics_csv(self, vec_type):
+        utils.dict_info_to_csv(self.Locations, vec_type)
 
     def location_exists(self, name):
         return name in self.Locations
