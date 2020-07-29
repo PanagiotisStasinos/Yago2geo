@@ -196,7 +196,7 @@ def simple_nn_6():
 
 
 def simple_nn_7():
-    path = '../datasets/center_distance/vectors_1/window_size_11/2steps_10walks/data4_60.csv'
+    path = '../datasets/center_distance/window_size_11/2steps_10walks/data4_60.csv'
     train_data, train_labels = read_datasets.read_data(path)
     print(np.unique(train_labels))
     model = Sequential([
@@ -267,7 +267,7 @@ def simple_nn_8():
 
 
 def simple_nn_9():
-    path = '../datasets/center_distance/vectors_1/window_size_31/10steps_5walks/data2_200.csv'
+    path = '../datasets/center_distance/window_size_31/10steps_5walks/data2_200.csv'
     train_data, train_labels, input_shape_x = read_datasets.read_data(path)
 
     X = train_data.astype(float)

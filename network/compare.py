@@ -7,7 +7,7 @@ from network import read_datasets
 
 
 def compare_1():
-    path = '../datasets/center_distance/vectors_1/window_size_51/10steps_5walks/data4_150.csv'
+    path = '../datasets/center_distance/window_size_51/10steps_5walks/data4_150.csv'
     simple_model(path)
     path = '../datasets/center_distance/vectors_2/window_size_51/10steps_5walks/data4_150.csv'
     simple_model(path)

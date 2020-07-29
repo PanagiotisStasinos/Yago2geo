@@ -6,16 +6,15 @@ from location.location import Location, compute_dampened_weight
 import utils
 from collections import Counter
 import pandas as pd
-import itertools
 import os
 
 
 class KGraph:
     Locations = {}
-    training_set = {}
-    test_set = {}
-    Locations_sorted_by_Latitude = {}
-    Locations_sorted_by_Longitude = {}
+
+    # Since Python 3.7 the dictionaries are order-preserving
+    Locations_sorted_by_Latitude = {}   # k: name, v: Location obj
+    Locations_sorted_by_Longitude = {}   # k: name, v: Location obj
 
     def __init__(self):
         self.count = 0
@@ -156,7 +155,7 @@ class KGraph:
         temp_dict["type"] = type_list
         temp_dict["asWKT"] = wkt_list
         df = pd.DataFrame.from_dict(temp_dict)
-        df.to_csv('../datasets/locations_csv/locations_1.csv')
+        df.to_csv('../datasets/locations_csv/locations.csv')
 
         temp_dict.pop("asWKT")
         df = pd.DataFrame.from_dict(temp_dict)
@@ -169,34 +168,10 @@ class KGraph:
         return self.Locations[loc].OS_type
 
     #################################
-    #   splits data in training and testing set, 90%-10% respectively
-    #   doesn't do the split randomly
+    #   returns OS_type of the given location
     #################################
-    def separate_data(self):
-        len_d2 = len(self.Locations.items()) // 10
-        len_d1 = len(self.Locations.items()) - len_d2
-
-        i = iter(self.Locations.items())
-
-        # self.training_set = dict(itertools.islice(i, len_d1))  # grab first len_d1 items
-        # self.test_set = dict(i)                                   # last len_d2 items to test test
-
-        self.test_set = dict(itertools.islice(i, len_d2))  # grab first len_d2 items
-        self.training_set = dict(i)                                   # last len_d1 items to train test
-
-        print("train_set ", len(self.training_set), " , test_set ", len(self.test_set), " = locs ", len(self.Locations))
-
-        print("    train set   ")
-        utils.dict_info(self.training_set)
-
-        print("\n     test set   ")
-        utils.dict_info(self.test_set)
-
-        count = 0
-        for k, v in self.test_set.items():
-            if k in self.training_set:
-                count = count + 1
-        print(count, " duplicate")
+    def get_os_id(self, loc):
+        return self.Locations[loc].OS_ID
 
     def print_info(self):
         print("COUNT : ", str(self.count))
@@ -257,26 +232,42 @@ def get_locations_from_csv(file):
 
 # for center distance
 def find_center_distances(weighted_graph, window_size):
-    # Latitude
+# Latitude
+    # pointer to the current location
     index = 0
+    # for every location in the Latitude dict
     for node1 in weighted_graph.Locations_sorted_by_Latitude.items():
-        # print("\n\n 1 -----------   ", node1[1].Location.resource, "( ", node1[1].Location.Lat, ", ", node1[1].Location.Lon, ")     --------   ")
+        # get where the window starts and ends for the current node
         start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Latitude), window_size)
-        # print(index, " (", start, ",", end, ")")
+##
         i = 0
+        temp1 = []
         for node2 in weighted_graph.Locations_sorted_by_Latitude.items():
             if i in range(int(start), int(end) + 1):
                 if node1[1].resource != node2[1].resource:
                     node1[1].compute_distance_from_closest_by_Latitude(node2[1])
+                    temp1.append(node2[0])
             i = i + 1
-        index = index + 1
+##
+        temp2 = []
+        for i in range(int(start), index):
+            temp2.append(list(weighted_graph.Locations_sorted_by_Latitude)[i])
+        for i in range(index+1, int(end) + 1):
+            temp2.append(list(weighted_graph.Locations_sorted_by_Latitude)[i])
 
-    # Longitude
+        print(temp1)
+        print(temp2)
+        print()
+        index = index + 1
+    exit(-1)
+# Longitude
+    # pointer to the current location
     index = 0
+    # for every location in the Longitude dict
     for node1 in weighted_graph.Locations_sorted_by_Longitude.items():
-        # print("\n 2 -----------   ", node1[1].Location.resource, "( ", node1[1].Location.Lat, ", ", node1[1].Location.Lon, ")    --------   ")
+        # get where the window starts and ends for the current node
         start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Longitude), window_size)
-        # print(index, " (", start, ",", end, ")")
+
         i = 0
         for node2 in weighted_graph.Locations_sorted_by_Longitude.items():
             if i in range(int(start), int(end) + 1):
@@ -295,9 +286,8 @@ def find_polygon_distances(weighted_graph, window_size):
     index = 0
     for node1 in weighted_graph.Locations_sorted_by_Latitude.items():
         print('\t', str(index), ' / ', str(len(weighted_graph.Locations_sorted_by_Latitude)))
-        # print("\n\n 1 -----------   ", node1[1].Location.resource, "( ", node1[1].Location.Lat, ", ", node1[1].Location.Lon, ")     --------   ")
         start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Latitude), window_size)
-        # print(index, " (", start, ",", end, ")")
+
         i = 0
         for node2 in weighted_graph.Locations_sorted_by_Latitude.items():
             if i in range(int(start), int(end) + 1):
@@ -321,9 +311,8 @@ def find_polygon_distances(weighted_graph, window_size):
     index = 0
     for node1 in weighted_graph.Locations_sorted_by_Longitude.items():
         print('\t', str(index), ' / ', str(len(weighted_graph.Locations_sorted_by_Longitude)))
-        # print("\n 2 -----------   ", node1[1].Location.resource, "( ", node1[1].Location.Lat, ", ", node1[1].Location.Lon, ")    --------   ")
         start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Longitude), window_size)
-        # print(index, " (", start, ",", end, ")")
+
         i = 0
         for node2 in weighted_graph.Locations_sorted_by_Longitude.items():
             if i in range(int(start), int(end) + 1):
@@ -359,9 +348,8 @@ def find_polygon_distances(weighted_graph, window_size):
         node1[1].compute_dampened_weights_Longitude()
 
 
-def store_distances(weighted_graph, vectors_type, distance_type, window_size):
-    path = '../datasets/' + distance_type + '/vectors_' + str(vectors_type) + '/window_size_' + str(window_size) \
-           + '/distances/'
+def store_distances(weighted_graph, distance_type, window_size):
+    path = '../datasets/' + distance_type + '/window_size_' + str(window_size) + '/distances/'
     if not os.path.exists(path):
         os.makedirs(path)
     else:

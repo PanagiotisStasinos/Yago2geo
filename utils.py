@@ -1,24 +1,7 @@
 from urllib.parse import urlparse
-
-###########################################
-#
-#
-#
-###########################################
+import time
 import numpy as np
 import pandas as pd
-
-# recommended value of paper 50
-# WINDOW_SIZE = 51
-
-WINDOW_SIZE = 11
-# WINDOW_SIZE = 21
-# WINDOW_SIZE = 31
-# WINDOW_SIZE = 41
-# WINDOW_SIZE = 51
-# WINDOW_SIZE = 61
-# WINDOW_SIZE = 71
-# WINDOW_SIZE = 81
 
 OS_TYPES = {
     "OS_CivilParishorCommunity": 0,
@@ -41,16 +24,6 @@ OS_TYPES = {
 
 
 def find_start_end(index, size, window_size):
-    # if index < ((WINDOW_SIZE - 1) / 2):
-    #     start = 0
-    #     end = WINDOW_SIZE - 1
-    # elif index > size - 1 - ((WINDOW_SIZE - 1) / 2):
-    #     start = size - WINDOW_SIZE
-    #     end = size - 1
-    # else:
-    #     start = index - ((WINDOW_SIZE - 1) / 2)
-    #     end = index + ((WINDOW_SIZE - 1) / 2)
-    # return start, end
     if index < ((window_size - 1) / 2):
         start = 0
         end = window_size - 1
@@ -231,3 +204,14 @@ def common_member(a, b):
         return list(c)
     else:
         print("No common elements")
+
+
+def show_exec_time(start):
+    end = time.time()
+    print("Processor time (in seconds):", end)
+    print("Time elapsed:", end - start)
+    total = end - start
+    minutes, secs = divmod(total, 60)
+    hours, minutes = divmod(minutes, 60)
+    print(hours, ' : ', minutes, ' : ', secs)
+
