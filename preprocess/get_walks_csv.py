@@ -2,7 +2,7 @@ import os
 from location.KGraph import store_distances, empty_distance_dicts, find_polygon_distances
 import utils
 from location.KGraph import find_center_distances, get_distances_from_csv
-from preprocess import DeepWalk
+from preprocess.preprocess_utils import DeepWalk
 from location.KGraph import get_locations_from_csv
 import time
 
@@ -46,7 +46,6 @@ if __name__ == "__main__":
                       " window_size=", window_size)
 
                 DeepWalk.deep_walk(weighted_graph, distance_type, num_of_steps, num_of_walks, window_size)
-
 
             # empty distance dicts
             print("delete previous distances")

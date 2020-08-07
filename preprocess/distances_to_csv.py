@@ -40,8 +40,8 @@ if __name__ == "__main__":
             else:
                 find_polygon_distances(weighted_graph, window_size)
 
-            # print("store distances")
-            # store_distances(weighted_graph, distance_type, window_size)
+            print("store distances")
+            store_distances(weighted_graph, distance_type, window_size)
 
     utils.show_exec_time(start)
 

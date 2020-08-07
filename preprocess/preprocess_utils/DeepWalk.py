@@ -1,6 +1,9 @@
 import os
+from sys import getsizeof
+
 from numpy.random import choice
 import pandas
+import numpy as np
 from numpy import array, argmax
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
@@ -9,6 +12,7 @@ from sklearn.preprocessing import OneHotEncoder
 from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 from tensorflow.keras.optimizers import Adam
+
 
 # keeps only the name of each location visited
 def deep_walk(weighted_graph, distance_type, num_of_steps, num_of_walks, window_size):
@@ -63,7 +67,69 @@ def find_next(neighbors):
     return draw.item(0), osID, center, os_type, area
 
 
-def skip_gram(weighted_graph, distance_type, num_of_steps, num_of_walks, window_size):
+# same as integer_encoded
+def get_index_of_one(one_hot):
+    print(one_hot)
+    for i in range(len(one_hot)):
+        if one_hot[i] == 1:
+            return i
+
+
+def get_name(one_hot, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder):
+    int_val = onehot_encoder.inverse_transform([one_hot])
+    name = label_encoder.inverse_transform(int_val[0])
+    return name[0]
+
+
+def get_one_hot(name, Vocabulary):
+    return Vocabulary[name]
+
+
+def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder):
+    # file = '../datasets/[(]distance_type]/window_size_[window_size]/' \
+    #        '[num_of_steps]steps_[num_of_walks]walks/random_walks.csv'
+    df = pandas.read_csv(file)
+    print(df.shape)
+
+    input_vecs = []
+    output = []
+
+    for index, row in df.iterrows():
+        temp_output = []
+        input_vecs.append(get_one_hot(row['2'], Vocabulary))
+
+        # temp_output.append(get_one_hot(row['0'], Vocabulary))
+        # temp_output.append(get_one_hot(row['1'], Vocabulary))
+        # temp_output.append(get_one_hot(row['3'], Vocabulary))
+        # temp_output.append(get_one_hot(row['4'], Vocabulary))
+
+        # output.append(temp_output)
+
+        temp0 = get_one_hot(row['0'], Vocabulary)
+        temp1 = get_one_hot(row['1'], Vocabulary)
+        temp3 = get_one_hot(row['3'], Vocabulary)
+        temp4 = get_one_hot(row['4'], Vocabulary)
+        temp = np.concatenate((temp0, temp1), axis=None)
+        temp = np.concatenate((temp, temp3), axis=None)
+        temp = np.concatenate((temp, temp4), axis=None)
+        output.append(temp)
+
+    # for i in range(0, df['0'].count(), 1000):
+    #     print(output[i][0], ",", output[i][1], ",", input_vecs[i], ",", output[i][2], ",", output[i][3])
+    #
+    # print('total : ', df['0'].count())
+
+    X = array(input_vecs)
+    Y = array(output)
+
+    print("X", X.shape, "Y", Y.shape)
+    print("X ", getsizeof(X), "Y", getsizeof(Y))
+    # exit(-2)
+
+    return X, Y
+
+
+def skip_gram(file_path):
     file = "../datasets/locations_csv/locations.csv"
     df = pandas.read_csv(file)
 
@@ -72,26 +138,67 @@ def skip_gram(weighted_graph, distance_type, num_of_steps, num_of_walks, window_
         temp.append(row['name'])
 
     values = array(temp)
-    print(values.shape)
-    print(values)
+    # print("\t values , ", str(type(values)))    # numpy.ndarray
+    # print(values.shape)    # (19648,)
+    # print(values)
 
     # integer encode
     label_encoder = LabelEncoder()
     integer_encoded = label_encoder.fit_transform(values)
-    print(integer_encoded.shape)
-    print(integer_encoded)
+    # print("\t integer_encoded , ", str(type(integer_encoded)))   # numpy.ndarray
+    # print(integer_encoded.shape)    # (19648, )
+    # print(integer_encoded)
+    # print(integer_encoded[0])
 
     # binary encode
     onehot_encoder = OneHotEncoder(sparse=False)
     integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
     onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
-    print(onehot_encoded.shape)
-    print(onehot_encoded)
+    # onehot_encoded = np.float32(onehot_encoded)
+    onehot_encoded = np.int8(onehot_encoded)
+    # onehot_encoded = np.array(onehot_encoded, dtype=bool)     # same as int_8
+    # print("\t onehot_encoded , ", str(type(onehot_encoded)))  # numpy.ndarray
+    # print(onehot_encoded.shape)  # (19648, 19648)
+    # print(onehot_encoded)
+    # print(" onehot_encoded[0]", str(type(onehot_encoded[0])))
+    # print(onehot_encoded[0], get_index_of_one(onehot_encoded[0]))
 
-    # invert first example
-    inverted = label_encoder.inverse_transform([argmax(onehot_encoded[0, :])])
-    print(inverted.shape)
-    print(inverted)
+    # # invert first example
+    # inverted = label_encoder.inverse_transform([argmax(onehot_encoded[0, :])])  # 0, gia to 1o location apo to csv
+    # print("\t inverted , ", str(type(inverted)))  # numpy.ndarray
+    # print(inverted.shape)
+    # print(inverted)  # name of first location
+    #
+    # print(" ----- EXAMPLE -----")
+    # int_val = onehot_encoder.inverse_transform([onehot_encoded[0, :]])
+    # print(int_val)
+    # name = label_encoder.inverse_transform([argmax(int_val)])  # to argmax() xreiazetai, den exw katalavei giati
+    # print(name)
+    # print("--------------------")
+
+    Vocabulary = {}  # key: name , value: one-hot
+    Inverse_Vocabulary = {}  # key: integer val , value: name
+    for i in range(len(values)):
+        Vocabulary[values[i]] = onehot_encoded[i]
+        Inverse_Vocabulary[integer_encoded[i][0]] = values[i]
+
+    # print(" ----- TEST -----")
+    # print("VOC :", values[1000], Vocabulary[values[1000]])
+    # print("I-VOC", integer_encoded[1000][0], Inverse_Vocabulary[integer_encoded[1000][0]])
+    # print("test", get_index_of_one(Vocabulary[values[1000]]))
+    #
+    # # int_val = onehot_encoder.inverse_transform([onehot_encoded[1000, :]])
+    # # print(int_val[0])
+    # # name = label_encoder.inverse_transform(int_val[0])
+    # # print(name[0])
+    # # print(values[1000])
+    # print(values[1000], get_one_hot(values[1000], Vocabulary))
+    # print(Vocabulary[values[1000]],
+    #       get_name(Vocabulary[values[1000]], Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder))
+    # print("-----------------")
+    #
+    # exit(-1)
+    X, Y = get_train_set(file_path, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder)
 
     model = Sequential([
         layers.Dense(100, input_shape=(19648,)),
@@ -103,6 +210,6 @@ def skip_gram(weighted_graph, distance_type, num_of_steps, num_of_walks, window_
                   # , loss='sparse_categorical_crossentropy'
                   , loss='categorical_crossentropy'
                   # , metrics=['loss']
-    )
+                  )
 
-    # model.fit(onehot_encoded, batch_size=78, epochs=20, shuffle=True)
+    model.fit(X, Y, batch_size=4, epochs=20, shuffle=True)

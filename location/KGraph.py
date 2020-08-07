@@ -213,21 +213,20 @@ def sort_Locations(weighted_graph):
     # sorted by Latitude
     weighted_graph.Locations_sorted_by_Latitude = {k: v for k, v in sorted(weighted_graph.Locations.items(),
                                                                            key=lambda item: item[1].Lat)}
+    temp_lat = {}
+    for k, v in weighted_graph.Locations_sorted_by_Latitude.items():
+        temp_lat[k] = v.Lat
+    df1 = pandas.DataFrame.from_dict(temp_lat, orient='index')
+    df1.to_csv('../datasets/locations_csv/lat_sorted.csv')
+
     # sorted by Longitude
     weighted_graph.Locations_sorted_by_Longitude = {k: v for k, v in sorted(weighted_graph.Locations.items(),
                                                                             key=lambda item: item[1].Lon)}
-
-
-def get_locations_from_csv(file):
-    weighted_graph = KGraph()
-    df = pd.read_csv(file)
-
-    for index, row in df.iterrows():
-        args = [row['name'], row['geometry'], row['id'], row['type'], row['asWKT']]
-        temp_location = Location(args)
-        weighted_graph.insert_node(temp_location)
-
-    return weighted_graph
+    temp_lon = {}
+    for k, v in weighted_graph.Locations_sorted_by_Longitude.items():
+        temp_lon[k] = v.Lon
+    df2 = pandas.DataFrame.from_dict(temp_lon, orient='index')
+    df2.to_csv('../datasets/locations_csv/lon_sorted.csv')
 
 
 # for center distance
@@ -239,27 +238,18 @@ def find_center_distances(weighted_graph, window_size):
     for node1 in weighted_graph.Locations_sorted_by_Latitude.items():
         # get where the window starts and ends for the current node
         start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Latitude), window_size)
-##
-        i = 0
-        temp1 = []
-        for node2 in weighted_graph.Locations_sorted_by_Latitude.items():
-            if i in range(int(start), int(end) + 1):
-                if node1[1].resource != node2[1].resource:
-                    node1[1].compute_distance_from_closest_by_Latitude(node2[1])
-                    temp1.append(node2[0])
-            i = i + 1
-##
-        temp2 = []
-        for i in range(int(start), index):
-            temp2.append(list(weighted_graph.Locations_sorted_by_Latitude)[i])
-        for i in range(index+1, int(end) + 1):
-            temp2.append(list(weighted_graph.Locations_sorted_by_Latitude)[i])
 
-        print(temp1)
-        print(temp2)
-        print()
+        for i in range(int(start), index):
+            other_location_name = list(weighted_graph.Locations_sorted_by_Latitude)[i]
+            node1[1].compute_distance_from_closest_by_Latitude(
+                weighted_graph.Locations_sorted_by_Latitude[other_location_name])
+        for i in range(index+1, int(end) + 1):
+            other_location_name = list(weighted_graph.Locations_sorted_by_Latitude)[i]
+            node1[1].compute_distance_from_closest_by_Latitude(
+                weighted_graph.Locations_sorted_by_Latitude[other_location_name])
+
         index = index + 1
-    exit(-1)
+
 # Longitude
     # pointer to the current location
     index = 0
@@ -268,14 +258,18 @@ def find_center_distances(weighted_graph, window_size):
         # get where the window starts and ends for the current node
         start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Longitude), window_size)
 
-        i = 0
-        for node2 in weighted_graph.Locations_sorted_by_Longitude.items():
-            if i in range(int(start), int(end) + 1):
-                if node1[1].resource != node2[1].resource:
-                    node1[1].compute_distance_from_closest_by_Longitude(node2[1])
-            i = i + 1
+        for i in range(int(start), index):
+            other_location_name = list(weighted_graph.Locations_sorted_by_Longitude)[i]
+            node1[1].compute_distance_from_closest_by_Longitude(
+                weighted_graph.Locations_sorted_by_Longitude[other_location_name])
+        for i in range(index+1, int(end) + 1):
+            other_location_name = list(weighted_graph.Locations_sorted_by_Longitude)[i]
+            node1[1].compute_distance_from_closest_by_Longitude(
+                weighted_graph.Locations_sorted_by_Longitude[other_location_name])
+
         index = index + 1
 
+        # compute dampened weights for both Longitude Latitude
         node1[1].compute_dampened_weights_Latitude()  # we call it here because we want the total weight
         node1[1].compute_dampened_weights_Longitude()
 
@@ -346,6 +340,18 @@ def find_polygon_distances(weighted_graph, window_size):
 
         node1[1].compute_dampened_weights_Latitude()  # we call it here because we want the total weight
         node1[1].compute_dampened_weights_Longitude()
+
+
+def get_locations_from_csv(file):
+    weighted_graph = KGraph()
+    df = pd.read_csv(file)
+
+    for index, row in df.iterrows():
+        args = [row['name'], row['geometry'], row['id'], row['type'], row['asWKT']]
+        temp_location = Location(args)
+        weighted_graph.insert_node(temp_location)
+
+    return weighted_graph
 
 
 def store_distances(weighted_graph, distance_type, window_size):

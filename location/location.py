@@ -120,7 +120,6 @@ class Location:
     #   adds the weight to dampened_weight_for_closest_by_Latitude_sum and to total_weight_sum for later use
     #################################
     def compute_distance_from_closest_by_Latitude(self, other_Location):
-        # d = self.Center.distance(other_Location.Center)
         curr = (self.Lat, self.Lon)
         other = (other_Location.Lat, other_Location.Lon)
         d = distance.geodesic(curr, other).miles
@@ -139,13 +138,12 @@ class Location:
     #   but for closest by longitude locations
     #################################
     def compute_distance_from_closest_by_Longitude(self, other_Location):
-        # d = self.Center.distance(other_Location.Center)
         curr = (self.Lat, self.Lon)
         other = (other_Location.Lat, other_Location.Lon)
         d = distance.geodesic(curr, other).miles
         w = compute_dampened_weight(d)
-        # print("dist ", self.resource, "(", self.Lat, self.Lon, ") ", other_Location.resource, "(", other_Location.Lat,
-        #       other_Location.Lon, ") = ", d, ", ", w)
+        print("dist ", self.resource, "(", self.Lat, self.Lon, ") ", other_Location.resource, "(", other_Location.Lat,
+              other_Location.Lon, ") = ", d, ", ", w)
 
         self.Closest_Location_by_Longitude_dampened_weight[other_Location.resource] = w
         self.Closest_Location_by_Longitude[other_Location.resource] = d
