@@ -12,6 +12,7 @@ from sklearn.preprocessing import OneHotEncoder
 from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 from tensorflow.keras.optimizers import Adam
+from sklearn.preprocessing import Normalizer
 
 
 # keeps only the name of each location visited
@@ -85,7 +86,17 @@ def get_one_hot(name, Vocabulary):
     return Vocabulary[name]
 
 
-def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder):
+def get_output_vector(row, num_of_steps, Vocabulary):
+    temp_out = get_one_hot(row['0'], Vocabulary)
+    for i in range(1, num_of_steps):
+        if i != int(num_of_steps/2):
+            temp_out = np.add(temp_out, get_one_hot(row[str(i)], Vocabulary))
+        else:
+            temp_in = get_one_hot(row[str(i)], Vocabulary)
+    return temp_out, temp_in
+
+
+def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder, num_of_steps, num_of_walks):
     # file = '../datasets/[(]distance_type]/window_size_[window_size]/' \
     #        '[num_of_steps]steps_[num_of_walks]walks/random_walks.csv'
     df = pandas.read_csv(file)
@@ -95,24 +106,12 @@ def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_en
     output = []
 
     for index, row in df.iterrows():
-        temp_output = []
-        input_vecs.append(get_one_hot(row['2'], Vocabulary))
+        temp_out, temp_in = get_output_vector(row, num_of_steps, Vocabulary)
+        # if np.sum(temp_out) != num_of_steps-1:
+        #     print("ERROR in output vectors")
 
-        # temp_output.append(get_one_hot(row['0'], Vocabulary))
-        # temp_output.append(get_one_hot(row['1'], Vocabulary))
-        # temp_output.append(get_one_hot(row['3'], Vocabulary))
-        # temp_output.append(get_one_hot(row['4'], Vocabulary))
-
-        # output.append(temp_output)
-
-        temp0 = get_one_hot(row['0'], Vocabulary)
-        temp1 = get_one_hot(row['1'], Vocabulary)
-        temp3 = get_one_hot(row['3'], Vocabulary)
-        temp4 = get_one_hot(row['4'], Vocabulary)
-        temp = np.concatenate((temp0, temp1), axis=None)
-        temp = np.concatenate((temp, temp3), axis=None)
-        temp = np.concatenate((temp, temp4), axis=None)
-        output.append(temp)
+        input_vecs.append(temp_in)
+        output.append(temp_out)
 
     # for i in range(0, df['0'].count(), 1000):
     #     print(output[i][0], ",", output[i][1], ",", input_vecs[i], ",", output[i][2], ",", output[i][3])
@@ -129,7 +128,7 @@ def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_en
     return X, Y
 
 
-def skip_gram(file_path):
+def skip_gram(file_path, num_of_steps, num_of_walks):
     file = "../datasets/locations_csv/locations.csv"
     df = pandas.read_csv(file)
 
@@ -198,18 +197,59 @@ def skip_gram(file_path):
     # print("-----------------")
     #
     # exit(-1)
-    X, Y = get_train_set(file_path, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder)
+    X, Y = get_train_set(file_path, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder, num_of_steps,
+                         num_of_walks)
 
     model = Sequential([
         layers.Dense(100, input_shape=(19648,)),
-        layers.Dense(4, activation="softmax")
+        layers.Dense(19648, activation="softmax")
     ])
     model.summary()
     opt1 = Adam(learning_rate=.00335888)
-    model.compile(optimizer=opt1
+    model.compile(optimizer='adam'
                   # , loss='sparse_categorical_crossentropy'
                   , loss='categorical_crossentropy'
                   # , metrics=['loss']
                   )
 
-    model.fit(X, Y, batch_size=4, epochs=20, shuffle=True)
+    model.fit(X, Y, batch_size=1000, epochs=1, shuffle=True, verbose=1)
+
+    weights = [layer.get_weights() for layer in model.layers]
+
+    print(str(type(weights)))
+    print(str(type(weights[0])))
+    print(len(weights[0]))
+    print(str(type(weights[0][0])))
+    print(weights[0][0].shape)
+
+    np.savetxt("../datasets/center_distance/window_size_11/15steps_3walks/vecs.csv", weights[0][0], delimiter=",")
+
+    vec_dict = {}
+    counter = 0
+    for name in values:
+        vec_dict[name] = weights[0][0][counter]
+        counter += 1
+
+    df = pandas.DataFrame.from_dict(vec_dict, orient='index')
+    df.to_csv("../datasets/center_distance/window_size_11/15steps_3walks/vectors.csv", index=True)
+##############################
+    #################################
+
+    temp_array = df.values
+
+    print(temp_array.shape)
+    print(temp_array[0])
+
+    data_normalizer = Normalizer(norm='l2').fit(temp_array)
+    temp_array = data_normalizer.transform(temp_array)
+    print(temp_array.shape)
+    print(temp_array[0])
+
+    v_dict = {}
+    counter = 0
+    for name in values:
+        v_dict[name] = temp_array[counter]
+        counter += 1
+
+    df = pandas.DataFrame.from_dict(v_dict, orient="index")
+    df.to_csv("../datasets/center_distance/window_size_11/15steps_3walks/vectors2.csv", index=True)
