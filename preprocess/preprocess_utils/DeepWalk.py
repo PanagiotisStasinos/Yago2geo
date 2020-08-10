@@ -86,17 +86,19 @@ def get_one_hot(name, Vocabulary):
     return Vocabulary[name]
 
 
-def get_output_vector(row, num_of_steps, Vocabulary):
-    temp_out = get_one_hot(row['0'], Vocabulary)
-    for i in range(1, num_of_steps):
-        if i != int(num_of_steps/2):
-            temp_out = np.add(temp_out, get_one_hot(row[str(i)], Vocabulary))
-        else:
-            temp_in = get_one_hot(row[str(i)], Vocabulary)
-    return temp_out, temp_in
+# ###############################################################
+def get_vectors_from_row(row, num_of_steps, Vocabulary, input_vecs, output, skip_gram_window):
+    for i in range(0, num_of_steps):
+        half_window = int(skip_gram_window / 2)
+        for j in range(i - half_window, i + half_window + 1):
+            if i != j and 0 <= j < num_of_steps:
+                input_vecs.append(Vocabulary[row[str(i)]])
+                output.append(Vocabulary[row[str(j)]])
 
 
-def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder, num_of_steps, num_of_walks):
+
+def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder, num_of_steps,
+                  num_of_walks, skip_gram_window):
     # file = '../datasets/[(]distance_type]/window_size_[window_size]/' \
     #        '[num_of_steps]steps_[num_of_walks]walks/random_walks.csv'
     df = pandas.read_csv(file)
@@ -106,12 +108,7 @@ def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_en
     output = []
 
     for index, row in df.iterrows():
-        temp_out, temp_in = get_output_vector(row, num_of_steps, Vocabulary)
-        # if np.sum(temp_out) != num_of_steps-1:
-        #     print("ERROR in output vectors")
-
-        input_vecs.append(temp_in)
-        output.append(temp_out)
+        get_vectors_from_row(row, num_of_steps, Vocabulary, input_vecs, output, skip_gram_window)
 
     # for i in range(0, df['0'].count(), 1000):
     #     print(output[i][0], ",", output[i][1], ",", input_vecs[i], ",", output[i][2], ",", output[i][3])
@@ -123,12 +120,14 @@ def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_en
 
     print("X", X.shape, "Y", Y.shape)
     print("X ", getsizeof(X), "Y", getsizeof(Y))
+    print("X ", getsizeof(X)/(1024 ** 3), "Y", getsizeof(Y)/(1024 ** 3))
+
     # exit(-2)
 
     return X, Y
 
 
-def skip_gram(file_path, num_of_steps, num_of_walks):
+def skip_gram(file_path, num_of_steps, num_of_walks, skip_gram_window):
     file = "../datasets/locations_csv/locations.csv"
     df = pandas.read_csv(file)
 
@@ -198,8 +197,8 @@ def skip_gram(file_path, num_of_steps, num_of_walks):
     #
     # exit(-1)
     X, Y = get_train_set(file_path, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder, num_of_steps,
-                         num_of_walks)
-
+                         num_of_walks, skip_gram_window)
+    # exit(-2)
     model = Sequential([
         layers.Dense(100, input_shape=(19648,)),
         layers.Dense(19648, activation="softmax")
@@ -212,17 +211,13 @@ def skip_gram(file_path, num_of_steps, num_of_walks):
                   # , metrics=['loss']
                   )
 
-    model.fit(X, Y, batch_size=1000, epochs=1, shuffle=True, verbose=1)
+    # Allocation of 78592000 exceeds 10% of system memory, when batch_size=1000
+    model.fit(X, Y, batch_size=400, epochs=1, shuffle=True, verbose=0)
 
     weights = [layer.get_weights() for layer in model.layers]
 
-    print(str(type(weights)))
-    print(str(type(weights[0])))
-    print(len(weights[0]))
     print(str(type(weights[0][0])))
     print(weights[0][0].shape)
-
-    np.savetxt("../datasets/center_distance/window_size_11/15steps_3walks/vecs.csv", weights[0][0], delimiter=",")
 
     vec_dict = {}
     counter = 0
@@ -231,9 +226,6 @@ def skip_gram(file_path, num_of_steps, num_of_walks):
         counter += 1
 
     df = pandas.DataFrame.from_dict(vec_dict, orient='index')
-    df.to_csv("../datasets/center_distance/window_size_11/15steps_3walks/vectors.csv", index=True)
-##############################
-    #################################
 
     temp_array = df.values
 
@@ -252,4 +244,21 @@ def skip_gram(file_path, num_of_steps, num_of_walks):
         counter += 1
 
     df = pandas.DataFrame.from_dict(v_dict, orient="index")
-    df.to_csv("../datasets/center_distance/window_size_11/15steps_3walks/vectors2.csv", index=True)
+    df.to_csv("../datasets/center_distance/window_size_11/" + str(num_of_steps) + "steps_" +
+              str(num_of_walks) + "walks/vectors.csv", index=True)
+    # check_if_l2_normalized(df)
+
+
+def check_if_l2_normalized(df):
+    v = df.values
+    print(v.shape)
+    print(v.shape[0])
+    counter = 0
+    flag = 0
+    for row in range(0, v.shape[0]):
+        print(np.sum(v[row] ** 2))
+        if np.sum(v[row] ** 2) != 1.0:
+            flag += 1
+        counter += 1
+    if flag > 1:
+        print("Not Normalized", flag)

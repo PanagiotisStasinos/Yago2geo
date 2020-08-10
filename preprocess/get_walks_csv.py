@@ -41,7 +41,8 @@ if __name__ == "__main__":
             # check if distances exist
             load_distances(path, weighted_graph)
 
-            for num_of_steps, num_of_walks in [(5, 10), (10, 5), (15, 3)]:
+            # for num_of_steps, num_of_walks in [(5, 10), (10, 5), (15, 3)]:
+            for num_of_steps, num_of_walks in [(5, 3), (3, 3)]:
                 print("START DeepWalk (num_of_steps=", num_of_steps, " num_of_walks=", num_of_walks,
                       " window_size=", window_size)
 
