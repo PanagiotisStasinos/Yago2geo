@@ -30,7 +30,8 @@ if __name__ == "__main__":
     get_topological_info(weighted_graph)
     weighted_graph.print_statistics()
 
-    for distance_type in ["center_distance", "polygon_distance"]:
+    # for distance_type in ["center_distance", "polygon_distance"]:
+    for distance_type in ["polygon_distance"]:
         print("find distances")
         # for window_size in [11, 21, 31, 41, 51, 61, 71, 81]:
         # for window_size in [11, 21, 31]:

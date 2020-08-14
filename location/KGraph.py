@@ -198,6 +198,9 @@ class KGraph:
         self.Locations[subject_name].Touches.append(obj_name)
         self.Locations[obj_name].Touches.append(subject_name)
 
+    def print_loc_info(self, temp_loc):
+        self.Locations[temp_loc].print_info()
+
 
 def read_RDF_Graph_and_store_Locations(main_graph):
     weighted_graph = KGraph()

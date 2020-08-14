@@ -1,14 +1,15 @@
-import time
+from time import time
 
 from tensorflow import keras
 from tensorflow.keras import Sequential
 from tensorflow.keras.optimizers import Adam
+from tensorflow.python.keras.callbacks import TensorBoard
 
 import utils
 from evaluation.evaluation_utils.read_vectors import get_vectors_n_type_labels, get_classWeight
 
 if __name__ == '__main__':
-    start = time.time()
+    start = time()
 
     file = "../datasets/center_distance/window_size_11/3steps_3walks/vectors.csv"
     X, Y = get_vectors_n_type_labels(file)
@@ -19,6 +20,9 @@ if __name__ == '__main__':
         keras.layers.Dense(15, activation="softmax")
     ])
     model.summary()
+
+    tensorboard = TensorBoard(log_dir="logs\{}".format(time()))
+
     opt1 = Adam(learning_rate=.00335888)
     model.compile(optimizer=opt1, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
@@ -27,7 +31,8 @@ if __name__ == '__main__':
     model.fit(X, Y, batch_size=78, epochs=20, shuffle=True,
               class_weight=classWeight,
               validation_split=0.1,
-              verbose=2)
+              verbose=2,
+              callbacks=[tensorboard])
 
     utils.show_exec_time(start)
     exit(0)

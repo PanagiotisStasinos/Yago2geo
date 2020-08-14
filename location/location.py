@@ -95,8 +95,13 @@ class Location:
             self.total_weight_sum = 0.0
 
     def print_info(self):
-        print("[", self.resource, ", ", self.OS_type, ", ",
-              str(self.Center), ", ", self.OS_ID, ", ", self.OS_Name, ", ", self.OS_Geometry, ", ", self.asWKT, "]")
+        # print("[", self.resource, ", ", self.OS_type, ", ",
+        #       str(self.Center), ", ", self.OS_ID, ", ", self.OS_Name, ", ", self.OS_Geometry, ", ", self.asWKT
+        #       , ", ", self.area, "]")
+        print("\t", self.OS_Name, "\n",
+              self.OS_type, "\n",
+              self.area, "\n",
+              self.Center)
 
     #################################
     #   used when reading locations from RDF graph

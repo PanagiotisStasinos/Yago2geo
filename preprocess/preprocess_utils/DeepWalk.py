@@ -226,6 +226,7 @@ def skip_gram(file_path, num_of_steps, num_of_walks, skip_gram_window):
         counter += 1
 
     df = pandas.DataFrame.from_dict(vec_dict, orient='index')
+    check_if_l1_normalized(df)
 
     temp_array = df.values
 
@@ -249,6 +250,7 @@ def skip_gram(file_path, num_of_steps, num_of_walks, skip_gram_window):
     # check_if_l2_normalized(df)
 
 
+# in each row the sum of the squares will always be up to 1
 def check_if_l2_normalized(df):
     v = df.values
     print(v.shape)
@@ -261,4 +263,20 @@ def check_if_l2_normalized(df):
             flag += 1
         counter += 1
     if flag > 1:
-        print("Not Normalized", flag)
+        print("Not l-2 Normalized", flag)
+
+
+# in each row the sum of the absolute values will always be up to 1
+def check_if_l1_normalized(df):
+    v = df.values
+    print(v.shape)
+    print(v.shape[0])
+    counter = 0
+    flag = 0
+    for row in range(0, v.shape[0]):
+        print(np.sum(abs(v[row])))
+        if np.sum(abs(v[row])) != 1.0:
+            flag += 1
+        counter += 1
+    if flag > 1:
+        print("Not l-1 Normalized", flag)
