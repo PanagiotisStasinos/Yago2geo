@@ -96,7 +96,6 @@ def get_vectors_from_row(row, num_of_steps, Vocabulary, input_vecs, output, skip
                 output.append(Vocabulary[row[str(j)]])
 
 
-
 def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_encoder, num_of_steps,
                   num_of_walks, skip_gram_window):
     # file = '../datasets/[(]distance_type]/window_size_[window_size]/' \
