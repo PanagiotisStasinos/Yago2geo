@@ -245,7 +245,7 @@ def skip_gram(file_path, num_of_steps, num_of_walks, skip_gram_window):
 
     df = pandas.DataFrame.from_dict(v_dict, orient="index")
     df.to_csv("../datasets/center_distance/window_size_11/" + str(num_of_steps) + "steps_" +
-              str(num_of_walks) + "walks/vectors.csv", index=True)
+              str(num_of_walks) + "walks/skip_gram_vectors.csv", index=True)
     # check_if_l2_normalized(df)
 
 

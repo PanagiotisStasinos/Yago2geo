@@ -201,6 +201,11 @@ class KGraph:
     def print_loc_info(self, temp_loc):
         self.Locations[temp_loc].print_info()
 
+    def get_location_info(self, temp_loc):
+        temp_dict = {'area': self.Locations[temp_loc].area, "type": self.Locations[temp_loc].OS_type,
+                     "OS_ID": self.Locations[temp_loc].OS_ID, "center": self.Locations[temp_loc].Center}
+        return temp_dict
+
 
 def read_RDF_Graph_and_store_Locations(main_graph):
     weighted_graph = KGraph()
@@ -278,6 +283,14 @@ def find_center_distances(weighted_graph, window_size):
 
 
 # for polygon distance
+# distance between current location and its closest neighbors
+# 5 cases :
+#       1. distance exists in current location latitude closest
+#       2. distance exists in current location longitude closest
+#       3. distance exists in neighbor's latitude closest
+#       4. distance exists in neighbor's longitude closest
+#       5. distance doesn't exist, must be estimated
+#################################################################
 def find_polygon_distances(weighted_graph, window_size):
     # Latitude
     index = 0
@@ -289,17 +302,52 @@ def find_polygon_distances(weighted_graph, window_size):
         for node2 in weighted_graph.Locations_sorted_by_Latitude.items():
             if i in range(int(start), int(end) + 1):
                 if node1[1].resource != node2[1].resource:
-                    if node1[1].resource in node2[1].Closest_Location_by_Latitude:
-                        print("lat 1")
+                    # 1. distance exists in current location latitude closest
+                    if node2[1].resource in node1[1].Closest_Location_by_Latitude:
+                        print(i, " current Latitude")
+                        w = node1[1].Closest_Location_by_Latitude_dampened_weight[node2[1].resource]
+                        node1[1].dampened_weight_for_closest_by_Latitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Latitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 2. distance exists in current location longitude closest
+                    elif node2[1].resource in node1[1].Closest_Location_by_Longitude:
+                        print(i, " current Longitude")
+                        d = node1[1].Closest_Location_by_Longitude[node2[1].resource]
+                        w = node1[1].Closest_Location_by_Longitude_dampened_weight[node2[1].resource]
+
+                        node1[1].Closest_Location_by_Latitude_dampened_weight[node2[1].resource] = w
+                        node1[1].Closest_Location_by_Latitude[node2[1].resource] = d
+
+                        node1[1].dampened_weight_for_closest_by_Latitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Latitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 3. distance exists in neighbor's latitude closest
+                    elif node1[1].resource in node2[1].Closest_Location_by_Latitude:
+                        print(i, " neighbor lat")
                         d = node2[1].Closest_Location_by_Latitude[node1[1].resource]
                         w = compute_dampened_weight(d)
 
                         node1[1].Closest_Location_by_Latitude_dampened_weight[node2[1].resource] = w
                         node1[1].Closest_Location_by_Latitude[node2[1].resource] = d
 
-                        node1[1].dampened_weight_for_closest_by_Latitude_sum = node1[1].dampened_weight_for_closest_by_Latitude_sum + w
+                        node1[1].dampened_weight_for_closest_by_Latitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Latitude_sum + w
                         node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 4. distance exists in neighbor's longitude closest
+                    elif node1[1].resource in node2[1].Closest_Location_by_Longitude:
+                        print(i, " neighbor lon")
+                        d = node2[1].Closest_Location_by_Longitude[node1[1].resource]
+                        w = compute_dampened_weight(d)
+
+                        node1[1].Closest_Location_by_Latitude_dampened_weight[node2[1].resource] = w
+                        node1[1].Closest_Location_by_Latitude[node2[1].resource] = d
+
+                        node1[1].dampened_weight_for_closest_by_Latitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Latitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 5. distance doesn't exist, must be estimated
                     else:
+                        print(i, "compute distance")
                         node1[1].compute_distance_from_closest_by_Latitude_2(node2[1])
             i = i + 1
         index = index + 1
@@ -314,8 +362,9 @@ def find_polygon_distances(weighted_graph, window_size):
         for node2 in weighted_graph.Locations_sorted_by_Longitude.items():
             if i in range(int(start), int(end) + 1):
                 if node1[1].resource != node2[1].resource:
+                    # 4. distance exists in neighbor's longitude closest
                     if node1[1].resource in node2[1].Closest_Location_by_Longitude:
-                        print("lon 1")
+                        print(i, " neighbor lon")
                         d = node2[1].Closest_Location_by_Longitude[node1[1].resource]
                         w = compute_dampened_weight(d)
 
@@ -325,8 +374,9 @@ def find_polygon_distances(weighted_graph, window_size):
                         node1[1].dampened_weight_for_closest_by_Longitude_sum = \
                             node1[1].dampened_weight_for_closest_by_Longitude_sum + w
                         node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 3. distance exists in neighbor's latitude closest
                     elif node1[1].resource in node2[1].Closest_Location_by_Latitude:
-                        print("lon 2")
+                        print(i, " neighbor lat")
                         d = node2[1].Closest_Location_by_Latitude[node1[1].resource]
                         w = compute_dampened_weight(d)
 
@@ -336,6 +386,31 @@ def find_polygon_distances(weighted_graph, window_size):
                         node1[1].dampened_weight_for_closest_by_Longitude_sum = \
                             node1[1].dampened_weight_for_closest_by_Longitude_sum + w
                         node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 1. distance exists in current location latitude closest
+                    elif node2[1].resource in node1[1].Closest_Location_by_Latitude:
+                        print(i, " current Latitude")
+                        d = node1[1].Closest_Location_by_Latitude[node2[1].resource]
+                        w = compute_dampened_weight(d)
+
+                        node1[1].Closest_Location_by_Longitude_dampened_weight[node2[1].resource] = w
+                        node1[1].Closest_Location_by_Longitude[node2[1].resource] = d
+
+                        node1[1].dampened_weight_for_closest_by_Longitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Longitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 4. distance exists in neighbor's longitude closest
+                    elif node2[1].resource in node1[1].Closest_Location_by_Longitude:
+                        print(i, " current Longitude")
+                        d = node1[1].Closest_Location_by_Longitude[node2[1].resource]
+                        w = compute_dampened_weight(d)
+
+                        node1[1].Closest_Location_by_Longitude_dampened_weight[node2[1].resource] = w
+                        node1[1].Closest_Location_by_Longitude[node2[1].resource] = d
+
+                        node1[1].dampened_weight_for_closest_by_Longitude_sum = \
+                            node1[1].dampened_weight_for_closest_by_Longitude_sum + w
+                        node1[1].total_weight_sum = node1[1].total_weight_sum + w
+                    # 5. distance doesn't exist, must be estimated
                     else:
                         node1[1].compute_distance_from_closest_by_Longitude_2(node2[1])
             i = i + 1
@@ -343,6 +418,48 @@ def find_polygon_distances(weighted_graph, window_size):
 
         node1[1].compute_dampened_weights_Latitude()  # we call it here because we want the total weight
         node1[1].compute_dampened_weights_Longitude()
+
+
+def get_polygon_distances(weighted_graph, window_size, smaller_window_size):
+    file_lat = "../datasets/center_distance/window_size_" + str(smaller_window_size) + "/distances/distances_lat.csv"
+    df_lat = pandas.read_csv(file_lat)
+
+    file_lon = "../datasets/center_distance/window_size_" + str(smaller_window_size) + "/distances/distances_lon.csv"
+    df_lon = pandas.read_csv(file_lon)
+
+    for index, row in df_lat.iterrows():
+        current_location = row['0']
+        for i in range(1, len(row)-2, 3):
+            neighbor_name = row[str(i)]
+            j = i + 1
+            d = row[str(j)]  # distance
+            j = j + 1
+            w = row[str(j)]  # dampened weight
+            # print(neighbor_name, " ", d, " ", w)
+
+            weighted_graph.Locations[current_location].Closest_Location_by_Latitude[neighbor_name] = d
+            weighted_graph.Locations[current_location].Closest_Location_by_Latitude_dampened_weight[neighbor_name] = w
+
+    for index, row in df_lon.iterrows():
+        current_location = row['0']
+        for i in range(1, len(row)-2, 3):
+            neighbor_name = row[str(i)]
+            j = i + 1
+            d = row[str(j)]     # distance
+            j = j + 1
+            w = row[str(j)]     # dampened weight
+            # print(neighbor_name, " ", d, " ", w)
+
+            weighted_graph.Locations[current_location].Closest_Location_by_Longitude[neighbor_name] = d
+            weighted_graph.Locations[current_location].Closest_Location_by_Longitude_dampened_weight[neighbor_name] = w
+
+    # count = 0
+    # for key, val in weighted_graph.Locations.items():
+    #     print(count, "lat ", len(weighted_graph.Locations[key].Closest_Location_by_Latitude), "/",
+    #           len(weighted_graph.Locations[key].Closest_Location_by_Latitude_dampened_weight), " lon ",
+    #           len(weighted_graph.Locations[key].Closest_Location_by_Longitude), "/",
+    #           len(weighted_graph.Locations[key].Closest_Location_by_Longitude_dampened_weight))
+    #     count += 1
 
 
 def get_locations_from_csv(file):

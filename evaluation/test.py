@@ -11,7 +11,8 @@ from evaluation.evaluation_utils.read_vectors import get_vectors_n_type_labels, 
 if __name__ == '__main__':
     start = time()
 
-    file = "../datasets/center_distance/window_size_11/3steps_3walks/vectors.csv"
+    # skip gram vectors
+    file = "../datasets/center_distance/window_size_11/3steps_3walks/vectors/skip_gram_vectors.csv"
     X, Y = get_vectors_n_type_labels(file)
 
     model = Sequential([

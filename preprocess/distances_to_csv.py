@@ -1,7 +1,7 @@
 from location.KGraph import get_locations_from_csv
 from location.KGraph import sort_Locations
 from location.KGraph import find_center_distances, find_polygon_distances
-from location.KGraph import store_distances
+from location.KGraph import store_distances, get_polygon_distances
 from read_files.read_OS_topological import get_topological_info
 import time
 import utils
@@ -33,12 +33,17 @@ if __name__ == "__main__":
     # for distance_type in ["center_distance", "polygon_distance"]:
     for distance_type in ["polygon_distance"]:
         print("find distances")
-        # for window_size in [11, 21, 31, 41, 51, 61, 71, 81]:
-        # for window_size in [11, 21, 31]:
-        for window_size in [11]:
+        # for window_size in [11, 31, 51, 71]:
+        for window_size in [31]:
+
             if distance_type == "center_distance":
                 find_center_distances(weighted_graph, window_size)
             else:
+                # get distances from smaller window
+                # less estimation to be done
+                smaller_window_size = 11
+                get_polygon_distances(weighted_graph, window_size, smaller_window_size)
+                # exit(-1)
                 find_polygon_distances(weighted_graph, window_size)
 
             print("store distances")
