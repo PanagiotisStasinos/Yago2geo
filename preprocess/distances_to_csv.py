@@ -31,19 +31,27 @@ if __name__ == "__main__":
     weighted_graph.print_statistics()
 
     # for distance_type in ["center_distance", "polygon_distance"]:
+    # for distance_type in ["center_distance"]:
     for distance_type in ["polygon_distance"]:
         print("find distances")
         # for window_size in [11, 31, 51, 71]:
-        for window_size in [31]:
+        for window_size in [11]:
 
             if distance_type == "center_distance":
                 find_center_distances(weighted_graph, window_size)
             else:
                 # get distances from smaller window
                 # less estimation to be done
-                smaller_window_size = 11
-                get_polygon_distances(weighted_graph, window_size, smaller_window_size)
-                # exit(-1)
+                if window_size == 31:
+                    smaller_window_size = 11    # window_size = 31
+                    get_polygon_distances(weighted_graph, window_size, smaller_window_size)
+                elif window_size == 51:
+                    smaller_window_size = 31  # window_size = 51
+                    get_polygon_distances(weighted_graph, window_size, smaller_window_size)
+                elif window_size == 71:
+                    smaller_window_size = 51  # window_size = 71
+                    get_polygon_distances(weighted_graph, window_size, smaller_window_size)
+
                 find_polygon_distances(weighted_graph, window_size)
 
             print("store distances")

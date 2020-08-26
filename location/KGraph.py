@@ -349,6 +349,7 @@ def find_polygon_distances(weighted_graph, window_size):
                     else:
                         print(i, "compute distance")
                         node1[1].compute_distance_from_closest_by_Latitude_2(node2[1])
+                        # node1[1].compute_distance_from_closest_by_Latitude_3(node2[1])    # not working
             i = i + 1
         index = index + 1
 
@@ -412,7 +413,9 @@ def find_polygon_distances(weighted_graph, window_size):
                         node1[1].total_weight_sum = node1[1].total_weight_sum + w
                     # 5. distance doesn't exist, must be estimated
                     else:
+                        print(i, "compute distance")
                         node1[1].compute_distance_from_closest_by_Longitude_2(node2[1])
+                        # node1[1].compute_distance_from_closest_by_Longitude_3(node2[1])   # not working
             i = i + 1
         index = index + 1
 
