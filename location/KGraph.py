@@ -217,6 +217,7 @@ def read_RDF_Graph_and_store_Locations(main_graph):
     return weighted_graph
 
 
+# ascending order
 def sort_Locations(weighted_graph):
     # sorted by Latitude
     weighted_graph.Locations_sorted_by_Latitude = {k: v for k, v in sorted(weighted_graph.Locations.items(),
@@ -237,49 +238,44 @@ def sort_Locations(weighted_graph):
     df2.to_csv('../datasets/locations_csv/lon_sorted.csv')
 
 
-# for center distance
+# for center distances
 def find_center_distances(weighted_graph, window_size):
 # Latitude
     # pointer to the current location
     index = 0
     # for every location in the Latitude dict
-    for node1 in weighted_graph.Locations_sorted_by_Latitude.items():
-        # get where the window starts and ends for the current node
-        start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Latitude), window_size)
-
-        for i in range(int(start), index):
-            other_location_name = list(weighted_graph.Locations_sorted_by_Latitude)[i]
-            node1[1].compute_distance_from_closest_by_Latitude(
-                weighted_graph.Locations_sorted_by_Latitude[other_location_name])
-        for i in range(index+1, int(end) + 1):
-            other_location_name = list(weighted_graph.Locations_sorted_by_Latitude)[i]
-            node1[1].compute_distance_from_closest_by_Latitude(
-                weighted_graph.Locations_sorted_by_Latitude[other_location_name])
-
+    lat_sorted = list(weighted_graph.Locations_sorted_by_Latitude.keys())
+    for name1 in lat_sorted:
+        start = index + 1
+        end = min(index + window_size + 1, len(lat_sorted))
+        # print("Lat:", index, name1, weighted_graph.Locations[name1].Lat, end - start)
+        for i in range(start, end):
+            d, w = weighted_graph.Locations[name1].get_geodesic_distance(
+                    weighted_graph.Locations[lat_sorted[i]])
+            weighted_graph.Locations[name1].adjacency_list[lat_sorted[i]] = d
+            weighted_graph.Locations[name1].weighted_adjacency_list[lat_sorted[i]] = w
+            # print(lat_sorted[i], d, w)
         index = index + 1
 
 # Longitude
     # pointer to the current location
     index = 0
     # for every location in the Longitude dict
-    for node1 in weighted_graph.Locations_sorted_by_Longitude.items():
-        # get where the window starts and ends for the current node
-        start, end = utils.find_start_end(index, len(weighted_graph.Locations_sorted_by_Longitude), window_size)
+    lon_sorted = list(weighted_graph.Locations_sorted_by_Longitude.keys())
+    for name1 in lon_sorted:
+        start = index + 1
+        end = min(index + window_size + 1, len(lon_sorted))
+        # print("Lon:", index, name1, weighted_graph.Locations[name1].Lon, end - start)
+        for i in range(start, end):
+            if lon_sorted[i] not in weighted_graph.Locations[name1].adjacency_list:
+                d, w = weighted_graph.Locations[name1].get_geodesic_distance(
+                    weighted_graph.Locations[lon_sorted[i]])
+                weighted_graph.Locations[name1].adjacency_list[lon_sorted[i]] = d
+                weighted_graph.Locations[name1].weighted_adjacency_list[lon_sorted[i]] = w
+                # print(lon_sorted[i], d, w)
 
-        for i in range(int(start), index):
-            other_location_name = list(weighted_graph.Locations_sorted_by_Longitude)[i]
-            node1[1].compute_distance_from_closest_by_Longitude(
-                weighted_graph.Locations_sorted_by_Longitude[other_location_name])
-        for i in range(index+1, int(end) + 1):
-            other_location_name = list(weighted_graph.Locations_sorted_by_Longitude)[i]
-            node1[1].compute_distance_from_closest_by_Longitude(
-                weighted_graph.Locations_sorted_by_Longitude[other_location_name])
-
+        # print("Lon:", index, name1, len(weighted_graph.Locations[name1].adjacency_list))
         index = index + 1
-
-        # compute dampened weights for both Longitude Latitude
-        node1[1].compute_dampened_weights_Latitude()  # we call it here because we want the total weight
-        node1[1].compute_dampened_weights_Longitude()
 
 
 # for polygon distance
@@ -481,37 +477,19 @@ def store_distances(weighted_graph, distance_type, window_size):
     path = '../datasets/' + distance_type + '/window_size_' + str(window_size) + '/distances/'
     if not os.path.exists(path):
         os.makedirs(path)
-    else:
-        print("\tDistances exist")
-        return
 
     vectors = {}
     for key, value in weighted_graph.Locations.items():
         temp = []
         temp.append(key)    # name of current location
-        for x, y in value.Closest_Location_by_Latitude.items():
+        for x, y in value.adjacency_list.items():
             temp.append(x)  # name
             temp.append(y)  # distance
-            temp.append(value.Closest_Location_by_Latitude_dampened_weight[x])  # dampened distance
-        temp.append(value.dampened_weight_for_closest_by_Latitude_sum)          # dampened_weight_sum
+            temp.append(value.weighted_adjacency_list[x])  # dampened distance
         vectors[key] = temp
     df = pandas.DataFrame.from_dict(vectors, orient='index')
     df.rows = None
-    df.to_csv(path + 'distances_lat.csv', index=False)
-
-    vectors = {}
-    for key, value in weighted_graph.Locations.items():
-        temp = []
-        temp.append(key)    # name of current location
-        for x, y in value.Closest_Location_by_Longitude.items():
-            temp.append(x)  # name
-            temp.append(y)  # distance
-            temp.append(value.Closest_Location_by_Longitude_dampened_weight[x])  # dampened distance
-        temp.append(value.dampened_weight_for_closest_by_Longitude_sum)          # dampened_weight_sum
-        vectors[key] = temp
-    df = pandas.DataFrame.from_dict(vectors, orient='index')
-    df.rows = None
-    df.to_csv(path + 'distances_lon.csv', index=False)
+    df.to_csv(path + 'distances.csv', index=False)
 
 
 def get_distances_from_csv(weighted_graph, lat_file, lon_file):

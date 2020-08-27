@@ -5,6 +5,7 @@ from math import e
 from geopy import distance  # https://geopy.readthedocs.io/en/stable/#module-geopy.distance
 import re
 from utils import get_url_value
+from haversine import haversine # https://pypi.org/project/haversine/
 
 
 class Location:
@@ -40,6 +41,9 @@ class Location:
             self.Closest_Location_by_Longitude_dampened_weight = {}
             self.dampened_weight_for_closest_by_Longitude_sum = 0.0
 
+            self.adjacency_list = {}
+            self.weighted_adjacency_list = {}
+
             self.total_weight_sum = 0.0
 
             self.resource = get_url_value(subject)
@@ -57,8 +61,8 @@ class Location:
                 self.Center = self.polygon.centroid
                 self.area = self.polygon.area
 
-                self.Lat = self.Center.x
-                self.Lon = self.Center.y
+                self.Lat = self.Center.y
+                self.Lon = self.Center.x
                 self.Center = Point(self.Lat, self.Lon)
             elif pred == "rdf-syntax-ns#type":
                 self.OS_type = get_url_value(obj)
@@ -78,8 +82,8 @@ class Location:
             self.polygon = shapely.wkt.loads(self.asWKT)
             self.Center = self.polygon.centroid
             self.area = self.polygon.area
-            self.Lat = self.Center.x
-            self.Lon = self.Center.y
+            self.Lat = self.Center.y
+            self.Lon = self.Center.x
 
             if self.OS_Geometry != self.OS_Geometry:    # is NaN
                 self.OS_Geometry = None
@@ -91,6 +95,9 @@ class Location:
             self.Closest_Location_by_Longitude = {}
             self.Closest_Location_by_Longitude_dampened_weight = {}
             self.dampened_weight_for_closest_by_Longitude_sum = 0.0
+
+            self.adjacency_list = {}
+            self.weighted_adjacency_list = {}
 
             self.total_weight_sum = 0.0
 
@@ -118,6 +125,18 @@ class Location:
             prev.OS_Mame = self.OS_Name
         elif self.OS_type is not None and prev.OS_type is None:
             prev.OS_type = self.OS_type
+
+    def get_geodesic_distance(self, other_Location):
+        curr = (self.Lat, self.Lon)
+        other = (other_Location.Lat, other_Location.Lon)
+
+        # d = distance.geodesic(curr, other).miles
+        # d = distance.geodesic(curr, other).km
+        # d peripou = d1
+        d1 = haversine(curr, other)     # in km
+
+        w = compute_dampened_weight(d1)
+        return d1, w
 
     #################################
     #   finds the geodesic distance between the centers of the 2 locations
@@ -304,8 +323,13 @@ def get_asWKT(obj):
     return as_wkt
 
 
+# https://numpy.org/doc/stable/reference/generated/numpy.log.html
 def compute_dampened_weight(dist):
     if dist == 0:
+        # 1.0 / np.log(dist) -> 0
         return e
+    # if max(1.0 / np.log(dist), e) != e:
+    #     print(max(1.0 / np.log(dist), e))
     return max(1.0 / np.log(dist), e)
-    # return 1.0 / np.log(dist)
+
+
