@@ -1,3 +1,9 @@
+**EXECUTE ORDER** 
+> get_locations_csv.py  
+> distances_to_csv.py  
+> get_walks.csv  
+> etc
+
 **\__init\__()**  
 > calls the rest of methods, in general it reads the locations file and creates the vector files 
 

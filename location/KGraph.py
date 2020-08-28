@@ -1,5 +1,6 @@
 from urllib.parse import urlparse
 
+import numpy
 import pandas
 from rdflib.graph import Graph
 from location.location import Location, compute_dampened_weight
@@ -7,14 +8,15 @@ import utils
 from collections import Counter
 import pandas as pd
 import os
+from math import e
 
 
 class KGraph:
     Locations = {}
 
     # Since Python 3.7 the dictionaries are order-preserving
-    Locations_sorted_by_Latitude = {}   # k: name, v: Location obj
-    Locations_sorted_by_Longitude = {}   # k: name, v: Location obj
+    Locations_sorted_by_Latitude = {}  # k: name, v: Location obj
+    Locations_sorted_by_Longitude = {}  # k: name, v: Location obj
 
     def __init__(self):
         self.count = 0
@@ -240,7 +242,7 @@ def sort_Locations(weighted_graph):
 
 # for center distances
 def find_center_distances(weighted_graph, window_size):
-# Latitude
+    # Latitude
     # pointer to the current location
     index = 0
     # for every location in the Latitude dict
@@ -251,13 +253,13 @@ def find_center_distances(weighted_graph, window_size):
         # print("Lat:", index, name1, weighted_graph.Locations[name1].Lat, end - start)
         for i in range(start, end):
             d, w = weighted_graph.Locations[name1].get_geodesic_distance(
-                    weighted_graph.Locations[lat_sorted[i]])
+                weighted_graph.Locations[lat_sorted[i]])
             weighted_graph.Locations[name1].adjacency_list[lat_sorted[i]] = d
             weighted_graph.Locations[name1].weighted_adjacency_list[lat_sorted[i]] = w
             # print(lat_sorted[i], d, w)
         index = index + 1
 
-# Longitude
+    # Longitude
     # pointer to the current location
     index = 0
     # for every location in the Longitude dict
@@ -276,6 +278,33 @@ def find_center_distances(weighted_graph, window_size):
 
         # print("Lon:", index, name1, len(weighted_graph.Locations[name1].adjacency_list))
         index = index + 1
+
+    # add within and touches
+    # if locations in adjacency list belong to Include, within or touches list
+    # distance = 0  and  dampened_weight = e
+    # length of adjacency list doesn't change
+    prev_sum = 0
+    for key, value in weighted_graph.Locations.items():
+        prev_length = len(weighted_graph.Locations[key].adjacency_list)
+        prev_sum += prev_length
+        # Within
+        for neighbor in weighted_graph.Locations[key].Within:
+            if neighbor in weighted_graph.Locations[key].adjacency_list:
+                weighted_graph.Locations[key].adjacency_list[neighbor] = 0.0
+                weighted_graph.Locations[key].weighted_adjacency_list[neighbor] = e
+        # Includes
+        for neighbor in weighted_graph.Locations[key].Includes:
+            if neighbor in weighted_graph.Locations[key].adjacency_list:
+                weighted_graph.Locations[key].adjacency_list[neighbor] = 0.0
+                weighted_graph.Locations[key].weighted_adjacency_list[neighbor] = e
+        # Touches
+        for neighbor in weighted_graph.Locations[key].Touches:
+            if neighbor in weighted_graph.Locations[key].adjacency_list:
+                weighted_graph.Locations[key].adjacency_list[neighbor] = 0.0
+                weighted_graph.Locations[key].weighted_adjacency_list[neighbor] = e
+
+        # print("Prev ", prev_length, " added ", added, " new_length ", new_length)
+    print("average ", prev_sum/len(weighted_graph.Locations))
 
 
 # for polygon distance
@@ -428,7 +457,7 @@ def get_polygon_distances(weighted_graph, window_size, smaller_window_size):
 
     for index, row in df_lat.iterrows():
         current_location = row['0']
-        for i in range(1, len(row)-2, 3):
+        for i in range(1, len(row) - 2, 3):
             neighbor_name = row[str(i)]
             j = i + 1
             d = row[str(j)]  # distance
@@ -441,12 +470,12 @@ def get_polygon_distances(weighted_graph, window_size, smaller_window_size):
 
     for index, row in df_lon.iterrows():
         current_location = row['0']
-        for i in range(1, len(row)-2, 3):
+        for i in range(1, len(row) - 2, 3):
             neighbor_name = row[str(i)]
             j = i + 1
-            d = row[str(j)]     # distance
+            d = row[str(j)]  # distance
             j = j + 1
-            w = row[str(j)]     # dampened weight
+            w = row[str(j)]  # dampened weight
             # print(neighbor_name, " ", d, " ", w)
 
             weighted_graph.Locations[current_location].Closest_Location_by_Longitude[neighbor_name] = d
@@ -481,7 +510,7 @@ def store_distances(weighted_graph, distance_type, window_size):
     vectors = {}
     for key, value in weighted_graph.Locations.items():
         temp = []
-        temp.append(key)    # name of current location
+        temp.append(key)  # name of current location
         for x, y in value.adjacency_list.items():
             temp.append(x)  # name
             temp.append(y)  # distance
@@ -492,46 +521,27 @@ def store_distances(weighted_graph, distance_type, window_size):
     df.to_csv(path + 'distances.csv', index=False)
 
 
-def get_distances_from_csv(weighted_graph, lat_file, lon_file):
-    df_lat = pd.read_csv(lat_file)
-    df_lon = pd.read_csv(lon_file)
+def get_distances_from_csv(weighted_graph, file):
+    df = pd.read_csv(file)
 
-    for index, row in df_lat.iterrows():
+    summ = 0
+    count = 0
+    for index, row in df.iterrows():
+        count += 1
         current_location = row['0']
-        for i in range(1, len(row)-2, 3):
+        for i in range(1, len(row) - 1, 3):
             neighbor_name = row[str(i)]
             j = i + 1
             d = row[str(j)]  # distance
             j = j + 1
             w = row[str(j)]  # dampened weight
             # print("\t" + str(i) + str(neighbor_name) + " - " + str(d) + " - " + str(w))
-            weighted_graph.Locations[current_location].Closest_Location_by_Latitude_dampened_weight[neighbor_name] = w
-            weighted_graph.Locations[current_location].Closest_Location_by_Latitude[neighbor_name] = d
+            if neighbor_name is not numpy.nan: # because each locations has different number of neighbors
+                weighted_graph.Locations[current_location].weighted_adjacency_list[neighbor_name] = w
+                weighted_graph.Locations[current_location].adjacency_list[neighbor_name] = d
+                summ += 1
 
-        dampened_weight_lat_sum = row[str(len(row)-1)]
-        weighted_graph.Locations[current_location].dampened_weight_for_closest_by_Latitude_sum = \
-            dampened_weight_lat_sum
-        weighted_graph.Locations[current_location].total_weight_sum = dampened_weight_lat_sum
-        # print(current_location + " - " + str(dampened_weight_sum))
-
-    for index, row in df_lon.iterrows():
-        current_location = row['0']
-        for i in range(1, len(row)-2, 3):
-            neighbor_name = row[str(i)]
-            j = i + 1
-            d = row[str(j)]     # distance
-            j = j + 1
-            w = row[str(j)]     # dampened weight
-            # print("\t" + str(i) + str(neighbor_name) + " - " + str(d) + " - " + str(w))
-            weighted_graph.Locations[current_location].Closest_Location_by_Longitude_dampened_weight[neighbor_name] = w
-            weighted_graph.Locations[current_location].Closest_Location_by_Longitude[neighbor_name] = d
-
-        dampened_weight_lon_sum = row[str(len(row)-1)]
-        weighted_graph.Locations[current_location].dampened_weight_for_closest_by_Longitude_sum = \
-            dampened_weight_lon_sum
-        weighted_graph.Locations[current_location].total_weight_sum = \
-            weighted_graph.Locations[current_location].total_weight_sum + dampened_weight_lon_sum
-        # print(current_location + " - " + str(dampened_weight_sum))
+    print(summ/count)
 
 
 def empty_distance_dicts(weighted_graph):

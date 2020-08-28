@@ -33,18 +33,9 @@ class Location:
             self.polygon = None
             self.area = None
 
-            self.Closest_Location_by_Latitude = {}      # key: name of neighbor, value: distance
-            self.Closest_Location_by_Latitude_dampened_weight = {}  # key: name of neighbor, value: dampened distance
-            self.dampened_weight_for_closest_by_Latitude_sum = 0.0
-
-            self.Closest_Location_by_Longitude = {}
-            self.Closest_Location_by_Longitude_dampened_weight = {}
-            self.dampened_weight_for_closest_by_Longitude_sum = 0.0
-
             self.adjacency_list = {}
             self.weighted_adjacency_list = {}
 
-            self.total_weight_sum = 0.0
 
             self.resource = get_url_value(subject)
 
@@ -88,18 +79,8 @@ class Location:
             if self.OS_Geometry != self.OS_Geometry:    # is NaN
                 self.OS_Geometry = None
 
-            self.Closest_Location_by_Latitude = {}
-            self.Closest_Location_by_Latitude_dampened_weight = {}
-            self.dampened_weight_for_closest_by_Latitude_sum = 0.0
-
-            self.Closest_Location_by_Longitude = {}
-            self.Closest_Location_by_Longitude_dampened_weight = {}
-            self.dampened_weight_for_closest_by_Longitude_sum = 0.0
-
             self.adjacency_list = {}
             self.weighted_adjacency_list = {}
-
-            self.total_weight_sum = 0.0
 
     def print_info(self):
         # print("[", self.resource, ", ", self.OS_type, ", ",
@@ -137,65 +118,6 @@ class Location:
 
         w = compute_dampened_weight(d1)
         return d1, w
-
-    #################################
-    #   finds the geodesic distance between the centers of the 2 locations
-    #   computes the dampened weight
-    #   adds the weight to dampened_weight_for_closest_by_Latitude_sum and to total_weight_sum for later use
-    #   https://geopy.readthedocs.io/en/stable/#module-geopy.distance
-    #################################
-    def compute_distance_from_closest_by_Latitude(self, other_Location):
-        curr = (self.Lat, self.Lon)
-        other = (other_Location.Lat, other_Location.Lon)
-        d = distance.geodesic(curr, other).miles
-        w = compute_dampened_weight(d)
-        # print("dist ", self.resource, "(", self.Lat, self.Lon, ") ", other_Location.resource, "(", other_Location.Lat,
-        #       other_Location.Lon, ") = ", d, ", ", w)
-
-        self.Closest_Location_by_Latitude_dampened_weight[other_Location.resource] = w
-        self.Closest_Location_by_Latitude[other_Location.resource] = d
-
-        self.dampened_weight_for_closest_by_Latitude_sum = self.dampened_weight_for_closest_by_Latitude_sum + w
-        self.total_weight_sum = self.total_weight_sum + w
-
-    #################################
-    #   does the same as compute_distance_from_closest_by_Latitude
-    #   but for closest by longitude locations
-    #################################
-    def compute_distance_from_closest_by_Longitude(self, other_Location):
-        curr = (self.Lat, self.Lon)
-        other = (other_Location.Lat, other_Location.Lon)
-        d = distance.geodesic(curr, other).miles
-        w = compute_dampened_weight(d)
-        print("dist ", self.resource, "(", self.Lat, self.Lon, ") ", other_Location.resource, "(", other_Location.Lat,
-              other_Location.Lon, ") = ", d, ", ", w)
-
-        self.Closest_Location_by_Longitude_dampened_weight[other_Location.resource] = w
-        self.Closest_Location_by_Longitude[other_Location.resource] = d
-
-        self.dampened_weight_for_closest_by_Longitude_sum = self.dampened_weight_for_closest_by_Longitude_sum + w
-        self.total_weight_sum = self.total_weight_sum + w
-
-    def compute_dampened_weights_Latitude(self):
-        for key in self.Closest_Location_by_Latitude_dampened_weight:
-            self.Closest_Location_by_Latitude_dampened_weight[key] = self.Closest_Location_by_Latitude_dampened_weight[
-                                                                         key] / self.total_weight_sum
-
-    def compute_dampened_weights_Longitude(self):
-        for key in self.Closest_Location_by_Longitude_dampened_weight:
-            self.Closest_Location_by_Longitude_dampened_weight[key] = \
-                self.Closest_Location_by_Longitude_dampened_weight[
-                    key] / self.total_weight_sum
-
-    def print_dampened_weights_Latitude(self):
-        for item in self.Closest_Location_by_Latitude_dampened_weight.items():
-            print(self.resource, " - ", item[0], " = ", item[1])
-        print(self.dampened_weight_for_closest_by_Latitude_sum)
-
-    def print_dampened_weights_Longitude(self):
-        for item in self.Closest_Location_by_Longitude_dampened_weight.items():
-            print(self.resource, " - ", item[0], " = ", item[1])
-        print(self.dampened_weight_for_closest_by_Longitude_sum)
 
     def get_OS_ID_from_OS_Name(self):
         a = re.findall("\d+", self.resource)
@@ -252,41 +174,11 @@ class Location:
         self.dampened_weight_for_closest_by_Longitude_sum = self.dampened_weight_for_closest_by_Longitude_sum + w
         self.total_weight_sum = self.total_weight_sum + w
 
-    #################################
-    #   finds the GEODESIC distance between the polygons of the 2 locations
-    #   computes the dampened weight
-    #   adds the weight to dampened_weight_for_closest_by_Latitude_sum and to total_weight_sum for later use
-    #################################
-    def compute_distance_from_closest_by_Latitude_3(self, other_Location):
-        d = distance.geodesic(self.polygon, other_Location.polygon).miles  # MILES
-        w = compute_dampened_weight(d)
-        d2 = self.Center.distance(other_Location.Center)
-        w2 = compute_dampened_weight(d2)
-        print("dist ", self.resource, "-", other_Location.resource, "( ", d, ", ", w, ")", "( ", d2, ", ", w2, ")")
 
-        self.Closest_Location_by_Latitude_dampened_weight[other_Location.resource] = w
-        self.Closest_Location_by_Latitude[other_Location.resource] = d
-
-        self.dampened_weight_for_closest_by_Latitude_sum = self.dampened_weight_for_closest_by_Latitude_sum + w
-        self.total_weight_sum = self.total_weight_sum + w
-
-    #################################
-    #   does the same as compute_distance_from_closest_by_Latitude_3
-    #   but for closest by longitude locations
-    #################################
-    def compute_distance_from_closest_by_Longitude_3(self, other_Location):
-        d = distance.geodesic(self.polygon, other_Location.polygon).miles  # MILES
-        w = compute_dampened_weight(d)
-        d2 = self.Center.distance(other_Location.Center)
-        w2 = compute_dampened_weight(d2)
-        print("dist ", self.resource, "-", other_Location.resource, "( ", d, ", ", w, ")", "( ", d2, ", ", w2, ")")
-
-        self.Closest_Location_by_Longitude_dampened_weight[other_Location.resource] = w
-        self.Closest_Location_by_Longitude[other_Location.resource] = d
-
-        self.dampened_weight_for_closest_by_Longitude_sum = self.dampened_weight_for_closest_by_Longitude_sum + w
-        self.total_weight_sum = self.total_weight_sum + w
-
+########################
+#   util methods of the file
+#
+########################
 
 def get_type_predicate(predicate):
     if str(predicate) == "http://www.opengis.net/ont/geosparql#asWKT":
