@@ -1,8 +1,10 @@
 **EXECUTE ORDER** 
 > get_locations_csv.py  
 > distances_to_csv.py  
-> get_walks.csv  
-> etc
+> get_walks_csv.py  
+> get_skip_gram_vectors.py
+> gensim/gensim_skip_gram.py(get_skip_gram_vectors.py custom made but slower than gensim)  
+> gensim/gensim_get_feature_vectors.py
 
 **\__init\__()**  
 > calls the rest of methods, in general it reads the locations file and creates the vector files 

@@ -1,7 +1,7 @@
 import os
 from sys import getsizeof
 
-from numpy.random import choice
+from numpy.random import choice  # https://docs.scipy.org/doc//numpy-1.10.4/reference/generated/numpy.random.choice.html
 import pandas
 import numpy as np
 from numpy import array, argmax
@@ -15,6 +15,12 @@ from tensorflow.keras.optimizers import Adam
 from sklearn.preprocessing import Normalizer
 
 
+####################################################
+#   random walks methods:
+#       deep_walk()
+#       random_walk()
+#       find_next()
+###################################################
 # keeps only the name of each location visited
 def deep_walk(weighted_graph, distance_type, num_of_steps, num_of_walks, window_size):
     path = '../datasets/' + distance_type + '/window_size_' + str(window_size) + '/' + str(
@@ -29,9 +35,9 @@ def deep_walk(weighted_graph, distance_type, num_of_steps, num_of_walks, window_
         return
 
     ############################
-    #
-    #
-    #
+    #   for every location
+    #   save num_of_walks walks of num_of_steps length
+    #   number total walks = num_of_locations * num_of_walks
     ############################
     vectors_set = {}
     count = 0
@@ -50,7 +56,10 @@ def random_walk(current_location, num_of_steps, weighted_graph):
     temp_walk = []
     cur_node = current_location
     for step in range(num_of_steps):
-        neighbors = weighted_graph.find_neighbors_2(cur_node)
+        # get list of neighbors
+        # one tuple for each loc with its info
+        neighbors = weighted_graph.find_neighbors(cur_node)
+        # choose one randomly
         next_node, os_id, center, os_type, os_area = find_next(neighbors)
         cur_node = next_node
 
@@ -60,14 +69,28 @@ def random_walk(current_location, num_of_steps, weighted_graph):
 
 
 def find_next(neighbors):
+    # neighbors : list of tuples
+    # weight : is dampened weight, probability distribution
     name, weight, os_id, os_center, os_t, os_area = zip(*neighbors)
+    # choice(array of names [samples],
+    #               len of array returned [1 because we want just nest step]
+    #               probability distribution)
     draw = choice(name, 1, weight)
+
+    # na = name
+    # we = weight
     for na, we, osID, center, os_type, area in neighbors:
         if draw.item(0) == na:
             break
     return draw.item(0), osID, center, os_type, area
 
 
+####################################################
+#   embeddings methods:
+#       ()
+#       ()
+#       ()
+###################################################
 # same as integer_encoded
 def get_index_of_one(one_hot):
     print(one_hot)
@@ -119,7 +142,7 @@ def get_train_set(file, Vocabulary, Inverse_Vocabulary, label_encoder, onehot_en
 
     print("X", X.shape, "Y", Y.shape)
     print("X ", getsizeof(X), "Y", getsizeof(Y))
-    print("X ", getsizeof(X)/(1024 ** 3), "Y", getsizeof(Y)/(1024 ** 3))
+    print("X ", getsizeof(X) / (1024 ** 3), "Y", getsizeof(Y) / (1024 ** 3))
 
     # exit(-2)
 

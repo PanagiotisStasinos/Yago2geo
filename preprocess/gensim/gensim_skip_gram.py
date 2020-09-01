@@ -24,14 +24,10 @@ if __name__ == "__main__":
     count = 0
     # for distance_type in ['center_distance', 'polygon_distance']:
     for distance_type in ['center_distance']:
-    # for distance_type in ['polygon_distance']:
         path = "../../datasets/"
         path1 = path + distance_type + '/'
-        for w in ['11', '31', '51', '71']:
-        # for w in ['11', '31']:
+        for w in ['10', '30', '50', '70']:
             path2 = path1 + "window_size_" + w
-            # p k-steps walks
-            # for k, p in [('3', '3'), ('5', '3'), ('5', '10'), ('10', '5'), ('15', '3')]:
             for num_of_steps, num_of_walks in [('5', '10'), ('10', '5'), ('15', '3')]:
                 path3 = path2 + "/" + num_of_steps + "steps_" + num_of_walks + "walks/"
 
@@ -43,6 +39,8 @@ if __name__ == "__main__":
 
                 if not os.path.exists(folder_path):
                     os.mkdir(folder_path)
+                print(folder_path)
+                print(file)
 
                 df = pandas.read_csv(file)
                 # print(df.shape)
@@ -52,8 +50,10 @@ if __name__ == "__main__":
                 path4 = get_tmpfile("word2vec.model")
                 print("path4 ", path4)
                 print("folder_path ", folder_path)
+
                 # size: The number of dimensions of the embeddings and the default is 100.
-                # window: The maximum distance between a target word and words around the target word.The default window is 5.
+                # window: The maximum distance between a target word and words around the target word.
+                #           The default window is 5.
                 # min_count: The minimum count of words to consider when training the model; words with occurrence
                 #     less than this count will be ignored.The default for min_count is 5.
                 # workers: The number of partitions during training and the default workers is 3.
@@ -88,5 +88,8 @@ if __name__ == "__main__":
                 df2 = pandas.DataFrame.from_dict(vectors, orient='index')
                 df2.to_csv(folder_path + 'gensim_vectors.csv', index=True)
 
+                break
+            break
+        break
     utils.show_exec_time(start)
     exit(0)

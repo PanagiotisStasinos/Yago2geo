@@ -7,18 +7,9 @@ from preprocess.preprocess_utils import DeepWalk
 if __name__ == "__main__":
     start = time.time()
 
-    for distance_type in ['center_distance'
-                          # , 'polygon_distance'
-                          ]:
-
-        for window_size in [11
-            , 31
-            , 51
-                            ]:
-
-            # for num_of_steps, num_of_walks in [(15, 3), (5, 10), (10, 5)]:
-            # for num_of_steps, num_of_walks in [(3, 3), (5, 3)]:
-            for num_of_steps, num_of_walks in [(5, 3)]:
+    for distance_type in ['center_distance']:
+        for window_size in [10, 30, 50, 70]:
+            for num_of_steps, num_of_walks in [(5, 10), (10, 5), (15, 3)]:
                 file = '../datasets/' + distance_type + '/window_size_' + str(window_size) + '/' + str(
                     num_of_steps) + 'steps_' + str(num_of_walks) + 'walks/random_walks.csv'
 

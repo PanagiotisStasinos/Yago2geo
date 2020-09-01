@@ -91,6 +91,20 @@ class Location:
               self.area, "\n",
               self.Center)
 
+    def get_OS_ID_from_OS_Name(self):
+        a = re.findall("\d+", self.resource)
+        self.OS_ID = a[0]
+
+        def concat_locations(self, other):
+            if self.OS_ID is None:
+                self.OS_ID = other.OS_ID
+            if self.OS_Name is None:
+                self.OS_Name = other.resource
+            if self.OS_type is None:
+                self.OS_type = other.OS_type
+
+            self.count = self.count + other.count
+
     #################################
     #   used when reading locations from RDF graph
     #   updates the info of an existing location with new values that were None before
@@ -111,27 +125,23 @@ class Location:
         curr = (self.Lat, self.Lon)
         other = (other_Location.Lat, other_Location.Lon)
 
-        # d = distance.geodesic(curr, other).miles
-        # d = distance.geodesic(curr, other).km
-        # d peripou = d1
+        # d = distance.geodesic(curr, other).km     # .miles
+        # d ~= d1
         d1 = haversine(curr, other)     # in km
 
         w = compute_dampened_weight(d1)
         return d1, w
 
-    def get_OS_ID_from_OS_Name(self):
-        a = re.findall("\d+", self.resource)
-        self.OS_ID = a[0]
-
-    def concat_locations(self, other):
-        if self.OS_ID is None:
-            self.OS_ID = other.OS_ID
-        if self.OS_Name is None:
-            self.OS_Name = other.resource
-        if self.OS_type is None:
-            self.OS_type = other.OS_type
-
-        self.count = self.count + other.count
+    def l1_normalize_dampened_weights(self):
+        # get sum
+        total_sum = 0
+        for key, value in self.weighted_adjacency_list.items():
+            total_sum += value
+        # divide by sum
+        test_sum = 0
+        for key, value in self.weighted_adjacency_list.items():
+            self.weighted_adjacency_list[key] = value/total_sum
+            test_sum += self.weighted_adjacency_list[key]
 
     #################################
     #   finds the distance between the polygons of the 2 locations

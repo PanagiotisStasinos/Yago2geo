@@ -32,13 +32,11 @@ if __name__ == "__main__":
     # for distance_type in ['center_distance', 'polygon_distance']:
     # for distance_type in ['polygon_distance']:
     for distance_type in ['center_distance']:
-        # for window_size in [10, 30, 50, 70]:
-        # for window_size in [10, 30]:
-        for window_size in [10]:
+        for window_size in [10, 30, 50, 70]:
             path = '../datasets/' + distance_type + '/window_size_' + str(window_size) + '/distances/'
             # check if distances exist
             load_distances(path, weighted_graph)
-            break
+            # break
             # for num_of_steps, num_of_walks in [(5, 3), (3, 3)]:
             for num_of_steps, num_of_walks in [(5, 10), (10, 5), (15, 3)]:
                 print("START DeepWalk (num_of_steps=", num_of_steps, " num_of_walks=", num_of_walks,
@@ -49,6 +47,7 @@ if __name__ == "__main__":
             # empty distance dicts
             print("delete previous distances")
             empty_distance_dicts(weighted_graph)
+            # break
 
     utils.show_exec_time(start)
 

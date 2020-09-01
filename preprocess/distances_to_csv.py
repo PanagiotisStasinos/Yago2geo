@@ -56,6 +56,6 @@ if __name__ == "__main__":
 
             print("store distances")
             store_distances(weighted_graph, distance_type, window_size)
-            break
+            # break
     utils.show_exec_time(start)
 

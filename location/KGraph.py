@@ -36,43 +36,13 @@ class KGraph:
 
     def find_neighbors(self, loc):
         neighbors = []
-        for key in self.Locations[loc].Closest_Location_by_Latitude_dampened_weight:
-            neighbors.append(
-                tuple((key, self.Locations[loc].Closest_Location_by_Latitude_dampened_weight[key],
-                       int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].OS_type, self.Locations[key].area)))
+        # l1-normalize weighted_adjacency_list, to achieve a valid probability distribution
+        self.Locations[loc].l1_normalize_dampened_weights()
 
-        for key in self.Locations[loc].Closest_Location_by_Longitude_dampened_weight:
+        for key, value in self.Locations[loc].adjacency_list.items():
             neighbors.append(
-                tuple((key, self.Locations[loc].Closest_Location_by_Longitude_dampened_weight[key],
+                tuple((key, self.Locations[loc].weighted_adjacency_list[key],
                        int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].OS_type, self.Locations[key].area)))
-        return neighbors
-
-    def find_neighbors_2(self, loc):
-        neighbors = []
-        for key in self.Locations[loc].Closest_Location_by_Latitude_dampened_weight:
-            neighbors.append(
-                tuple((key, self.Locations[loc].Closest_Location_by_Latitude_dampened_weight[key],
-                       int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].OS_type, self.Locations[key].area)))
-
-        for key in self.Locations[loc].Closest_Location_by_Longitude_dampened_weight:
-            neighbors.append(
-                tuple((key, self.Locations[loc].Closest_Location_by_Longitude_dampened_weight[key],
-                       int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].OS_type, self.Locations[key].area)))
-        for key in self.Locations[loc].Within:
-            neighbors.append(
-                tuple((key, 0, int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].OS_type, self.Locations[key].area)))
-        for key in self.Locations[loc].Includes:
-            neighbors.append(
-                tuple((key, 0, int(self.Locations[key].OS_ID), self.Locations[key].Center,
-                       self.Locations[key].OS_type, self.Locations[key].area)))
-        for key in self.Locations[loc].Touches:
-            neighbors.append(
-                tuple((key, 0, int(self.Locations[key].OS_ID), self.Locations[key].Center,
                        self.Locations[key].OS_type, self.Locations[key].area)))
         return neighbors
 
@@ -241,6 +211,10 @@ def sort_Locations(weighted_graph):
 
 
 # for center distances
+# 1. find distances from latitude list neighbors
+# 2. same for longitude if they already exist
+# 3. check within, includes and touches lists and if the location already exist
+#       in  adjacency list and make distance 0 and weighted distance e
 def find_center_distances(weighted_graph, window_size):
     # Latitude
     # pointer to the current location
@@ -304,7 +278,7 @@ def find_center_distances(weighted_graph, window_size):
                 weighted_graph.Locations[key].weighted_adjacency_list[neighbor] = e
 
         # print("Prev ", prev_length, " added ", added, " new_length ", new_length)
-    print("average ", prev_sum/len(weighted_graph.Locations))
+    print(window_size, " average ", prev_sum/len(weighted_graph.Locations))
 
 
 # for polygon distance
@@ -546,12 +520,5 @@ def get_distances_from_csv(weighted_graph, file):
 
 def empty_distance_dicts(weighted_graph):
     for key, value in weighted_graph.Locations.items():
-        value.Closest_Location_by_Latitude.clear()
-        value.Closest_Location_by_Latitude_dampened_weight.clear()
-        value.dampened_weight_for_closest_by_Latitude_sum = 0.0
-
-        value.Closest_Location_by_Longitude.clear()
-        value.Closest_Location_by_Longitude_dampened_weight.clear()
-        value.dampened_weight_for_closest_by_Longitude_sum = 0.0
-
-        value.total_weight_sum = 0.0
+        value.adjacency_list.clear()
+        value.weighted_adjacency_list.clear()
