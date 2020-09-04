@@ -28,7 +28,7 @@ def skip_gram(list_of_walks, embeddings_size):
     # workers: The number of partitions during training and the default workers is 3.
     # sg: The training algorithm, either CBOW(0) or skip gram(1). The default training algorithm is CBOW.
     model = Word2Vec(list_of_walks, size=embeddings_size, window=5, min_count=5, workers=3, sg=1)
-    model.save(folder_path + str(embeddings_size)
+    model.save(folder_path + str(embeddings_size) + "/"
                + "/word2vec.model")  # model = Word2Vec.load(path + "word2vec.model")
 
     word_vectors = model.wv
@@ -53,7 +53,7 @@ def cbow(list_of_walks, embeddings_size):
     # workers: The number of partitions during training and the default workers is 3.
     # sg: The training algorithm, either CBOW(0) or skip gram(1). The default training algorithm is CBOW.
     model = Word2Vec(list_of_walks, size=embeddings_size, window=5, min_count=5, workers=3, sg=0)
-    model.save(folder_path + str(embeddings_size)
+    model.save(folder_path + str(embeddings_size) + "/"
                + "word2vec.model")  # model = Word2Vec.load(path + "word2vec.model")
 
     word_vectors = model.wv
@@ -65,22 +65,23 @@ def cbow(list_of_walks, embeddings_size):
     return locs, word_vectors
 
 
-def save_neighbors_and_vectors(locations, rename_vectors, embeddings_size):
+###################
+# for every location
+#   save the embedding
+#   save 10 closests neighbors
+#
+###################
+def save_neighbors_and_vectors(locations, name_vectors, embeddings_size):
     neighbors = {}
     vectors = {}
     for curr_loc in locations:
-        vectors[curr_loc] = rename_vectors.get_vector(curr_loc)
+        vectors[curr_loc] = name_vectors.get_vector(curr_loc)
 
         neighbors[curr_loc] = []
-        result = rename_vectors.similar_by_word(curr_loc)
-        # print("Most similar to geoentity_Benington_7295471 :\n", result[:3])
-
-        # weighted_graph.print_loc_info(curr_loc)
+        result = name_vectors.similar_by_word(curr_loc)
         for n in result:
             neighbors[curr_loc].append(n[0])
-            # weighted_graph.print_loc_info(n[0])
 
-    # folder_path = "../../datasets/center_distance/window_size_w/ksteps_pwalks/.../"
     df1 = pandas.DataFrame.from_dict(neighbors, orient='index')
     df1.to_csv(folder_path + "/" + str(embeddings_size) + '/neighbors.csv', index=True)
 
@@ -90,9 +91,6 @@ def save_neighbors_and_vectors(locations, rename_vectors, embeddings_size):
 
 if __name__ == "__main__":
     start = time.time()
-
-    # weighted graph used for debug
-    # weighted_graph = get_locations_from_csv("../../datasets/locations_csv/locations.csv")
 
     count = 0
     # for distance_type in ['center_distance', 'polygon_distance']:
@@ -139,8 +137,8 @@ if __name__ == "__main__":
                     locs, word_vectors = cbow(walks_list, size)
                     save_neighbors_and_vectors(locs, word_vectors, size)
 
-                break
-            break
-        break
+        #         break
+        #     break
+        # break
     utils.show_exec_time(start)
     exit(0)
