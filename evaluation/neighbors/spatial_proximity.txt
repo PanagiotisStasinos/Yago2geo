@@ -1,0 +1,2052 @@
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.39234527687296417	 adjacency list : 0.0031148208469055374../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.39327157980456023	 adjacency list : 0.005802117263843648../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.39395358306188927	 adjacency list : 0.007588558631921824../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.425198493485342	 adjacency list : 0.21348228827361562../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.43557614006514656	 adjacency list : 0.3418973941368078../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.43928644136807815	 adjacency list : 0.38926608306188926../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.39505802117263844	 adjacency list : 0.0049114413680781755../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3926455618892508	 adjacency list : 0.009950122149837133../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.3897648615635179	 adjacency list : 0.01514657980456026../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4507328990228013	 adjacency list : 0.35508448697068407../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.45672333061889253	 adjacency list : 0.40612276058631924../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4564383143322476	 adjacency list : 0.4189739413680782../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3934904315960912	 adjacency list : 0.003308224755700326../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.3927219055374593	 adjacency list : 0.005898819218241042../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.38555069218241045	 adjacency list : 0.008163680781758957../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.45038171824104234	 adjacency list : 0.34104234527687294../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.45814332247557005	 adjacency list : 0.39665614820846906../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.457680171009772	 adjacency list : 0.41209792345276874../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3967774779819783	 adjacency list : 0.004250878175431451../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.3932698671282391	 adjacency list : 0.005762867179147788../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.3959069388586265	 adjacency list : 0.006083592119330041../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.42043985134653566	 adjacency list : 0.08551137809906836../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.437993178231431	 adjacency list : 0.16888968080232145../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4456956676678715	 adjacency list : 0.22688489538257903../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3900330872995673	 adjacency list : 0.005156528378722321../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.39026724357342835	 adjacency list : 0.00695851361669636../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.38899465512853143	 adjacency list : 0.008694324255535759../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4839959277169763	 adjacency list : 0.287024688215831../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.49878849580045814	 adjacency list : 0.3560956986510562../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.501888521252227	 adjacency list : 0.37795876813438534../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.39209468058030034	 adjacency list : 0.0044489692033596335../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.38773733774497326	 adjacency list : 0.00568592517179944../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.38122168490710107	 adjacency list : 0.006332400101807076../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4812013234919827	 adjacency list : 0.25743955204886737../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.4926902519725121	 adjacency list : 0.33325528124204634../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4984779842199033	 adjacency list : 0.36303385085263423../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3945838635785187	 adjacency list : 0.006077882412827692../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.3949249172817511	 adjacency list : 0.007350470857724612../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.3959480783914482	 adjacency list : 0.007905319419699668../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.41588699414609315	 adjacency list : 0.06175617205395775../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.43286841435479767	 adjacency list : 0.1175617205395775../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.44154237719521505	 adjacency list : 0.16179180453041486../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3932495036399735	 adjacency list : 0.007127220892938961../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3955505778139795	 adjacency list : 0.008914116988240085../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.400753449065825	 adjacency list : 0.009270478032887034../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.5023570737667362	 adjacency list : 0.26713842081148503../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5252914524258006	 adjacency list : 0.3359721020210762../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.5330957593035687	 adjacency list : 0.3629791783332485../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3924439918533605	 adjacency list : 0.006461303462321793../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.3934012219959267	 adjacency list : 0.007642566191446028../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.39891547861507126	 adjacency list : 0.00824847250509165../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.49574847250509163	 adjacency list : 0.23025458248472505../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5185845213849287	 adjacency list : 0.30822301425661913../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.527693482688391	 adjacency list : 0.3406313645621181../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3896221611162033	 adjacency list : 0.007979427640289236../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.38780934922089827	 adjacency list : 0.009583460637539464../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.39102250738364397	 adjacency list : 0.009547815459822792../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.42450351359608923	 adjacency list : 0.05834606375394643../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.4397545574905795	 adjacency list : 0.10273449434769324../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.449765760260719	 adjacency list : 0.1371066300030553../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3977847940113052	 adjacency list : 0.008952487650863166../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3981158018027194	 adjacency list : 0.01083668584814381../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.39544227733360493	 adjacency list : 0.01186026378774762../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.5068849620614146	 adjacency list : 0.26070173651779804../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5374802668432042	 adjacency list : 0.3406477567856597../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.5469267199674085	 adjacency list : 0.3724499668992209../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3927581992259116	 adjacency list : 0.00859136280301487../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.39145956406600124	 adjacency list : 0.009543695253615809../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.39027296801792627	 adjacency list : 0.009823793033204319../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4912711346506417	 adjacency list : 0.22093603585251578../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5188836830311673	 adjacency list : 0.30385516398451823../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.531243634141373	 adjacency list : 0.3410623344876757../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.39234527687296417	 adjacency list : 0.0031148208469055374../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.39327157980456023	 adjacency list : 0.005802117263843648../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.39395358306188927	 adjacency list : 0.007588558631921824../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.425198493485342	 adjacency list : 0.21348228827361562../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.43557614006514656	 adjacency list : 0.3418973941368078../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.43928644136807815	 adjacency list : 0.38926608306188926../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.39505802117263844	 adjacency list : 0.0049114413680781755../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3926455618892508	 adjacency list : 0.009950122149837133../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.3897648615635179	 adjacency list : 0.01514657980456026../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4507328990228013	 adjacency list : 0.35508448697068407../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.45672333061889253	 adjacency list : 0.40612276058631924../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4564383143322476	 adjacency list : 0.4189739413680782../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3934904315960912	 adjacency list : 0.003308224755700326../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.3927219055374593	 adjacency list : 0.005898819218241042../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.38555069218241045	 adjacency list : 0.008163680781758957../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.45038171824104234	 adjacency list : 0.34104234527687294../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.45814332247557005	 adjacency list : 0.39665614820846906../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.457680171009772	 adjacency list : 0.41209792345276874../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3967774779819783	 adjacency list : 0.004250878175431451../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.3932698671282391	 adjacency list : 0.005762867179147788../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.3959069388586265	 adjacency list : 0.006083592119330041../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.42043985134653566	 adjacency list : 0.08551137809906836../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.437993178231431	 adjacency list : 0.16888968080232145../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4456956676678715	 adjacency list : 0.22688489538257903../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3900330872995673	 adjacency list : 0.005156528378722321../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.39026724357342835	 adjacency list : 0.00695851361669636../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.38899465512853143	 adjacency list : 0.008694324255535759../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4839959277169763	 adjacency list : 0.287024688215831../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.49878849580045814	 adjacency list : 0.3560956986510562../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.501888521252227	 adjacency list : 0.37795876813438534../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.39209468058030034	 adjacency list : 0.0044489692033596335../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.38773733774497326	 adjacency list : 0.00568592517179944../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.38122168490710107	 adjacency list : 0.006332400101807076../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4812013234919827	 adjacency list : 0.25743955204886737../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.4926902519725121	 adjacency list : 0.33325528124204634../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4984779842199033	 adjacency list : 0.36303385085263423../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3945838635785187	 adjacency list : 0.006077882412827692../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.3949249172817511	 adjacency list : 0.007350470857724612../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.3959480783914482	 adjacency list : 0.007905319419699668../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.41588699414609315	 adjacency list : 0.06175617205395775../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.43286841435479767	 adjacency list : 0.1175617205395775../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.44154237719521505	 adjacency list : 0.16179180453041486../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3932495036399735	 adjacency list : 0.007127220892938961../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3955505778139795	 adjacency list : 0.008914116988240085../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.400753449065825	 adjacency list : 0.009270478032887034../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.5023570737667362	 adjacency list : 0.26713842081148503../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5252914524258006	 adjacency list : 0.3359721020210762../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.5330957593035687	 adjacency list : 0.3629791783332485../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3924439918533605	 adjacency list : 0.006461303462321793../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.3934012219959267	 adjacency list : 0.007642566191446028../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.39891547861507126../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3970378664495114
+	 adjacency list : 0.011156351791530945
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39548045602605864
+	 adjacency list : 0.014199918566775244
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3980812296416938
+	 adjacency list : 0.01755394951140065
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4223635993485342
+	 adjacency list : 0.2705466205211726
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4322068403908795
+	 adjacency list : 0.4033387622149837
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4374898208469055
+	 adjacency list : 0.4514861563517915
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967732084690554
+	 adjacency list : 0.014927728013029317
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3953939332247557
+	 adjacency list : 0.021824104234527686
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3962896986970684
+	 adjacency list : 0.029076750814332246
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507990635179153
+	 adjacency list : 0.4461370114006515
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4555730863192182
+	 adjacency list : 0.4894543973941368
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.45366958469055374
+	 adjacency list : 0.497623167752443
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3951547231270358
+	 adjacency list : 0.011970684039087949
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3937449104234528
+	 adjacency list : 0.015599552117263844
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3974450325732899
+	 adjacency list : 0.019248778501628663
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4494248778501629
+	 adjacency list : 0.43557614006514656
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4551302931596091
+	 adjacency list : 0.48493485342019543
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.45800081433224754
+	 adjacency list : 0.49454906351791533
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3970378664495114
+	 adjacency list : 0.011156351791530945
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39548045602605864
+	 adjacency list : 0.014199918566775244
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3980812296416938
+	 adjacency list : 0.01755394951140065
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4223635993485342
+	 adjacency list : 0.2705466205211726
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4322068403908795
+	 adjacency list : 0.4033387622149837
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4374898208469055
+	 adjacency list : 0.4514861563517915
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967732084690554
+	 adjacency list : 0.014927728013029317
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3953939332247557
+	 adjacency list : 0.021824104234527686
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3962896986970684
+	 adjacency list : 0.029076750814332246
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507990635179153
+	 adjacency list : 0.4461370114006515
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4555730863192182
+	 adjacency list : 0.4894543973941368
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.45366958469055374
+	 adjacency list : 0.497623167752443
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3951547231270358
+	 adjacency list : 0.011970684039087949
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3937449104234528
+	 adjacency list : 0.015599552117263844
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3974450325732899
+	 adjacency list : 0.019248778501628663
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4494248778501629
+	 adjacency list : 0.43557614006514656
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4551302931596091
+	 adjacency list : 0.48493485342019543
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.45800081433224754
+	 adjacency list : 0.49454906351791533
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3970378664495114
+	 adjacency list : 0.011156351791530945
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39548045602605864
+	 adjacency list : 0.014199918566775244
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3980812296416938
+	 adjacency list : 0.01755394951140065
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4223635993485342
+	 adjacency list : 0.2705466205211726
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4322068403908795
+	 adjacency list : 0.4033387622149837
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4374898208469055
+	 adjacency list : 0.4514861563517915
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967732084690554
+	 adjacency list : 0.014927728013029317
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3953939332247557
+	 adjacency list : 0.021824104234527686
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3962896986970684
+	 adjacency list : 0.029076750814332246
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507990635179153
+	 adjacency list : 0.4461370114006515
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4555730863192182
+	 adjacency list : 0.4894543973941368
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.45366958469055374
+	 adjacency list : 0.497623167752443
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3951547231270358
+	 adjacency list : 0.011970684039087949
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3937449104234528
+	 adjacency list : 0.015599552117263844
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3974450325732899
+	 adjacency list : 0.019248778501628663
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4494248778501629
+	 adjacency list : 0.43557614006514656
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4551302931596091
+	 adjacency list : 0.48493485342019543
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.45800081433224754
+	 adjacency list : 0.49454906351791533
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3921366042345277
+	 adjacency list : 0.010891693811074918
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3937449104234528
+	 adjacency list : 0.0142253664495114
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.393266490228013
+	 adjacency list : 0.017411441368078175
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.43759670195439737
+	 adjacency list : 0.37240940553745927
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4470378664495114
+	 adjacency list : 0.4650396986970684
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44807105048859935
+	 adjacency list : 0.48735749185667754
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3968291938110749
+	 adjacency list : 0.014189739413680782
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39375
+	 adjacency list : 0.02135586319218241
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39173452768729644
+	 adjacency list : 0.028186074918566777
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4674623371335505
+	 adjacency list : 0.4218241042345277
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.47236868892508144
+	 adjacency list : 0.4434446254071661
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4730557817589576
+	 adjacency list : 0.44193811074918565
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39095582247557004
+	 adjacency list : 0.011772190553745928
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38879275244299677
+	 adjacency list : 0.01582858306188925
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38545907980456023
+	 adjacency list : 0.018979030944625407
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.47135077361563515
+	 adjacency list : 0.4025244299674267
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.47362581433224754
+	 adjacency list : 0.41913680781758955
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4742925488599348
+	 adjacency list : 0.4099297638436482
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3921366042345277
+	 adjacency list : 0.010891693811074918
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3937449104234528
+	 adjacency list : 0.0142253664495114
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.393266490228013
+	 adjacency list : 0.017411441368078175
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.43759670195439737
+	 adjacency list : 0.37240940553745927
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4470378664495114
+	 adjacency list : 0.4650396986970684
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44807105048859935
+	 adjacency list : 0.48735749185667754
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3968291938110749
+	 adjacency list : 0.014189739413680782
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39375
+	 adjacency list : 0.02135586319218241
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39173452768729644
+	 adjacency list : 0.028186074918566777
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4674623371335505
+	 adjacency list : 0.4218241042345277
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.47236868892508144
+	 adjacency list : 0.4434446254071661
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4730557817589576
+	 adjacency list : 0.44193811074918565
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39095582247557004
+	 adjacency list : 0.011772190553745928
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38879275244299677
+	 adjacency list : 0.01582858306188925
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38545907980456023
+	 adjacency list : 0.018979030944625407
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.47135077361563515
+	 adjacency list : 0.4025244299674267
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.47362581433224754
+	 adjacency list : 0.41913680781758955
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4742925488599348
+	 adjacency list : 0.4099297638436482
+../../datasets/polygon_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv DOESN'T EXIST
+../../datasets/polygon_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv DOESN'T EXIST
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39234527687296417
+	 adjacency list : 0.0031148208469055374
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39327157980456023
+	 adjacency list : 0.005802117263843648
+../../datasets/center_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39395358306188927
+	 adjacency list : 0.007588558631921824
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.425198493485342
+	 adjacency list : 0.21348228827361562
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43557614006514656
+	 adjacency list : 0.3418973941368078
+../../datasets/center_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.43928644136807815
+	 adjacency list : 0.38926608306188926
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39505802117263844
+	 adjacency list : 0.0049114413680781755
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3926455618892508
+	 adjacency list : 0.009950122149837133
+../../datasets/center_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3897648615635179
+	 adjacency list : 0.01514657980456026
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4507328990228013
+	 adjacency list : 0.35508448697068407
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45672333061889253
+	 adjacency list : 0.40612276058631924
+../../datasets/center_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4564383143322476
+	 adjacency list : 0.4189739413680782
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3934904315960912
+	 adjacency list : 0.003308224755700326
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3927219055374593
+	 adjacency list : 0.005898819218241042
+../../datasets/center_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38555069218241045
+	 adjacency list : 0.008163680781758957
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.45038171824104234
+	 adjacency list : 0.34104234527687294
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.45814332247557005
+	 adjacency list : 0.39665614820846906
+../../datasets/center_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.457680171009772
+	 adjacency list : 0.41209792345276874
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3967774779819783
+	 adjacency list : 0.004250878175431451
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3932698671282391
+	 adjacency list : 0.005762867179147788
+../../datasets/center_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959069388586265
+	 adjacency list : 0.006083592119330041
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42043985134653566
+	 adjacency list : 0.08551137809906836
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.437993178231431
+	 adjacency list : 0.16888968080232145
+../../datasets/center_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4456956676678715
+	 adjacency list : 0.22688489538257903
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3900330872995673
+	 adjacency list : 0.005156528378722321
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39026724357342835
+	 adjacency list : 0.00695851361669636
+../../datasets/center_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38899465512853143
+	 adjacency list : 0.008694324255535759
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4839959277169763
+	 adjacency list : 0.287024688215831
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.49878849580045814
+	 adjacency list : 0.3560956986510562
+../../datasets/center_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.501888521252227
+	 adjacency list : 0.37795876813438534
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39209468058030034
+	 adjacency list : 0.0044489692033596335
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38773733774497326
+	 adjacency list : 0.00568592517179944
+../../datasets/center_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38122168490710107
+	 adjacency list : 0.006332400101807076
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4812013234919827
+	 adjacency list : 0.25743955204886737
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4926902519725121
+	 adjacency list : 0.33325528124204634
+../../datasets/center_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4984779842199033
+	 adjacency list : 0.36303385085263423
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3945838635785187
+	 adjacency list : 0.006077882412827692
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3949249172817511
+	 adjacency list : 0.007350470857724612
+../../datasets/center_distance/window_size_50/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3959480783914482
+	 adjacency list : 0.007905319419699668
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.41588699414609315
+	 adjacency list : 0.06175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.43286841435479767
+	 adjacency list : 0.1175617205395775
+../../datasets/center_distance/window_size_50/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44154237719521505
+	 adjacency list : 0.16179180453041486
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3932495036399735
+	 adjacency list : 0.007127220892938961
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3955505778139795
+	 adjacency list : 0.008914116988240085
+../../datasets/center_distance/window_size_50/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.400753449065825
+	 adjacency list : 0.009270478032887034
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5023570737667362
+	 adjacency list : 0.26713842081148503
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5252914524258006
+	 adjacency list : 0.3359721020210762
+../../datasets/center_distance/window_size_50/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5330957593035687
+	 adjacency list : 0.3629791783332485
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3924439918533605
+	 adjacency list : 0.006461303462321793
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3934012219959267
+	 adjacency list : 0.007642566191446028
+../../datasets/center_distance/window_size_50/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39891547861507126
+	 adjacency list : 0.00824847250509165
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.49574847250509163
+	 adjacency list : 0.23025458248472505
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5185845213849287
+	 adjacency list : 0.30822301425661913
+../../datasets/center_distance/window_size_50/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.527693482688391
+	 adjacency list : 0.3406313645621181
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3896221611162033
+	 adjacency list : 0.007979427640289236
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38780934922089827
+	 adjacency list : 0.009583460637539464
+../../datasets/center_distance/window_size_70/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39102250738364397
+	 adjacency list : 0.009547815459822792
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.42450351359608923
+	 adjacency list : 0.05834606375394643
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4397545574905795
+	 adjacency list : 0.10273449434769324
+../../datasets/center_distance/window_size_70/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.449765760260719
+	 adjacency list : 0.1371066300030553
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3977847940113052
+	 adjacency list : 0.008952487650863166
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3981158018027194
+	 adjacency list : 0.01083668584814381
+../../datasets/center_distance/window_size_70/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544227733360493
+	 adjacency list : 0.01186026378774762
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5068849620614146
+	 adjacency list : 0.26070173651779804
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5374802668432042
+	 adjacency list : 0.3406477567856597
+../../datasets/center_distance/window_size_70/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5469267199674085
+	 adjacency list : 0.3724499668992209
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3927581992259116
+	 adjacency list : 0.00859136280301487
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39145956406600124
+	 adjacency list : 0.009543695253615809
+../../datasets/center_distance/window_size_70/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39027296801792627
+	 adjacency list : 0.009823793033204319
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4912711346506417
+	 adjacency list : 0.22093603585251578
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5188836830311673
+	 adjacency list : 0.30385516398451823
+../../datasets/center_distance/window_size_70/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.531243634141373
+	 adjacency list : 0.3410623344876757
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3921366042345277
+	 adjacency list : 0.010891693811074918
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3937449104234528
+	 adjacency list : 0.0142253664495114
+../../datasets/polygon_distance/window_size_10/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.393266490228013
+	 adjacency list : 0.017411441368078175
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.43759670195439737
+	 adjacency list : 0.37240940553745927
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.4470378664495114
+	 adjacency list : 0.4650396986970684
+../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.44807105048859935
+	 adjacency list : 0.48735749185667754
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.3968291938110749
+	 adjacency list : 0.014189739413680782
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39375
+	 adjacency list : 0.02135586319218241
+../../datasets/polygon_distance/window_size_10/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39173452768729644
+	 adjacency list : 0.028186074918566777
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4674623371335505
+	 adjacency list : 0.4218241042345277
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.47236868892508144
+	 adjacency list : 0.4434446254071661
+../../datasets/polygon_distance/window_size_10/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4730557817589576
+	 adjacency list : 0.44193811074918565
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39095582247557004
+	 adjacency list : 0.011772190553745928
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38879275244299677
+	 adjacency list : 0.01582858306188925
+../../datasets/polygon_distance/window_size_10/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.38545907980456023
+	 adjacency list : 0.018979030944625407
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.47135077361563515
+	 adjacency list : 0.4025244299674267
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.47362581433224754
+	 adjacency list : 0.41913680781758955
+../../datasets/polygon_distance/window_size_10/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4742925488599348
+	 adjacency list : 0.4099297638436482
+../../datasets/polygon_distance/window_size_30/5steps_10walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.38995215311004783
+	 adjacency list : 0.009737351114730734
+../../datasets/polygon_distance/window_size_30/5steps_10walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.38906647663646543
+	 adjacency list : 0.010897892700804235
+../../datasets/polygon_distance/window_size_30/5steps_10walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39060368522854527
+	 adjacency list : 0.012333299399368829
+../../datasets/polygon_distance/window_size_30/5steps_10walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.4434541382469714
+	 adjacency list : 0.23972818894431436
+../../datasets/polygon_distance/window_size_30/5steps_10walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.46139163188435306
+	 adjacency list : 0.3708286674132139
+../../datasets/polygon_distance/window_size_30/5steps_10walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.4718314160643388
+	 adjacency list : 0.42843835895347654
+../../datasets/polygon_distance/window_size_30/10steps_5walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39172434853420196
+	 adjacency list : 0.010555781758957654
+../../datasets/polygon_distance/window_size_30/10steps_5walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.3929203990228013
+	 adjacency list : 0.013721498371335504
+../../datasets/polygon_distance/window_size_30/10steps_5walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.39544482899022804
+	 adjacency list : 0.01634771986970684
+../../datasets/polygon_distance/window_size_30/10steps_5walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5206687703583062
+	 adjacency list : 0.380303338762215
+../../datasets/polygon_distance/window_size_30/10steps_5walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.524231473941368
+	 adjacency list : 0.39440655537459285
+../../datasets/polygon_distance/window_size_30/10steps_5walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5241296824104235
+	 adjacency list : 0.39214678338762216
+../../datasets/polygon_distance/window_size_30/15steps_3walks/cbow/50/neighbors.csv EXISTS
+	 category : 0.39073414112615823
+	 adjacency list : 0.009759698605030037
+../../datasets/polygon_distance/window_size_30/15steps_3walks/cbow/100/neighbors.csv EXISTS
+	 category : 0.39428775073821404
+	 adjacency list : 0.011658690561042663
+../../datasets/polygon_distance/window_size_30/15steps_3walks/cbow/150/neighbors.csv EXISTS
+	 category : 0.3988086752876489
+	 adjacency list : 0.012870379798391203
+../../datasets/polygon_distance/window_size_30/15steps_3walks/skip_gram/50/neighbors.csv EXISTS
+	 category : 0.5109612055798799
+	 adjacency list : 0.33567355666429083
+../../datasets/polygon_distance/window_size_30/15steps_3walks/skip_gram/100/neighbors.csv EXISTS
+	 category : 0.5125394562671826
+	 adjacency list : 0.336768149882904
+../../datasets/polygon_distance/window_size_30/15steps_3walks/skip_gram/150/neighbors.csv EXISTS
+	 category : 0.5116586905610426
+	 adjacency list : 0.33021077283372363

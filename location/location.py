@@ -6,6 +6,7 @@ from geopy import distance  # https://geopy.readthedocs.io/en/stable/#module-geo
 import re
 from utils import get_url_value
 from haversine import haversine # https://pypi.org/project/haversine/
+from shapely.ops import nearest_points # https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.nearest_points
 
 
 class Location:
@@ -146,43 +147,17 @@ class Location:
     #################################
     #   finds the distance between the polygons of the 2 locations
     #   computes the dampened weight
-    #   adds the weight to dampened_weight_for_closest_by_Latitude_sum and to total_weight_sum for later use
     #################################
-    def compute_distance_from_closest_by_Latitude_2(self, other_Location):
-        # d = self.Center.distance(other_Location.Center)
-        d = self.polygon.distance(other_Location.polygon)
+    def get_polygon_distance(self, other_Location):
+        # find closest points between 2 multipolygons
+        p1, p2 = nearest_points(self.polygon, other_Location.polygon)
+        # get haversine distance between those 2 points
+        curr = (p1.y, p1.x)
+        other = (p2.y, p2.x)
+        d = haversine(curr, other)
+
         w = compute_dampened_weight(d)
-        # curr = (self.Lat, self.Lon)
-        # other = (other_Location.Lat, other_Location.Lon)
-        # d1 = distance.geodesic(curr, other).miles   # MILES
-        # w1 = compute_dampened_weight(d1)
-        d2 = self.Center.distance(other_Location.Center)
-        w2 = compute_dampened_weight(d2)
-        print("dist ", self.resource, "-", other_Location.resource, "( ", d, ", ", w, ")", "( ", d2, ", ", w2, ")")
-
-        self.Closest_Location_by_Latitude_dampened_weight[other_Location.resource] = w
-        self.Closest_Location_by_Latitude[other_Location.resource] = d
-
-        self.dampened_weight_for_closest_by_Latitude_sum = self.dampened_weight_for_closest_by_Latitude_sum + w
-        self.total_weight_sum = self.total_weight_sum + w
-
-    #################################
-    #   does the same as compute_distance_from_closest_by_Latitude_2
-    #   but for closest by longitude locations
-    #################################
-    def compute_distance_from_closest_by_Longitude_2(self, other_Location):
-        # d = self.Center.distance(other_Location.Center)
-        d = self.polygon.distance(other_Location.polygon)
-        w = compute_dampened_weight(d)
-        d2 = self.Center.distance(other_Location.Center)
-        w2 = compute_dampened_weight(d2)
-        print("dist ", self.resource, "-", other_Location.resource, "( ", d, ", ", w, ")", "( ", d2, ", ", w2, ")")
-
-        self.Closest_Location_by_Longitude_dampened_weight[other_Location.resource] = w
-        self.Closest_Location_by_Longitude[other_Location.resource] = d
-
-        self.dampened_weight_for_closest_by_Longitude_sum = self.dampened_weight_for_closest_by_Longitude_sum + w
-        self.total_weight_sum = self.total_weight_sum + w
+        return d, w
 
 
 ########################

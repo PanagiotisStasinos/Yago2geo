@@ -30,9 +30,10 @@ if __name__ == "__main__":
     weighted_graph = get_locations_from_csv(file)
 
     # for distance_type in ['center_distance', 'polygon_distance']:
-    # for distance_type in ['polygon_distance']:
-    for distance_type in ['center_distance']:
-        for window_size in [10, 30, 50, 70]:
+    # for distance_type in ['center_distance']:
+    for distance_type in ['polygon_distance']:
+        # for window_size in [10, 30, 50, 70]:
+        for window_size in [30]:
             path = '../datasets/' + distance_type + '/window_size_' + str(window_size) + '/distances/'
             # check if distances exist
             load_distances(path, weighted_graph)

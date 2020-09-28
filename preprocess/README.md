@@ -2,8 +2,7 @@
 > get_locations_csv.py  
 > distances_to_csv.py  
 > get_walks_csv.py  
-> get_skip_gram_vectors.py
-> gensim/gensim_skip_gram.py(get_skip_gram_vectors.py custom made but slower than gensim)  
+> gensim/word2vec.py(get_skip_gram_vectors.py custom made but slower than gensim [deleted])  
 > gensim/gensim_get_feature_vectors.py
 
 **\__init\__()**  

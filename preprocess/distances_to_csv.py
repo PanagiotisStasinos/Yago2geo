@@ -31,11 +31,12 @@ if __name__ == "__main__":
     weighted_graph.print_statistics()
 
     # for distance_type in ["center_distance", "polygon_distance"]:
-    # for distance_type in ["polygon_distance"]:
-    for distance_type in ["center_distance"]:
+    # for distance_type in ["center_distance"]:
+    for distance_type in ["polygon_distance"]:
         print("find distances")
+        # for window_size in [10, 30, 50, 70]:
         # for window_size in [10]:
-        for window_size in [10, 30, 50, 70]:
+        for window_size in [30]:
 
             if distance_type == "center_distance":
                 find_center_distances(weighted_graph, window_size)
