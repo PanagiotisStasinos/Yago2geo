@@ -6,11 +6,16 @@ if __name__ == '__main__':
     start = time.time()
 
     accuracy_dict = {}
-    for distance_type in ['center_distance']:
-        for w in ['10', '30', '50', '70']:
-            for num_of_steps, num_of_walks in [('5', '10'), ('10', '5'), ('15', '3')]:
-                for emb in ['skip_gram', 'cbow']:
-                    for size in ['50', '100', '150']:
+    # for distance_type in ['center_distance']:
+    for distance_type in ['polygon_distance']:
+        # for w in ['10', '30', '50', '70']:
+        for w in ['10']:
+            # for num_of_steps, num_of_walks in [('5', '10'), ('10', '5'), ('15', '3')]:
+            for num_of_steps, num_of_walks in [('5', '10')]:
+                # for emb in ['skip_gram', 'cbow']:
+                for emb in ['skip_gram']:
+                    # for size in ['50', '100', '150']:
+                    for size in ['150']:
                         file = '../../datasets/' + distance_type + '/window_size_' + w + '/' + num_of_steps + 'steps_' \
                                + num_of_walks + 'walks/' + emb + '/' + size + '/feature_vectors_0.csv'
                         try:

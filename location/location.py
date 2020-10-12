@@ -5,7 +5,7 @@ from math import e
 from geopy import distance  # https://geopy.readthedocs.io/en/stable/#module-geopy.distance
 import re
 from utils import get_url_value
-from haversine import haversine # https://pypi.org/project/haversine/
+from haversine import haversine     # https://pypi.org/project/haversine/
 from shapely.ops import nearest_points # https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.nearest_points
 
 

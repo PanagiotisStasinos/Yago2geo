@@ -100,10 +100,10 @@ if __name__ == "__main__":
 
     count = 0
     # for distance_type in ['center_distance', 'polygon_distance']:
-    # for distance_type in ['center_distance']:
-    for distance_type in ['polygon_distance']:
-        # for w in ['10', '30', '50', '70']:
-        for w in ['30']:
+    # for distance_type in ['polygon_distance']:
+    for distance_type in ['center_distance']:
+        # for w in ['10', '30']:
+        for w in ['10', '30', '50', '70']:
             for num_of_steps, num_of_walks in [('5', '10'), ('10', '5'), ('15', '3')]:
                 path = "../../datasets/" + distance_type + "/window_size_" + w + "/" + num_of_steps + "steps_" \
                        + num_of_walks + "walks/"
@@ -128,6 +128,7 @@ if __name__ == "__main__":
                 for size in [50, 100, 150]:
                     if not os.path.exists(folder_path + str(size) + "/"):
                         os.mkdir(folder_path + str(size) + "/")
+                    # def skip_gram(path1, list_of_walks, embeddings_size, window_size, min_c, noise_words)
                     locs, word_vectors = skip_gram(folder_path, walks_list, size, 20, 5, 5)
                     save_neighbors_and_vectors(locs, word_vectors, size)
 

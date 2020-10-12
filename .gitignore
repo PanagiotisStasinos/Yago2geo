@@ -5,4 +5,9 @@ __pycache__/
 testing/
 read_files
 auxiliary_scripts/
+plots/
 old_REPORT.md
+locations_stats.txt
+locations_stats_1.csv
+locations_stats_1.txt
+PROGRESS_REPORT.pdf

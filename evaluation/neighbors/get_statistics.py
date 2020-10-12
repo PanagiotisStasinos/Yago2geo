@@ -12,9 +12,9 @@ import utils
 
 def print_line(index_line):
     print(percentages_dict["distance_type"][index_line],
-          percentages_dict["walk_window"][index_line],
+          percentages_dict["walk_window"][index_line], "(",
           percentages_dict["num_of_steps"][index_line],
-          percentages_dict["num_of_walks"][index_line],
+          percentages_dict["num_of_walks"][index_line], ")",
           percentages_dict["embedding"][index_line],
           percentages_dict["embedding_window"][index_line],
           percentages_dict["category_percentage"][index_line],
@@ -87,13 +87,13 @@ if __name__ == "__main__":
 
     # max proximity
     index = max(temp_prox, key=temp_prox.get)  # get key of max proximity_percentage
-    print(index, " - ", temp_cat[index], " - ", temp_prox[index])
+    print(index, " - ", temp_prox[index])
     print_line(index)
 
     # max category
-    index = max(temp_cat, key=temp_cat.get)  # get key of max category_percentage
-    print(index, " - ", temp_cat[index], " - ", temp_prox[index])
-    print_line(index)
+    # index = max(temp_cat, key=temp_cat.get)  # get key of max category_percentage
+    # print(index, " - ", temp_cat[index], " - ", temp_prox[index])
+    # print_line(index)
 
     # best distance_type
     # check only for window sizes of 10 and 30

@@ -9,10 +9,10 @@ if __name__ == "__main__":
     weighted_graph = get_locations_from_csv("../../datasets/locations_csv/locations.csv")
 
     # for distance_type in ['center_distance', 'polygon_distance']:
-    # for distance_type in ['center_distance']:
-    for distance_type in ['polygon_distance']:
-        # for w in ['10', '30', '50', '70']:
-        for w in ['30']:
+    # for distance_type in ['polygon_distance']:
+    for distance_type in ['center_distance']:
+        # for w in ['10', '30']:
+        for w in ['10', '30', '50', '70']:
             for num_of_steps, num_of_walks in [('5', '10'), ('10', '5'), ('15', '3')]:
                 for emb in ['skip_gram', 'cbow']:
                     for size in ['50', '100', '150']:

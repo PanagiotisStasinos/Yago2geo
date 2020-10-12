@@ -44,7 +44,7 @@ if __name__ == '__main__':
     adam_decay = 0.005689749519548906
 
 # collect data
-    path = '../../datasets/center_distance/window_size_10/5steps_10walks/cbow/100/feature_vectors_1.csv'
+    path = '../../datasets/polygon_distance/window_size_10/5steps_10walks/skip_gram/150/feature_vectors_0.csv'
     train_data, train_labels, input_shape = read_feature_vectors.get_vectors(path)
     # exit(-1)
     print(np.unique(train_labels))

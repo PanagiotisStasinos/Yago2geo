@@ -281,6 +281,7 @@ def find_center_distances(weighted_graph, window_size):
     print(window_size, " average ", prev_sum/len(weighted_graph.Locations))
 
 
+#################################################################
 # for polygon distance
 # distance between current location and its closest neighbors
 # if distances for smaller windows exist we use them to do less computations
@@ -409,6 +410,13 @@ def store_distances(weighted_graph, distance_type, window_size):
     df.to_csv(path + 'distances.csv', index=False)
 
 
+#################################################
+#   works for both center and polygon distance
+#   In distances.csv files distance and weight are stored wrong
+#   distance is store in km not in in units of R, earth's radius
+#   and weight is calculated wrong because of distance
+#   So we correct the distance here and estimate weight again
+#################################################
 def get_distances_from_csv(weighted_graph, file):
     df = pd.read_csv(file)
 
@@ -425,8 +433,13 @@ def get_distances_from_csv(weighted_graph, file):
             w = row[str(j)]  # dampened weight
             # print("\t" + str(i) + str(neighbor_name) + " - " + str(d) + " - " + str(w))
             if neighbor_name is not numpy.nan:  # because each locations has different number of neighbors
-                weighted_graph.Locations[current_location].weighted_adjacency_list[neighbor_name] = w
-                weighted_graph.Locations[current_location].adjacency_list[neighbor_name] = d
+                # d is in km
+                # R = 6,371 km
+                # correct_dist is in units of R
+                correct_dist = d/6371
+                correct_weight = compute_dampened_weight(correct_dist)
+                weighted_graph.Locations[current_location].weighted_adjacency_list[neighbor_name] = correct_weight
+                weighted_graph.Locations[current_location].adjacency_list[neighbor_name] = correct_dist
                 summ += 1
 
     print(summ/count)

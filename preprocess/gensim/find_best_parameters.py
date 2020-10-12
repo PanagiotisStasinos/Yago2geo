@@ -28,10 +28,10 @@ def save_neighbors_and_vectors_1(locations, name_vectors, embeddings_size):
             neighbors[curr_loc].append(n[0])
 
     df1 = pandas.DataFrame.from_dict(neighbors, orient='index')
-    df1.to_csv(folder_path + "/" + str(embeddings_size) + '/neighbors.csv', index=True)
+    df1.to_csv(folder_path + str(embeddings_size) + '/neighbors.csv', index=True)
 
     df2 = pandas.DataFrame.from_dict(vectors, orient='index')
-    df2.to_csv(folder_path + "/" + str(embeddings_size) + '/vectors.csv', index=True)
+    df2.to_csv(folder_path + str(embeddings_size) + '/vectors.csv', index=True)
 
 
 def get_spatial_proximity(path1):
@@ -70,10 +70,10 @@ if __name__ == "__main__":
 
     count = 0
     # for distance_type in ['center_distance', 'polygon_distance']:
-    # for distance_type in ['polygon_distance']:
-    for distance_type in ['center_distance']:
-        # for w in ['30']:
-        for w in ['10', '30', '50', '70']:
+    # for distance_type in ['center_distance']:
+    for distance_type in ['polygon_distance']:
+        # for w in ['10', '30', '50', '70']:
+        for w in ['10']:
             temp_path = "../../datasets/" + distance_type + "/window_size_" + w + "/distances/distances.csv"
             if not os.path.exists(temp_path):
                 print("distances don't exist")
@@ -90,7 +90,7 @@ if __name__ == "__main__":
                 df = pandas.read_csv(walks_file)
                 walks_list = df.values.tolist()
 
-                folder_path = "/temp/"
+                folder_path = "../gensim/temp/"
                 # if not os.path.exists(folder_path):
                 #     os.mkdir(folder_path)
                 print(folder_path)
@@ -98,12 +98,25 @@ if __name__ == "__main__":
 
                 # skip_gram
                 # dimensions of the embeddings
-                for size in [50, 100, 150]:
+                # for size in [150]:
+                for size in [50, 100, 150]:   #best 150
                     if not os.path.exists(folder_path + str(size) + "/"):
                         os.mkdir(folder_path + str(size) + "/")
-                    for window_size in [5, 10, 15]:     # (min, max) sentence length (5, 15)
-                        for min_count in [0, 5, 10]:    # word frequency, less than that will be ignored
-                            for noise_words in [5, 10, 15, 20]:     # how many “noise words” should be drawn
+                    # for window_size in [5]:
+                    # for window_size in [5, 10, 15]:     # (min, max) sentence length (5, 15)
+                    # for window_size in [int(int(num_of_steps)/2)]:
+                    for window_size in [20]:
+                        for min_count in [5, 10]:    # word frequency, less than that will be ignored
+                            # for noise_words in [5, 10, 15, 20]:     # how many “noise words” should be drawn
+                            # for noise_words in [2, 3, 4, 5]:
+                            for noise_words in [5]:
+                                print("dist ", distance_type, " walk_window ", w,
+                                      " num_of_steps", num_of_steps,
+                                      " num_of_walks ", num_of_walks,
+                                      " embedding_vector_size", size,
+                                      " embedding_window_size", window_size,
+                                      " embedding_min_count ", min_count,
+                                      " embedding_noise_words", noise_words)
                                 # skip_gram(list_of_walks, embeddings_size, window_size, min_c, noise_words)
                                 locs, word_vectors = skip_gram(folder_path, walks_list, size, window_size,
                                                                min_count, noise_words)
@@ -120,9 +133,28 @@ if __name__ == "__main__":
                                 stats_dict["embedding_min_count"].append(min_count)
                                 stats_dict["embedding_noise_words"].append(noise_words)
                                 stats_dict["proximity_percentage"].append(prox)
-                break
-            break
-        break
+                            # break
+                        # break
+                    # break   # size
+                # break   # num_of_steps, num_of_walks
+            # break     # w
+        # break     # distance_type
+
+    file = "../gensim/temp/" + "percentages.csv"
+    df = pandas.DataFrame.from_dict(stats_dict)
+    df.to_csv(file, index=False)
+
+    # max proximity
+    df = pandas.read_csv(file)
+    percentages_dict = df.to_dict()
+
+    temp_prox = percentages_dict["proximity_percentage"]
+    index = max(temp_prox, key=temp_prox.get)  # get key of max proximity_percentage
+    print(index, " - ", temp_prox[index])
+    print(percentages_dict["embedding_vector_size"][index],
+          percentages_dict["embedding_window_size"][index],
+          percentages_dict["embedding_min_count"][index],
+          percentages_dict["embedding_noise_words"][index])
 
     utils.show_exec_time(start)
     exit(0)
